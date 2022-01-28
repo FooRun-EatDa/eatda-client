@@ -11,20 +11,29 @@ class TabBarController: UITabBarController {
 
     private lazy var communityViewController : UIViewController = {
         let viewController = UINavigationController(rootViewController: TalkViewController())
-        let tabBarItem = UITabBarItem(
+        viewController.tabBarItem = UITabBarItem(
             title: "맛집 톡",
             image: UIImage(imageLiteralResourceName: "talk"),
             tag: 2
         )
-        viewController.tabBarItem = tabBarItem
+
+        return viewController
+    }()
+    
+    private lazy var homeViewController : UIViewController = {
+        let viewController = UINavigationController(rootViewController: HomeViewController())
+        viewController.tabBarItem = UITabBarItem(
+            title: "홈",
+            image: UIImage(imageLiteralResourceName: "home"),
+            selectedImage: UIImage(imageLiteralResourceName: "home_fill")
+        )
+        
         return viewController
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        let homeViewController = UIViewController()
-        homeViewController.tabBarItem = UITabBarItem(title: "홈", image: UIImage(imageLiteralResourceName: "home"), selectedImage: UIImage(imageLiteralResourceName: "home_fill"))
+        
         let likeViewController = UIViewController()
         likeViewController.tabBarItem = UITabBarItem(title: "좋아요", image: UIImage(imageLiteralResourceName: "heart"), tag: 1)
         let eventViewController = UIViewController()
