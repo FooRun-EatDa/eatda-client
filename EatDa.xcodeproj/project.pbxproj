@@ -15,6 +15,9 @@
 		FD63338E27A0DADC004783E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD63338D27A0DADC004783E3 /* SceneDelegate.swift */; };
 		FD63339027A0DADC004783E3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD63338F27A0DADC004783E3 /* TabBarController.swift */; };
 		FD63339527A0DADD004783E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD63339427A0DADD004783E3 /* Assets.xcassets */; };
+		FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8DDCC27A423450072034C /* HomeViewController.swift */; };
+		FDD8DDD027A423740072034C /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8DDCF27A423740072034C /* FilterView.swift */; };
+		FDD8DDD327A426C40072034C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8DDD227A426C40072034C /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		FD63338F27A0DADC004783E3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		FD63339427A0DADD004783E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD63339927A0DADD004783E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDD8DDCC27A423450072034C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FDD8DDCF27A423740072034C /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		FDD8DDD227A426C40072034C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 		FD0CF62827A12B9600BDEA53 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FDD8DDCB27A422C10072034C /* Home */,
 				FD0CF62927A12BAB00BDEA53 /* Talk */,
 				FD63338F27A0DADC004783E3 /* TabBarController.swift */,
 			);
@@ -104,10 +111,36 @@
 				FD63338B27A0DADC004783E3 /* AppDelegate.swift */,
 				FD63338D27A0DADC004783E3 /* SceneDelegate.swift */,
 				FD0CF62827A12B9600BDEA53 /* Scenes */,
+				FDD8DDD127A425A60072034C /* Extensions */,
 				FD63339427A0DADD004783E3 /* Assets.xcassets */,
 				FD63339927A0DADD004783E3 /* Info.plist */,
 			);
 			path = EatDa;
+			sourceTree = "<group>";
+		};
+		FDD8DDCB27A422C10072034C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FDD8DDCC27A423450072034C /* HomeViewController.swift */,
+				FDD8DDCE27A423620072034C /* SubComponent */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FDD8DDCE27A423620072034C /* SubComponent */ = {
+			isa = PBXGroup;
+			children = (
+				FDD8DDCF27A423740072034C /* FilterView.swift */,
+			);
+			path = SubComponent;
+			sourceTree = "<group>";
+		};
+		FDD8DDD127A425A60072034C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FDD8DDD227A426C40072034C /* UIColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,7 +259,10 @@
 				FD63338C27A0DADC004783E3 /* AppDelegate.swift in Sources */,
 				FD0CF62F27A12BF400BDEA53 /* CommunityViewController.swift in Sources */,
 				FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */,
+				FDD8DDD327A426C40072034C /* UIColor.swift in Sources */,
+				FDD8DDD027A423740072034C /* FilterView.swift in Sources */,
 				FD0CF62D27A12BDA00BDEA53 /* ReviewFeedViewController.swift in Sources */,
+				FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */,
 				FD63338E27A0DADC004783E3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
