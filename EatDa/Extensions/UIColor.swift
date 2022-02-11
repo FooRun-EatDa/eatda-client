@@ -21,7 +21,13 @@ extension UIColor {
     
     // MARK: 메인 테마 색, 자주 쓰는 색 정의
     class var mainColor: UIColor { UIColor(hex: 0xffc107) }
-    class var filterViewBorderColor: UIColor { UIColor(hex: 0xc7c7c7) }
+    class var seperatorColor: UIColor {UIColor(hex: 0xF8F8F8)}
+    class var filterViewBorderColor: UIColor { UIColor(hex: 0xCACACA) }
+    class var filterTextColor: UIColor { UIColor(hex: 0x99999F)}
+    class var filterClickBackgroundColor: UIColor {UIColor(hex: 0xFFEBAE)}
+    class var filterClickBorderColor: UIColor { UIColor(hex: 0xFFC107)}
+    class var filterBackgroundColor: UIColor {UIColor(hex: 0xFFEBAE)}
+    class var uncheckTextColor: UIColor { UIColor(hex: 0x99999F) }
 
 
 }
