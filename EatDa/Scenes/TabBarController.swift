@@ -24,7 +24,7 @@ class TabBarController: UITabBarController {
         let viewController = UINavigationController(rootViewController: HomeViewController())
         viewController.tabBarItem = UITabBarItem(
             title: "홈",
-            image: UIImage(imageLiteralResourceName: "home"),
+            image: UIImage(named: "home"),
             selectedImage: UIImage(imageLiteralResourceName: "home_fill")
         )
         
@@ -35,11 +35,11 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         let likeViewController = UIViewController()
-        likeViewController.tabBarItem = UITabBarItem(title: "좋아요", image: UIImage(imageLiteralResourceName: "heart"), tag: 1)
+        likeViewController.tabBarItem = UITabBarItem(title: "좋아요", image: UIImage(named: "heart"), tag: 1)
         let eventViewController = UIViewController()
-        eventViewController.tabBarItem = UITabBarItem(title: "이벤트", image: UIImage(imageLiteralResourceName: "event"), tag: 3)
+        eventViewController.tabBarItem = UITabBarItem(title: "이벤트", image: UIImage(named: "event"), tag: 3)
         let mypageViewController = UIViewController()
-        mypageViewController.tabBarItem = UITabBarItem(title: "마이", image: UIImage(imageLiteralResourceName: "my"), tag: 4)
+        mypageViewController.tabBarItem = UITabBarItem(title: "마이", image: UIImage(named: "my"), tag: 4)
         
         viewControllers = [homeViewController, likeViewController, communityViewController, eventViewController, mypageViewController]
         
