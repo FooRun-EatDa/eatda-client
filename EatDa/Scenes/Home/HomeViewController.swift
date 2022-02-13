@@ -51,7 +51,8 @@ class HomeViewController: UIViewController {
         button.layer.cornerRadius = 10
         // 눌렀을때
         //button.addTarget(self, action: #selector(), for: .touchUpInside)
-        
+        // 임시로 액션 생성. 지워도 됩니다.
+        button.addTarget(self, action: #selector(showDetail(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -60,7 +61,15 @@ class HomeViewController: UIViewController {
         setNavigation()
         setRightBarButtonItem()
         setLayout()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
+    @objc func showDetail(_ sender: AnyObject?){
+        let vc = RestaurantDetailViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
