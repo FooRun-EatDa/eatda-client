@@ -11,8 +11,9 @@ target 'EatDa' do
   pod 'Tabman', '~> 2.11'
   pod 'RxSwift', '~> 6.5.0'
   pod 'RxCocoa', '~> 6.5.0'
+  pod "RxGesture"
   pod 'TTGTagCollectionView'
-
+  
   # Pods for EatDa
 
 end
