@@ -7,18 +7,18 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 final class FilterButtonView: UIView {
     private let title: String
     private let imageTitle: String
-    var isSelected: Bool
+    
+    let viewModel = FilterSectionViewModel()
+    
+    let disposeBag = DisposeBag()
     
     private lazy var categoryImage: UIImageView = {
         let image = UIImageView(image: UIImage(named: imageTitle))
-        
-        image.snp.makeConstraints {
-            $0.height.width.equalTo(32.0)
-        }
         
         return image
     }()
@@ -27,8 +27,9 @@ final class FilterButtonView: UIView {
     private lazy var categoryTitle: UILabel = {
         let label = UILabel()
         label.text = title
-        label.font = .systemFont(ofSize: 14.0, weight: .medium)
-        label.textColor = UIColor.label
+        label.font = .mySystemFont(ofSize: 12)
+
+        label.textColor = UIColor.uncheckTextColor
         
         return label
     }()
@@ -39,11 +40,10 @@ final class FilterButtonView: UIView {
         return image
     }()
     
-
-    init(title:String, imageTitle: String, isSeleted: Bool) {
+    
+    init(title:String, imageTitle: String) {
         self.title = title
         self.imageTitle = imageTitle
-        self.isSelected = false
         
         super.init(frame: .zero)
         
@@ -53,34 +53,27 @@ final class FilterButtonView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !self.isSelected {
-            self.isSelected = true
-        } else {
-            self.isSelected = false
-        }
-        
-        self.setNeedsDisplay()
-    }
-    
-    override func draw(_ rect: CGRect) {
+    func setClick(selected: Bool) {
         var imageName: String = "title"
         
-        if !self.isSelected {
-            imageName = imageTitle
-            categoryTitle.font = .systemFont(ofSize: 14.0, weight: .medium)
-            categoryTitle.textColor = .uncheckTextColor
-            checkImage.image = UIImage(named: "check")
-        } else {
+        if selected {
             imageName = imageTitle+"_fill"
-            categoryTitle.font = .systemFont(ofSize: 14.0, weight: .medium)
+            categoryTitle.font = .myBoldSystemFont(ofSize: 12.0)
             categoryTitle.textColor = UIColor.label
             checkImage.image = UIImage(named: "check_fill")
+            self.layer.borderColor = UIColor.mainColor.cgColor
+        } else {
+            imageName = imageTitle
+            categoryTitle.font = .mySystemFont(ofSize: 12.0)
+            categoryTitle.textColor = .uncheckTextColor
+            checkImage.image = UIImage(named: "check")
+            self.layer.borderColor = UIColor.filterViewBorderColor.cgColor
         }
         categoryImage.image = UIImage(named: imageName)
+        
     }
+
 }
 
 private extension FilterButtonView {
@@ -91,16 +84,17 @@ private extension FilterButtonView {
         
         categoryImage.snp.makeConstraints {
             $0.top.equalToSuperview().inset(14.0)
-            $0.leading.trailing.equalToSuperview().inset(22.0)
+            $0.leading.trailing.equalToSuperview().inset(20.0)
+            $0.height.width.equalTo(32.0)
         }
         
         categoryTitle.snp.makeConstraints {
             $0.top.equalTo(categoryImage.snp.bottom).offset(10.0)
-            $0.leading.equalToSuperview().inset(12.0)
+            $0.centerX.equalToSuperview().offset(-5)
         }
         
         checkImage.snp.makeConstraints {
-            $0.leading.equalTo(categoryTitle.snp.trailing).offset(1.0)
+            $0.leading.equalTo(categoryTitle.snp.trailing).offset(2.3)
             $0.top.equalTo(categoryTitle.snp.top).offset(2.0)
         }
         
@@ -108,6 +102,11 @@ private extension FilterButtonView {
         self.layer.borderColor = UIColor.filterViewBorderColor.cgColor
         self.clipsToBounds = true
         self.layer.cornerRadius = 20
+        
+        self.snp.makeConstraints {
+            $0.width.equalTo(72.0)
+            $0.height.equalTo(86.0)
+        }
     
     }
     

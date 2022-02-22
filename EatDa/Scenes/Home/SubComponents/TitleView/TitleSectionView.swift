@@ -13,13 +13,12 @@ final class TitleSectionView: UIView {
     private lazy var schoolTitleButton: UIButton = {
         let button = UIButton()
         button.setTitle("경희대학교(국제)", for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 20.0)
+        button.titleLabel?.font = .myBoldSystemFont(ofSize: 25.0)
         button.setTitleColor(.label, for: .normal)
         button.setImage(UIImage(imageLiteralResourceName: "arrow"), for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
         button.imageEdgeInsets = .init(top: 0, left: 20, bottom: 0, right: 0)
-        // 눌렀을때 학교 검색 controller 만들 예정
-        //button.addTarget(self, action: #selector(), for: .touchUpInside)
+        // 눌렀을때 학교 검색 -> rx로
         return button
     }()
     
@@ -28,7 +27,10 @@ final class TitleSectionView: UIView {
         
         addSubview(schoolTitleButton)
         schoolTitleButton.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(16.0)
+            $0.top.equalToSuperview().inset(16.91)
+            $0.leading.equalToSuperview().inset(22.94)
+            $0.height.equalTo(34.0)
+            $0.bottom.equalToSuperview()
         }
     }
     

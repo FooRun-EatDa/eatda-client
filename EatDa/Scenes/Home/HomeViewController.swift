@@ -33,39 +33,23 @@ class HomeViewController: UIViewController {
         stackView.distribution = .equalSpacing
         stackView.spacing = 0.0
 
-        let titleSectionView = TitleSectionView(frame: .zero)
-        let filterSectionView = FilterSectionView(frame: .zero)
-        let recommendSectionView = RecommendSectionView(frame: .zero)
-        let aroundSectionView = AroundSectionView(frame: .zero)
+        let titleSectionView = TitleSectionView()
+        let filterSectionView = FilterSectionView()
+        let recommendSectionView = RecommendSectionView()
+        let aroundSectionView = AroundSectionView()
+        let mapSectionView = MapSectionView()
     
         // 임의의 뷰 추가하여 스크롤 뷰 아래화면 끝까지 잘보이게
         let spacingView = UIView()
         spacingView.snp.makeConstraints {
-            $0.height.equalTo(100.0)
+            $0.height.equalTo(50.0)
         }
                 
-        [titleSectionView, filterSectionView, recommendSectionView, aroundSectionView, spacingView]
+        [titleSectionView, filterSectionView, recommendSectionView, aroundSectionView, mapSectionView, spacingView]
             .forEach {
                 stackView.addArrangedSubview($0)
             }
-        
-        titleSectionView.snp.makeConstraints {
-            $0.height.equalTo(30.0)
-        }
-        
-        filterSectionView.snp.makeConstraints {
-            $0.top.equalTo(titleSectionView.snp.bottom).offset(20.0)
-            //$0.leading.trailing.equalToSuperview().inset(15.0)
-        }
-        
-        recommendSectionView.snp.makeConstraints {
-            $0.height.equalTo(350)
-        }
-        
-        aroundSectionView.snp.makeConstraints {
-            $0.height.equalTo(350)
-        }
-        
+
         return stackView
     }()
     
@@ -108,11 +92,9 @@ private extension HomeViewController {
             $0.width.equalToSuperview()
         }
         
-
         contentView.addSubview(stackView)
         stackView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
-        
     }
 }

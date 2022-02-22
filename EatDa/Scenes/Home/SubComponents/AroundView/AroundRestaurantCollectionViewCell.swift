@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class RestaurantCollectionViewCell: UICollectionViewCell{
+final class AroundRestaurantCollectionViewCell: UICollectionViewCell{
     static var width: CGFloat { 180.0 }
     static var height: CGFloat { 250.0 }
     
@@ -32,7 +32,7 @@ final class RestaurantCollectionViewCell: UICollectionViewCell{
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "타이틀"
-        label.font = .systemFont(ofSize: 16.0, weight: .bold)
+        label.font = .myBoldSystemFont(ofSize: 16.0)
         label.textColor = .label
         
         return label
@@ -41,7 +41,7 @@ final class RestaurantCollectionViewCell: UICollectionViewCell{
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "소개글"
-        label.font = .systemFont(ofSize: 13.0, weight: .regular)
+        label.font = .myMediumSystemFont(ofSize: 13.0)
         label.textColor = .darkGray
         
         return label
@@ -50,7 +50,7 @@ final class RestaurantCollectionViewCell: UICollectionViewCell{
     private lazy var hashTagLabel: UILabel = {
         let label = UILabel()
         label.text = "해시태그"
-        label.font = .systemFont(ofSize: 13.0, weight: .regular)
+        label.font = .mySystemFont(ofSize: 13.0)
         label.textColor = .secondaryLabel
         
         return label
@@ -62,7 +62,7 @@ final class RestaurantCollectionViewCell: UICollectionViewCell{
 }
 
 
-private extension RestaurantCollectionViewCell {
+private extension AroundRestaurantCollectionViewCell {
     func setupLayout(){
 
         self.backgroundColor = .white
@@ -71,7 +71,7 @@ private extension RestaurantCollectionViewCell {
         self.contentView.layer.borderColor = UIColor.clear.cgColor
         self.contentView.layer.masksToBounds = true
         self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 0.0)
+        self.layer.shadowOffset = CGSize(width: 10, height: 0.0)
         self.layer.shadowRadius = 10.0
         self.layer.shadowOpacity = 0.3
         self.layer.cornerRadius = 15.0
