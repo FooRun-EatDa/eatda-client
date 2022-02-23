@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		D723B51AAD593609FDECE7FE /* Pods_EatDa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6AB1F6EAB7375AC712E1EDD /* Pods_EatDa.framework */; };
+		F03FB65327A6DDA40097D817 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03FB65227A6DDA40097D817 /* RestaurantDetailViewController.swift */; };
+		F03FB65627A6EBB90097D817 /* RestaurantImageCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03FB65527A6EBB90097D817 /* RestaurantImageCVC.swift */; };
+		F03FB65A27A93C3A0097D817 /* RestaurantDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03FB65927A93C3A0097D817 /* RestaurantDetailTVC.swift */; };
+		F03FB65D27A95D620097D817 /* RestauranthashTagCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03FB65C27A95D620097D817 /* RestauranthashTagCVC.swift */; };
+		F03FB65F27B025460097D817 /* RestaurantMenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03FB65E27B025460097D817 /* RestaurantMenuTVC.swift */; };
+		F03FB66127B0333D0097D817 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03FB66027B0333D0097D817 /* UILabel.swift */; };
+		F03FB66327B52B2E0097D817 /* RestaurantReviewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03FB66227B52B2E0097D817 /* RestaurantReviewTVC.swift */; };
 		FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62A27A12BC400BDEA53 /* TalkViewController.swift */; };
 		FD0CF62D27A12BDA00BDEA53 /* ReviewFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62C27A12BDA00BDEA53 /* ReviewFeedViewController.swift */; };
 		FD0CF62F27A12BF400BDEA53 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62E27A12BF400BDEA53 /* CommunityViewController.swift */; };
@@ -39,6 +46,13 @@
 
 /* Begin PBXFileReference section */
 		5492170291BB836C96181C46 /* Pods-EatDa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatDa.release.xcconfig"; path = "Target Support Files/Pods-EatDa/Pods-EatDa.release.xcconfig"; sourceTree = "<group>"; };
+		F03FB65227A6DDA40097D817 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		F03FB65527A6EBB90097D817 /* RestaurantImageCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantImageCVC.swift; sourceTree = "<group>"; };
+		F03FB65927A93C3A0097D817 /* RestaurantDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTVC.swift; sourceTree = "<group>"; };
+		F03FB65C27A95D620097D817 /* RestauranthashTagCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranthashTagCVC.swift; sourceTree = "<group>"; };
+		F03FB65E27B025460097D817 /* RestaurantMenuTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMenuTVC.swift; sourceTree = "<group>"; };
+		F03FB66027B0333D0097D817 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		F03FB66227B52B2E0097D817 /* RestaurantReviewTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewTVC.swift; sourceTree = "<group>"; };
 		F3BE5607C6653930EC611246 /* Pods-EatDa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatDa.debug.xcconfig"; path = "Target Support Files/Pods-EatDa/Pods-EatDa.debug.xcconfig"; sourceTree = "<group>"; };
 		F6AB1F6EAB7375AC712E1EDD /* Pods_EatDa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatDa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD0CF62A27A12BC400BDEA53 /* TalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkViewController.swift; sourceTree = "<group>"; };
@@ -101,9 +115,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F03FB65127A6DCAE0097D817 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F03FB65B27A958060097D817 /* RestaurantDetail */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F03FB65427A6EB930097D817 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F03FB65527A6EBB90097D817 /* RestaurantImageCVC.swift */,
+				F03FB65927A93C3A0097D817 /* RestaurantDetailTVC.swift */,
+				F03FB65C27A95D620097D817 /* RestauranthashTagCVC.swift */,
+				F03FB65E27B025460097D817 /* RestaurantMenuTVC.swift */,
+				F03FB66227B52B2E0097D817 /* RestaurantReviewTVC.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F03FB65B27A958060097D817 /* RestaurantDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F03FB65427A6EB930097D817 /* Cell */,
+				F03FB65227A6DDA40097D817 /* RestaurantDetailViewController.swift */,
+			);
+			path = RestaurantDetail;
+			sourceTree = "<group>";
+		};
 		FD0CF62827A12B9600BDEA53 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F03FB65127A6DCAE0097D817 /* Common */,
 				FDD8DDCB27A422C10072034C /* Home */,
 				FD0CF62927A12BAB00BDEA53 /* Talk */,
 				FD63338F27A0DADC004783E3 /* TabBarController.swift */,
@@ -236,8 +280,12 @@
 			isa = PBXGroup;
 			children = (
 				FDD8DDD227A426C40072034C /* UIColor.swift */,
+<<<<<<< HEAD
 				FD9D4F6F27B4EBA70005205E /* UIView.swift */,
 				FD9C6F4627C10140005D88A6 /* UIFont.swift */,
+=======
+				F03FB66027B0333D0097D817 /* UILabel.swift */,
+>>>>>>> develop
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -360,15 +408,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD63339027A0DADC004783E3 /* TabBarController.swift in Sources */,
+				F03FB65F27B025460097D817 /* RestaurantMenuTVC.swift in Sources */,
 				FD63338C27A0DADC004783E3 /* AppDelegate.swift in Sources */,
+<<<<<<< HEAD
 				FD94861E27A959EF009BE666 /* SeperatorView.swift in Sources */,
 				FD9D4F7227B503090005205E /* TitleSectionView.swift in Sources */,
+=======
+				F03FB65627A6EBB90097D817 /* RestaurantImageCVC.swift in Sources */,
+				F03FB65327A6DDA40097D817 /* RestaurantDetailViewController.swift in Sources */,
+>>>>>>> develop
 				FD0CF62F27A12BF400BDEA53 /* CommunityViewController.swift in Sources */,
+				F03FB66127B0333D0097D817 /* UILabel.swift in Sources */,
 				FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */,
 				FD94861D27A959EF009BE666 /* AroundRestaurantCollectionViewCell.swift in Sources */,
 				FD9C6F5027C11838005D88A6 /* FilterView.swift in Sources */,
 				FD94861427A955F6009BE666 /* FilterSectionView.swift in Sources */,
 				FDD8DDD327A426C40072034C /* UIColor.swift in Sources */,
+<<<<<<< HEAD
 				FD0DBC6027B8D9770001E526 /* MapSectionView.swift in Sources */,
 				FD9C6F4727C10140005D88A6 /* UIFont.swift in Sources */,
 				FDD8DDD027A423740072034C /* FilterButtonView.swift in Sources */,
@@ -380,6 +436,15 @@
 				FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */,
 				FD63338E27A0DADC004783E3 /* SceneDelegate.swift in Sources */,
 				FD9C6F3A27BFDA4F005D88A6 /* RecommendCollectionViewCell.swift in Sources */,
+=======
+				F03FB66327B52B2E0097D817 /* RestaurantReviewTVC.swift in Sources */,
+				FDD8DDD027A423740072034C /* FilterView.swift in Sources */,
+				FD0CF62D27A12BDA00BDEA53 /* ReviewFeedViewController.swift in Sources */,
+				F03FB65D27A95D620097D817 /* RestauranthashTagCVC.swift in Sources */,
+				FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */,
+				FD63338E27A0DADC004783E3 /* SceneDelegate.swift in Sources */,
+				F03FB65A27A93C3A0097D817 /* RestaurantDetailTVC.swift in Sources */,
+>>>>>>> develop
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
         button.image = UIImage(imageLiteralResourceName: "bell")
         return button
     }()
-    
+
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical  // 세로 스크롤이기 때문
@@ -58,6 +58,15 @@ class HomeViewController: UIViewController {
         setNavigation()
         setRightBarButtonItem()
         setupLayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
+    @objc func showDetail(_ sender: AnyObject?){
+        let vc = RestaurantDetailViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
