@@ -280,12 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				FDD8DDD227A426C40072034C /* UIColor.swift */,
-<<<<<<< HEAD
 				FD9D4F6F27B4EBA70005205E /* UIView.swift */,
 				FD9C6F4627C10140005D88A6 /* UIFont.swift */,
-=======
-				F03FB66027B0333D0097D817 /* UILabel.swift */,
->>>>>>> develop
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -410,13 +406,8 @@
 				FD63339027A0DADC004783E3 /* TabBarController.swift in Sources */,
 				F03FB65F27B025460097D817 /* RestaurantMenuTVC.swift in Sources */,
 				FD63338C27A0DADC004783E3 /* AppDelegate.swift in Sources */,
-<<<<<<< HEAD
 				FD94861E27A959EF009BE666 /* SeperatorView.swift in Sources */,
 				FD9D4F7227B503090005205E /* TitleSectionView.swift in Sources */,
-=======
-				F03FB65627A6EBB90097D817 /* RestaurantImageCVC.swift in Sources */,
-				F03FB65327A6DDA40097D817 /* RestaurantDetailViewController.swift in Sources */,
->>>>>>> develop
 				FD0CF62F27A12BF400BDEA53 /* CommunityViewController.swift in Sources */,
 				F03FB66127B0333D0097D817 /* UILabel.swift in Sources */,
 				FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */,
@@ -424,7 +415,6 @@
 				FD9C6F5027C11838005D88A6 /* FilterView.swift in Sources */,
 				FD94861427A955F6009BE666 /* FilterSectionView.swift in Sources */,
 				FDD8DDD327A426C40072034C /* UIColor.swift in Sources */,
-<<<<<<< HEAD
 				FD0DBC6027B8D9770001E526 /* MapSectionView.swift in Sources */,
 				FD9C6F4727C10140005D88A6 /* UIFont.swift in Sources */,
 				FDD8DDD027A423740072034C /* FilterButtonView.swift in Sources */,
@@ -436,15 +426,6 @@
 				FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */,
 				FD63338E27A0DADC004783E3 /* SceneDelegate.swift in Sources */,
 				FD9C6F3A27BFDA4F005D88A6 /* RecommendCollectionViewCell.swift in Sources */,
-=======
-				F03FB66327B52B2E0097D817 /* RestaurantReviewTVC.swift in Sources */,
-				FDD8DDD027A423740072034C /* FilterView.swift in Sources */,
-				FD0CF62D27A12BDA00BDEA53 /* ReviewFeedViewController.swift in Sources */,
-				F03FB65D27A95D620097D817 /* RestauranthashTagCVC.swift in Sources */,
-				FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */,
-				FD63338E27A0DADC004783E3 /* SceneDelegate.swift in Sources */,
-				F03FB65A27A93C3A0097D817 /* RestaurantDetailTVC.swift in Sources */,
->>>>>>> develop
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
