@@ -1,6 +1,6 @@
 PODS:
-  - Alamofire (5.4.4)
-  - Kingfisher (7.0.0)
+  - Alamofire (5.5.0)
+  - Kingfisher (7.1.2)
   - Pageboy (3.6.2)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
@@ -40,8 +40,8 @@ SPEC REPOS:
     - TTGTagCollectionView
 
 SPEC CHECKSUMS:
-  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
-  Kingfisher: 5efc54fec3980f92354898532e562cc17f31efb4
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
   Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxGesture: abadd243fc36db74df43dfc893829ddde94f1a3d

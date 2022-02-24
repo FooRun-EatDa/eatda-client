@@ -20,7 +20,6 @@ extension UIColor {
     }
     
     // MARK: 메인 테마 색, 자주 쓰는 색 정의
-<<<<<<< HEAD
     class var mainColor: UIColor { UIColor(hex: 0xFFC208) }
     class var applyButtonColor: UIColor { UIColor(hex: 0xFBB734) }
     class var seperatorColor: UIColor {UIColor(hex: 0xF8F8F8)}
