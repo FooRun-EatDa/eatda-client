@@ -20,10 +20,21 @@ extension UIColor {
     }
     
     // MARK: 메인 테마 색, 자주 쓰는 색 정의
-    class var mainColor: UIColor { UIColor(hex: 0xffc107) }
-    class var filterViewBorderColor: UIColor { UIColor(hex: 0xc7c7c7) }
+    class var mainColor: UIColor { UIColor(hex: 0xFFC208) }
+    class var applyButtonColor: UIColor { UIColor(hex: 0xFBB734) }
+    class var seperatorColor: UIColor {UIColor(hex: 0xF8F8F8)}
+    class var homeTitleColor: UIColor { UIColor(hex: 0xFF9F00) }
+    class var filterViewBorderColor: UIColor { UIColor(hex: 0xCACACA) }
+    class var filterStrokeColor: UIColor {UIColor(hex: 0xFFC107)}
+    class var filterTextColor: UIColor { UIColor(hex: 0x99999F)}
+    class var filterClickBackgroundColor: UIColor {UIColor(hex: 0xFFEBAE)}
+    class var filterBackgroundColor: UIColor {UIColor(hex: 0xFFEBAE)}
+    class var uncheckTextColor: UIColor { UIColor(hex: 0xCECED0) }
+    class var hashTagBackgroundColor: UIColor { UIColor(hex: 0xFDF2E6) }
+    class var hashTagTextColor: UIColor { UIColor(hex: 0xFF8A00) }
     
     class var mainTextColor: UIColor { UIColor(hex: 0x191919) }
     class var subTextColor: UIColor { UIColor(hex: 0x6B7280) }
     class var highlightTextColor: UIColor { UIColor(hex: 0x16B96A) }
+
 }

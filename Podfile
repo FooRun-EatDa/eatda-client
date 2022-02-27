@@ -9,7 +9,11 @@ target 'EatDa' do
   pod 'Kingfisher', '~> 7.0'
   pod 'Alamofire', '~> 5.0'
   pod 'Tabman', '~> 2.11'
-
+  pod 'RxSwift', '~> 6.5.0'
+  pod 'RxCocoa', '~> 6.5.0'
+  pod "RxGesture"
+  pod 'TTGTagCollectionView'
+  
   # Pods for EatDa
 
 end

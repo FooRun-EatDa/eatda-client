@@ -25,7 +25,7 @@ class TabBarController: UITabBarController {
         viewController.tabBarItem = UITabBarItem(
             title: "홈",
             image: UIImage(named: "home"),
-            selectedImage: UIImage(imageLiteralResourceName: "home_fill")
+            selectedImage: UIImage(named: "home_fill")
         )
         
         return viewController
@@ -33,6 +33,8 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tabBar.isTranslucent = false
         
         let likeViewController = UIViewController()
         likeViewController.tabBarItem = UITabBarItem(title: "좋아요", image: UIImage(named: "heart"), tag: 1)

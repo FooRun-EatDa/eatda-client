@@ -6,23 +6,14 @@
 //
 
 import UIKit
+import SnapKit
+
 
 class HomeViewController: UIViewController {
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
     
     // MARK: - UIComponent
-    private lazy var leftBarButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("경희대학교(국제)", for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 20.0)
-        button.setTitleColor(.label, for: .normal)
-        button.setImage(UIImage(imageLiteralResourceName: "arrow"), for: .normal)
-        button.semanticContentAttribute = .forceRightToLeft
-        button.imageEdgeInsets = .init(top: 0, left: 20, bottom: 0, right: 0)
-        // 눌렀을때 학교 검색 controller 만들 예정
-        //button.addTarget(self, action: #selector(), for: .touchUpInside)
-        return button
-    }()
-    
     private lazy var  searchBarButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
         button.image = UIImage(imageLiteralResourceName: "search")
@@ -34,33 +25,39 @@ class HomeViewController: UIViewController {
         button.image = UIImage(imageLiteralResourceName: "bell")
         return button
     }()
+
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical  // 세로 스크롤이기 때문
+        
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 0.0
+
+        let titleSectionView = TitleSectionView()
+        let filterSectionView = FilterSectionView()
+        let recommendSectionView = RecommendSectionView()
+        let aroundSectionView = AroundSectionView()
+        let mapSectionView = MapSectionView()
     
-    private let categoryView = FilterView(title: "종류별", imageTitle: "category")
-    private let districtView = FilterView(title: "지역별", imageTitle: "district")
-    private let priceView = FilterView(title: "가격별", imageTitle: "price")
-    private let hashtagView = FilterView(title: "해시태그", imageTitle: "hashtag")
-    
-    private lazy var applyButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("조회하기", for: .normal)
-        button.backgroundColor = UIColor.mainColor
-        button.titleLabel?.font = .boldSystemFont(ofSize: 15.0)
-        button.setTitleColor(.white, for: .normal)
-        button.setImage(UIImage(imageLiteralResourceName: "logo"), for: .normal)
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 10
-        // 눌렀을때
-        //button.addTarget(self, action: #selector(), for: .touchUpInside)
-        // 임시로 액션 생성. 지워도 됩니다.
-        button.addTarget(self, action: #selector(showDetail(_:)), for: .touchUpInside)
-        return button
+        // 임의의 뷰 추가하여 스크롤 뷰 아래화면 끝까지 잘보이게
+        let spacingView = UIView()
+        spacingView.snp.makeConstraints {
+            $0.height.equalTo(50.0)
+        }
+                
+        [titleSectionView, filterSectionView, recommendSectionView, aroundSectionView, mapSectionView, spacingView]
+            .forEach {
+                stackView.addArrangedSubview($0)
+            }
+
+        return stackView
     }()
     
     override func viewDidLoad() {
-        view.backgroundColor = .systemBackground
+        super.viewDidLoad()
         setNavigation()
         setRightBarButtonItem()
-        setLayout()
+        setupLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,9 +71,8 @@ class HomeViewController: UIViewController {
     
 }
 
-// MARK: - private
 private extension HomeViewController {
-    // 상단 네비게이션 설정
+    
     func setNavigation() {
         self.navigationController?.navigationBar.backgroundColor = .clear
         self.navigationController?.navigationBar.isTranslucent = false
@@ -84,45 +80,30 @@ private extension HomeViewController {
         //self.navigationController?.hidesBarsOnSwipe = true
         self.navigationController?.navigationBar.tintColor = .label
     }
-
+    
+    
     func setRightBarButtonItem() {
         self.navigationItem.rightBarButtonItems = [noticeBarButton, searchBarButton]
     }
-    
-    func setLayout() {
-        let titleBar = leftBarButton
-        let applyButton = applyButton
-        let filterStackView = UIStackView(arrangedSubviews: [categoryView, districtView, priceView, hashtagView])
-        filterStackView.spacing = 8.0
-        filterStackView.distribution = .fillEqually
-        
-        [
-            titleBar,
-            filterStackView,
-            applyButton
-        ]
-        .forEach { view.addSubview($0) }
-        
-        let inset: CGFloat = 16.0
 
-        titleBar.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(inset)
+    func setupLayout(){
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
         
-        filterStackView.snp.makeConstraints {
-            $0.top.equalTo(titleBar.snp.bottom).offset(inset)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(inset)
-            $0.height.equalTo(86.0)
-            $0.width.equalTo(72.0)
+        scrollView.addSubview(contentView)
+        
+        contentView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            // 세로 스크롤만 가능하게 - 가로만 고정
+            $0.width.equalToSuperview()
         }
         
-        applyButton.snp.makeConstraints {
-            $0.top.equalTo(filterStackView.snp.bottom).offset(inset)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(inset)
-            $0.width.equalTo(315.0)
-            $0.height.equalTo(52.0)
+        contentView.addSubview(stackView)
+        stackView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
-
     }
 }
-
