@@ -7,9 +7,13 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 
 class HomeViewController: UIViewController {
+    let disposeBag = DisposeBag()
+    let homeViewModel = HomeViewModel()
+    
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     
@@ -55,9 +59,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigation()
-        setRightBarButtonItem()
+        
+        setNavigationBar()
         setupLayout()
+        bind(homeViewModel)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,20 +74,30 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    
+    func bind(_ viewModel: HomeViewModel) {
+        searchBarButton.rx.tap
+            .bind(to: viewModel.searchButtonTapped)
+            .disposed(by: disposeBag)
+        
+        viewModel.pushSearchViewController
+            .drive(onNext: { viewModel in
+                let viewController = SearchViewController()
+                viewController.bind(viewModel)
+                self.show(viewController, sender: nil)
+            })
+            .disposed(by: disposeBag)
+    }
 }
 
 private extension HomeViewController {
     
-    func setNavigation() {
+    func setNavigationBar() {
         self.navigationController?.navigationBar.backgroundColor = .clear
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.shadowImage = UIImage()
         //self.navigationController?.hidesBarsOnSwipe = true
         self.navigationController?.navigationBar.tintColor = .label
-    }
-    
-    
-    func setRightBarButtonItem() {
         self.navigationItem.rightBarButtonItems = [noticeBarButton, searchBarButton]
     }
 
