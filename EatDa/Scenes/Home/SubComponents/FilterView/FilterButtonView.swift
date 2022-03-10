@@ -68,7 +68,7 @@ final class FilterButtonView: UIView {
             categoryTitle.font = .mySystemFont(ofSize: 12.0)
             categoryTitle.textColor = .uncheckTextColor
             checkImage.image = UIImage(named: "check")
-            self.layer.borderColor = UIColor.filterViewBorderColor.cgColor
+            self.layer.borderColor = UIColor.lightGrayBorderColor.cgColor
         }
         categoryImage.image = UIImage(named: imageName)
         
@@ -99,7 +99,7 @@ private extension FilterButtonView {
         }
         
         self.layer.borderWidth = 0.6
-        self.layer.borderColor = UIColor.filterViewBorderColor.cgColor
+        self.layer.borderColor = UIColor.lightGrayBorderColor.cgColor
         self.clipsToBounds = true
         self.layer.cornerRadius = 20
         

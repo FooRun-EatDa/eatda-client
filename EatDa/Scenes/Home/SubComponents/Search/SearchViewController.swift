@@ -32,13 +32,26 @@ final class SearchViewController: UIViewController {
         return label
     }()
     
-    
+    private lazy var recentSearchTerms: UIStackView = {
+        // text 수정 필요
+        let first = setRecentSearchButton("한식")
+        let second = setRecentSearchButton("분식")
+        let third = setRecentSearchButton("디저트, 커피")
+        let fourth = setRecentSearchButton("디저트, 커피")
+
+        let stackView = UIStackView(arrangedSubviews: [first, second, third, fourth])
+        stackView.axis = .horizontal
+        stackView.spacing = 13.0
+        stackView.distribution = .fillProportionally
+        
+        return stackView
+    }()
     
     private let seperatorView = SeperatorView(frame: .zero)
 
     private lazy var topSearchLabel: UILabel = {
         let label = UILabel()
-        label.text = "가장 많이\n검색하고 있어요!"
+        label.text = "오늘의\n핫 키워드 !"
         label.numberOfLines = 2
         label.font = .myBoldSystemFont(ofSize: 16.0)
         return label
@@ -49,7 +62,7 @@ final class SearchViewController: UIViewController {
         // 수정 필요
         label.text = "2.28 17:00 기준"
         label.font = .myMediumSystemFont(ofSize: 12.0)
-        label.textColor = .gray
+        label.textColor = UIColor.grayTextColor
         return label
     }()
     
@@ -98,15 +111,17 @@ final class SearchViewController: UIViewController {
 
 private extension SearchViewController {
     func setNavigationBar() {
+        let backButtonImage = UIImage(named: "back")?.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 0))
+        self.navigationController?.navigationBar.backIndicatorImage = backButtonImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.backgroundColor = .white
         self.navigationItem.titleView = searchBar
         self.navigationItem.rightBarButtonItem = searchBarButton
-        
     }
     
     func setLayout() {
-        [recentSearchLabel, seperatorView, topSearchLabel, standardTimeLabel, topSearchTerms]
+        [recentSearchLabel, recentSearchTerms, seperatorView, topSearchLabel, standardTimeLabel, topSearchTerms]
             .forEach { view.addSubview($0) }
         
         recentSearchLabel.snp.makeConstraints {
@@ -114,8 +129,13 @@ private extension SearchViewController {
             $0.leading.equalToSuperview().inset(25.85)
         }
         
+        recentSearchTerms.snp.makeConstraints {
+            $0.top.equalTo(recentSearchLabel.snp.bottom).offset(20.0)
+            $0.leading.equalToSuperview().inset(23.84)
+        }
+        
         seperatorView.snp.makeConstraints {
-            $0.top.equalTo(recentSearchLabel.snp.bottom).offset(23.46)
+            $0.top.equalTo(recentSearchTerms.snp.bottom).offset(23.46)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(10.0)
         }
@@ -176,5 +196,24 @@ private extension SearchViewController {
 
             return button
         }
+    }
+    
+    func setRecentSearchButton(_ text: String) -> UIButton {
+        let button = UIButton()
+        button.setTitle(text, for: .normal)
+        button.setTitleColor(.label, for: .normal)
+        button.titleLabel?.font = .mySystemFont(ofSize: 13)
+        button.setImage(UIImage(named: "close"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 0)
+        button.semanticContentAttribute = .forceRightToLeft
+        
+        button.layer.borderWidth = 1.0
+        button.layer.cornerRadius = 20
+        button.layer.borderColor = UIColor.lightGrayBorderColor.cgColor
+        button.layer.masksToBounds = true
+        button.contentEdgeInsets = UIEdgeInsets(top: 11, left: 11, bottom: 11, right: 11)
+        
+
+        return button
     }
 }
