@@ -31,13 +31,22 @@ class TabBarController: UITabBarController {
         return viewController
     }()
     
+    private lazy var likeViewController: UIViewController = {
+        let viewController = UINavigationController(rootViewController: LikeViewController())
+        viewController.tabBarItem = UITabBarItem(
+            title: "좋아요",
+            image: UIImage(named: "heart"),
+            tag: 1
+        )
+        
+        return viewController
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tabBar.isTranslucent = false
         
-        let likeViewController = UIViewController()
-        likeViewController.tabBarItem = UITabBarItem(title: "좋아요", image: UIImage(named: "heart"), tag: 1)
         let eventViewController = UIViewController()
         eventViewController.tabBarItem = UITabBarItem(title: "이벤트", image: UIImage(named: "event"), tag: 3)
         let mypageViewController = UIViewController()
