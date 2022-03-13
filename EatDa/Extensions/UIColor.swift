@@ -41,6 +41,10 @@ extension UIColor {
     // MARK: RestaurantDetailViewController
     class var mainTextColor: UIColor { UIColor(hex: 0x191919) }
     class var subTextColor: UIColor { UIColor(hex: 0x6B7280) }
+    class var timeTextColor: UIColor {UIColor(hex: 0xBBBBBB) }
     class var highlightTextColor: UIColor { UIColor(hex: 0x16B96A) }
+
+    // MARK: 탭바 컬러
+    class var gray1: UIColor { UIColor(hex: 0xBABABC) }
 
 }
