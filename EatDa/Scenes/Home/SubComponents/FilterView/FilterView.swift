@@ -77,7 +77,7 @@ private extension FilterView {
         let cornerRadiusValue: CGFloat = 18.0
         let shadowOpacity: CGFloat = 0.0
         let extraSpace = CGSize(width: 20.0, height: 20.0)
-        let color = UIColor.filterViewBorderColor
+        let color = UIColor.lightGrayBorderColor
 
         let style = TTGTextTagStyle()
         style.backgroundColor = .white

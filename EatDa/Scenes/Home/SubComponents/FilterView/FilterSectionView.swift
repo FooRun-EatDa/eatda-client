@@ -19,7 +19,7 @@ final class FilterSectionView: UIView {
     private let hashtagView = FilterButtonView(title: "해시태그", imageTitle: "hashtag")
     
     private let filter = FilterView(frame: .zero)
-    let filterviewmodel = FilterSectionViewModel()
+    let filterViewModel = FilterSectionViewModel()
 
     
     let disposeBag = DisposeBag()
@@ -44,7 +44,7 @@ final class FilterSectionView: UIView {
         
         setupViews()
         filter.isHidden = true
-        bind(filterviewmodel)
+        bind(filterViewModel)
     }
     
     required init?(coder: NSCoder) {

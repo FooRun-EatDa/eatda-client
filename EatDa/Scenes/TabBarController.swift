@@ -45,7 +45,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBar.isTranslucent = false
+        tabBar.backgroundColor = .white
         
         let eventViewController = UIViewController()
         eventViewController.tabBarItem = UITabBarItem(title: "이벤트", image: UIImage(named: "event"), tag: 3)
