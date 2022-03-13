@@ -10,9 +10,9 @@
 import UIKit
 
 struct AppFontName {
-    static let regular = "AppleSDGothicNeo-Regular"
-    static let medium = "AppleSDGothicNeo-Medium"
-    static let bold = "AppleSDGothicNeo-Bold"
+    static let regular = "AppleSDGothicNeoL00"
+    static let medium = "AppleSDGothicNeoM00"
+    static let bold = "AppleSDGothicNeoB00"
 }
 
 extension UIFontDescriptor.AttributeName {
