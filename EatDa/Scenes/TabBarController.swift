@@ -42,13 +42,22 @@ class TabBarController: UITabBarController {
         return viewController
     }()
     
+    private lazy var eventViewController: UIViewController = {
+        let viewController = UINavigationController(rootViewController: EventViewController())
+        viewController.tabBarItem = UITabBarItem(
+            title: "이벤트",
+            image: UIImage(named: "event"),
+            tag: 3
+        )
+        return viewController
+        
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tabBar.backgroundColor = .white
         
-        let eventViewController = UIViewController()
-        eventViewController.tabBarItem = UITabBarItem(title: "이벤트", image: UIImage(named: "event"), tag: 3)
         let mypageViewController = UIViewController()
         mypageViewController.tabBarItem = UITabBarItem(title: "마이", image: UIImage(named: "my"), tag: 4)
         

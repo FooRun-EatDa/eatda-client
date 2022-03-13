@@ -19,6 +19,8 @@
 		FD0CF62D27A12BDA00BDEA53 /* ReviewFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62C27A12BDA00BDEA53 /* ReviewFeedViewController.swift */; };
 		FD0CF62F27A12BF400BDEA53 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62E27A12BF400BDEA53 /* CommunityViewController.swift */; };
 		FD0DBC6027B8D9770001E526 /* MapSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0DBC5F27B8D9770001E526 /* MapSectionView.swift */; };
+		FD1BEEFD27DDB18500487D8C /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1BEEFC27DDB18500487D8C /* EventViewController.swift */; };
+		FD1BEF0027DDB74000487D8C /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1BEEFF27DDB74000487D8C /* EventCollectionViewCell.swift */; };
 		FD63338C27A0DADC004783E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD63338B27A0DADC004783E3 /* AppDelegate.swift */; };
 		FD63338E27A0DADC004783E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD63338D27A0DADC004783E3 /* SceneDelegate.swift */; };
 		FD63339027A0DADC004783E3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD63338F27A0DADC004783E3 /* TabBarController.swift */; };
@@ -65,6 +67,8 @@
 		FD0CF62C27A12BDA00BDEA53 /* ReviewFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedViewController.swift; sourceTree = "<group>"; };
 		FD0CF62E27A12BF400BDEA53 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		FD0DBC5F27B8D9770001E526 /* MapSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSectionView.swift; sourceTree = "<group>"; };
+		FD1BEEFC27DDB18500487D8C /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		FD1BEEFF27DDB74000487D8C /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD63338827A0DADC004783E3 /* EatDa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatDa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD63338B27A0DADC004783E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD63338D27A0DADC004783E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 		FD0CF62827A12B9600BDEA53 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FD1BEEFB27DDB14000487D8C /* Event */,
 				F03FB65127A6DCAE0097D817 /* Common */,
 				FDD8DDCB27A422C10072034C /* Home */,
 				FD63EA9527CCED8400DFBD0B /* Like */,
@@ -176,6 +181,23 @@
 				FD0CF62E27A12BF400BDEA53 /* CommunityViewController.swift */,
 			);
 			path = Talk;
+			sourceTree = "<group>";
+		};
+		FD1BEEFB27DDB14000487D8C /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				FD1BEEFC27DDB18500487D8C /* EventViewController.swift */,
+				FD1BEEFE27DDB26100487D8C /* SubComponents */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		FD1BEEFE27DDB26100487D8C /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FD1BEEFF27DDB74000487D8C /* EventCollectionViewCell.swift */,
+			);
+			path = SubComponents;
 			sourceTree = "<group>";
 		};
 		FD63337F27A0DADC004783E3 = {
@@ -443,6 +465,8 @@
 				FD63EA9D27CCF19900DFBD0B /* LikeRestaurantCell.swift in Sources */,
 				F03FB65F27B025460097D817 /* RestaurantMenuTVC.swift in Sources */,
 				FD63338C27A0DADC004783E3 /* AppDelegate.swift in Sources */,
+				FD1BEEFD27DDB18500487D8C /* EventViewController.swift in Sources */,
+				FD1BEF0027DDB74000487D8C /* EventCollectionViewCell.swift in Sources */,
 				FD94861E27A959EF009BE666 /* SeperatorView.swift in Sources */,
 				FD9D4F7227B503090005205E /* TitleSectionView.swift in Sources */,
 				F03FB65627A6EBB90097D817 /* RestaurantImageCVC.swift in Sources */,
