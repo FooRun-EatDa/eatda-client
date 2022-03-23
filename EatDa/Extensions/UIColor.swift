@@ -38,6 +38,11 @@ extension UIColor {
     // MARK: SearchViewController
     class var searchBarBackgroundColor: UIColor { UIColor(hex: 0xF2F2F2) }
     
+    // MARK: NoticeViewController
+    class var dateGrayColor: UIColor { UIColor(hex: 0xC4C4C4) }
+    class var noticeCellBackgroundColor: UIColor { UIColor(hex: 0xFFF8ED) }
+
+    
     // MARK: RestaurantDetailViewController
     class var mainTextColor: UIColor { UIColor(hex: 0x191919) }
     class var subTextColor: UIColor { UIColor(hex: 0x6B7280) }

@@ -12,11 +12,19 @@ struct HomeViewModel {
     let searchButtonTapped = PublishRelay<Void>()
     let pushSearchViewController: Driver<SearchViewModel>
     
+    let noticeButtonTapped = PublishRelay<Void>()
+    let pushNoticeViewController: Driver<NoticeViewModel>
+
     init() {
         let searchViewModel = SearchViewModel()
+        let noticeViewModel = NoticeViewModel()
 
         self.pushSearchViewController = searchButtonTapped
             .map { return searchViewModel }
+            .asDriver(onErrorDriveWith: .empty())
+        
+        self.pushNoticeViewController = noticeButtonTapped
+            .map { return noticeViewModel }
             .asDriver(onErrorDriveWith: .empty())
     }
 }

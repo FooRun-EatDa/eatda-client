@@ -87,6 +87,20 @@ class HomeViewController: UIViewController {
                 self.show(viewController, sender: nil)
             })
             .disposed(by: disposeBag)
+        
+        noticeBarButton.rx.tap
+            .bind(to: viewModel.noticeButtonTapped)
+            .disposed(by: disposeBag)
+        
+        viewModel.pushNoticeViewController
+            .drive(onNext: { viewModel in
+                let viewController = NoticeViewController()
+                viewController.bind(viewModel)
+                self.show(viewController, sender: nil)
+            })
+            .disposed(by: disposeBag)
+        
+        
     }
 }
 
