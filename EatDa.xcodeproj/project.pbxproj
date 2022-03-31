@@ -53,6 +53,10 @@
 		FDE37EAB27D37DCB00618163 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAA27D37DCB00618163 /* HomeViewModel.swift */; };
 		FDE37EAD27D389C400618163 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAC27D389C400618163 /* SearchViewController.swift */; };
 		FDE37EAF27D389CF00618163 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAE27D389CF00618163 /* SearchViewModel.swift */; };
+		FDF78A2527EB421B005D37C8 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF78A2427EB421B005D37C8 /* NoticeViewController.swift */; };
+		FDF78A2727EB4284005D37C8 /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF78A2627EB4284005D37C8 /* NoticeViewModel.swift */; };
+		FDF78A2927EB45AE005D37C8 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF78A2827EB45AE005D37C8 /* NoticeTableViewCell.swift */; };
+		FDF78A2B27EB4C13005D37C8 /* NoticeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF78A2A27EB4C13005D37C8 /* NoticeHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +110,10 @@
 		FDE37EAA27D37DCB00618163 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FDE37EAC27D389C400618163 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FDE37EAE27D389CF00618163 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		FDF78A2427EB421B005D37C8 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		FDF78A2627EB4284005D37C8 /* NoticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewModel.swift; sourceTree = "<group>"; };
+		FDF78A2827EB45AE005D37C8 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
+		FDF78A2A27EB4C13005D37C8 /* NoticeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				FDE37EA927D37BAA00618163 /* Search */,
+				FDF78A2327EB4161005D37C8 /* Notice */,
 				FD9C6F4C27C108FE005D88A6 /* TitleView */,
 				FD9C6F4827C1087E005D88A6 /* FilterView */,
 				FD9C6F4927C108AC005D88A6 /* RecommendView */,
@@ -358,6 +367,25 @@
 				FDE37EAE27D389CF00618163 /* SearchViewModel.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		FDF78A2327EB4161005D37C8 /* Notice */ = {
+			isa = PBXGroup;
+			children = (
+				FDF78A2C27EB4FAF005D37C8 /* SubComponents */,
+				FDF78A2427EB421B005D37C8 /* NoticeViewController.swift */,
+				FDF78A2627EB4284005D37C8 /* NoticeViewModel.swift */,
+			);
+			path = Notice;
+			sourceTree = "<group>";
+		};
+		FDF78A2C27EB4FAF005D37C8 /* SubComponents */ = {
+			isa = PBXGroup;
+			children = (
+				FDF78A2827EB45AE005D37C8 /* NoticeTableViewCell.swift */,
+				FDF78A2A27EB4C13005D37C8 /* NoticeHeaderView.swift */,
+			);
+			path = SubComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,6 +509,7 @@
 				FDE37EAB27D37DCB00618163 /* HomeViewModel.swift in Sources */,
 				FD63EA9D27CCF19900DFBD0B /* LikeRestaurantCell.swift in Sources */,
 				F03FB65F27B025460097D817 /* RestaurantMenuTVC.swift in Sources */,
+				FDF78A2727EB4284005D37C8 /* NoticeViewModel.swift in Sources */,
 				FD63338C27A0DADC004783E3 /* AppDelegate.swift in Sources */,
 				FD1BEEFD27DDB18500487D8C /* EventViewController.swift in Sources */,
 				FD1BEF0027DDB74000487D8C /* EventCollectionViewCell.swift in Sources */,
@@ -493,6 +522,7 @@
 				FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */,
 				FD94861D27A959EF009BE666 /* AroundRestaurantCollectionViewCell.swift in Sources */,
 				FD9C6F5027C11838005D88A6 /* FilterView.swift in Sources */,
+				FDF78A2527EB421B005D37C8 /* NoticeViewController.swift in Sources */,
 				FD63EA9B27CCEDEB00DFBD0B /* LikeHeaderView.swift in Sources */,
 				FDE37EAD27D389C400618163 /* SearchViewController.swift in Sources */,
 				FD94861427A955F6009BE666 /* FilterSectionView.swift in Sources */,
@@ -516,7 +546,9 @@
 				FD0CF62D27A12BDA00BDEA53 /* ReviewFeedViewController.swift in Sources */,
 				F03FB65D27A95D620097D817 /* RestauranthashTagCVC.swift in Sources */,
 				F03FB65A27A93C3A0097D817 /* RestaurantDetailTVC.swift in Sources */,
+				FDF78A2927EB45AE005D37C8 /* NoticeTableViewCell.swift in Sources */,
 				FD63EA9927CCEDD600DFBD0B /* LikeViewController.swift in Sources */,
+				FDF78A2B27EB4C13005D37C8 /* NoticeHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
