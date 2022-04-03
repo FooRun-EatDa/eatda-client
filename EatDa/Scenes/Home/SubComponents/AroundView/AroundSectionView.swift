@@ -38,7 +38,7 @@ final class AroundSectionView: UIView {
         return button
     }()
 
-    private lazy var showAllButton: UIButton = {
+    lazy var showAllButton: UIButton = {
         let button = UIButton()
         button.setTitle("전체 보기", for: .normal)
         button.setTitleColor(.label, for: .normal)

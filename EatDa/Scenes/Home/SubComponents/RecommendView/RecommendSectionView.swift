@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class RecommendSectionView: UIView {
-    
+
     private lazy var subTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .myBoldSystemFont(ofSize: 16)
@@ -31,7 +31,7 @@ final class RecommendSectionView: UIView {
         return label
     }()
 
-    private lazy var showAllButton: UIButton = {
+    lazy var showAllButton: UIButton = {
         let button = UIButton()
         button.setTitle("전체 보기", for: .normal)
         button.setTitleColor(.label, for: .normal)
@@ -39,7 +39,7 @@ final class RecommendSectionView: UIView {
         button.setImage(UIImage(imageLiteralResourceName: "right_arrow"), for: .normal)
         button.semanticContentAttribute = .forceRightToLeft
         button.imageEdgeInsets = .init(top: 0, left: 20, bottom: 0, right: 0)
-        
+
         return button
     }()
     
@@ -60,6 +60,7 @@ final class RecommendSectionView: UIView {
     
 
     private let seperatorView = SeperatorView(frame: .zero)
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -140,4 +141,5 @@ private extension RecommendSectionView {
         }
 
     }
+    
 }
