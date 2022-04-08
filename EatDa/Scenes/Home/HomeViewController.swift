@@ -14,10 +14,16 @@ class HomeViewController: UIViewController {
     let disposeBag = DisposeBag()
     let homeViewModel = HomeViewModel()
     
+    // MARK: - UIComponent
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     
-    // MARK: - UIComponent
+    let titleSectionView = TitleSectionView()
+    let filterSectionView = FilterSectionView()
+    let recommendSectionView = RecommendSectionView()
+    let aroundSectionView = AroundSectionView()
+    let mapSectionView = MapSectionView()
+    
     private lazy var  searchBarButton: UIBarButtonItem = {
         let button = UIBarButtonItem()
         button.image = UIImage(imageLiteralResourceName: "search")
@@ -36,12 +42,6 @@ class HomeViewController: UIViewController {
         
         stackView.distribution = .equalSpacing
         stackView.spacing = 0.0
-
-        let titleSectionView = TitleSectionView()
-        let filterSectionView = FilterSectionView()
-        let recommendSectionView = RecommendSectionView()
-        let aroundSectionView = AroundSectionView()
-        let mapSectionView = MapSectionView()
     
         // 임의의 뷰 추가하여 스크롤 뷰 아래화면 끝까지 잘보이게
         let spacingView = UIView()
@@ -69,16 +69,27 @@ class HomeViewController: UIViewController {
         tabBarController?.tabBar.isHidden = false
     }
     
-    @objc func showDetail(_ sender: AnyObject?){
-        let vc = RestaurantDetailViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    
     func bind(_ viewModel: HomeViewModel) {
         searchBarButton.rx.tap
             .bind(to: viewModel.searchButtonTapped)
             .disposed(by: disposeBag)
+        
+        noticeBarButton.rx.tap
+            .bind(to: viewModel.noticeButtonTapped)
+            .disposed(by: disposeBag)
+        
+        filterSectionView.applyButton.rx.tap
+            .bind(to: viewModel.filterButtonTapped)
+            .disposed(by: disposeBag)
+        
+        recommendSectionView.showAllButton.rx.tap
+            .bind(to: viewModel.recommendDetailButtonTapped)
+            .disposed(by: disposeBag)
+        
+        aroundSectionView.showAllButton.rx.tap
+            .bind(to: viewModel.aroundDetailButtonTapped)
+            .disposed(by: disposeBag)
+
         
         viewModel.pushSearchViewController
             .drive(onNext: { viewModel in
@@ -86,10 +97,6 @@ class HomeViewController: UIViewController {
                 viewController.bind(viewModel)
                 self.show(viewController, sender: nil)
             })
-            .disposed(by: disposeBag)
-        
-        noticeBarButton.rx.tap
-            .bind(to: viewModel.noticeButtonTapped)
             .disposed(by: disposeBag)
         
         viewModel.pushNoticeViewController
@@ -100,7 +107,31 @@ class HomeViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        viewModel.filterButtonTapped
+            .asDriver(onErrorDriveWith: .empty())
+            .drive(onNext: {
+                let viewController = FilterDetailViewController()
+                //viewController.bind(viewModel)
+                self.show(viewController, sender: nil)
+            })
+            .disposed(by: disposeBag)
         
+        viewModel.recommendDetailButtonTapped
+            .asDriver(onErrorDriveWith: .empty())
+            .drive(onNext: {
+                let viewController = RecommendDetailViewController()
+                self.show(viewController, sender: nil)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.aroundDetailButtonTapped
+            .asDriver(onErrorDriveWith: .empty())
+            .drive(onNext: {
+                let viewController = AroundDetailViewController()
+                //viewController.bind(viewModel)
+                self.show(viewController, sender: nil)
+            })
+            .disposed(by: disposeBag)
     }
 }
 

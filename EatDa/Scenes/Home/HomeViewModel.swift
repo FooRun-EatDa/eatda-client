@@ -14,6 +14,10 @@ struct HomeViewModel {
     
     let noticeButtonTapped = PublishRelay<Void>()
     let pushNoticeViewController: Driver<NoticeViewModel>
+    
+    let recommendDetailButtonTapped = PublishRelay<Void>()
+    let aroundDetailButtonTapped = PublishRelay<Void>()
+    let filterButtonTapped = PublishRelay<Void>()
 
     init() {
         let searchViewModel = SearchViewModel()
