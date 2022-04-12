@@ -24,7 +24,7 @@ final class FilterSectionView: UIView {
     
     let disposeBag = DisposeBag()
     
-    private lazy var applyButton: UIButton = {
+    lazy var applyButton: UIButton = {
         let button = UIButton()
         button.setTitle("조회하기", for: .normal)
         button.backgroundColor = UIColor.mainColor

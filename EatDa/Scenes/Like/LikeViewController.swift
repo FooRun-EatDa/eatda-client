@@ -35,7 +35,7 @@ final class LikeViewController: UIViewController {
         tableview.delegate = self
         tableview.dataSource = self
         
-        tableview.register(LikeRestaurantCell.self, forCellReuseIdentifier: "LikeRestaurantCell")
+        tableview.register(RestaurantTableViewCell.self, forCellReuseIdentifier: "RestaurantTableViewCell")
         
         return tableview
     }()
@@ -56,7 +56,7 @@ extension LikeViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LikeRestaurantCell", for: indexPath) as? LikeRestaurantCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell", for: indexPath) as? RestaurantTableViewCell
         cell?.separatorInset = UIEdgeInsets.zero
         cell?.setupLayout()
         
