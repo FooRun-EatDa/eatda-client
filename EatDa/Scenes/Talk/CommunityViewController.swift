@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class CommunityViewController: UIViewController {
 
@@ -18,10 +19,14 @@ class CommunityViewController: UIViewController {
         bar.layer.cornerRadius = 4
         bar.layer.borderColor = UIColor.white.cgColor
         bar.layer.borderWidth = 0
+        bar.searchTextField.font = UIFont.systemFont(ofSize: 12)
+        bar.searchTextField.backgroundColor = UIColor.searchBarBackgroundColor
         bar.placeholder = "지역, 매장명, 메뉴검색"
+        bar.backgroundColor = UIColor.searchBarBackgroundColor
+        bar.setImage(UIImage(named: "searchbar_left"), for: UISearchBar.Icon.search, state: .normal)
         return bar
     }()
-        
+    
     private lazy var tableView: UITableView = {
         let view = UITableView()
         view.delegate = self
@@ -36,7 +41,6 @@ class CommunityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         binding()
-
         initUI()
     }
     
@@ -54,7 +58,6 @@ class CommunityViewController: UIViewController {
         }
                 
         [searchingView, tableView].forEach{ contentView.addSubview($0) }
-    
         searchingView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
             make.height.equalTo(50)
@@ -71,20 +74,21 @@ class CommunityViewController: UIViewController {
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
+        
         tableView.layoutIfNeeded()
+
         if #available(iOS 15, *) {
             tableView.sectionHeaderTopPadding = 0
         }
-        
         contentView.snp.remakeConstraints { make in
-            make.height.equalTo(tableView.estimatedRowHeight * 9 + 750)
+            make.height.equalTo(tableView.estimatedRowHeight * 9 + 770)
             make.width.centerX.top.bottom.equalToSuperview()
         }
     }
     
     func binding(){
         tableView.register(BoardMainTVC.self, forCellReuseIdentifier: "BoardMainTVC")
-    }
+    }    
 }
 
 extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
@@ -102,8 +106,6 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BoardMainTVC", for: indexPath) as? BoardMainTVC else {
             return UITableViewCell()
         }
-
-        
         return cell
 
     }
@@ -129,7 +131,13 @@ extension CommunityViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
 
         let view = UIView(frame: CGRect(x: 0, y: 0, width: contentView.frame.width, height: 60))
-
+        let sectionTitleImage = UIImageView()
+        sectionTitleImage.image = UIImage(named: "matzip_category")
+        view.addSubview(sectionTitleImage)
+        sectionTitleImage.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().offset(26)
+        }
         return view
     }
     

@@ -37,6 +37,7 @@ extension UIColor {
     
     // MARK: SearchViewController
     class var searchBarBackgroundColor: UIColor { UIColor(hex: 0xF2F2F2) }
+    class var searchBarTextColor: UIColor { UIColor(hex: 0xBDBDBD) }
     
     // MARK: NoticeViewController
     class var dateGrayColor: UIColor { UIColor(hex: 0xC4C4C4) }
