@@ -18,9 +18,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .systemBackground
         window?.tintColor = .label
-        window?.rootViewController = TabBarController()
+//        window?.rootViewController = TabBarController()
+        window?.rootViewController = LoginViewController()
         window?.makeKeyAndVisible()
 
+
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) { [self] in
+//            window?.rootViewController = LoginViewController()
+//        }
+        
     }
 
 

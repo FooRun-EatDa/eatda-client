@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D723B51AAD593609FDECE7FE /* Pods_EatDa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6AB1F6EAB7375AC712E1EDD /* Pods_EatDa.framework */; };
+		F0128D38281E517F005BE0B9 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128D37281E517F005BE0B9 /* SplashViewController.swift */; };
+		F0128D3A281E5531005BE0B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128D39281E5531005BE0B9 /* LoginViewController.swift */; };
+		F0128D3C281E5E9B005BE0B9 /* ImageSliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128D3B281E5E9B005BE0B9 /* ImageSliderCollectionViewCell.swift */; };
+		F0128D3E281E86DD005BE0B9 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128D3D281E86DD005BE0B9 /* BottomSheetViewController.swift */; };
+		F0128D40281EDE4F005BE0B9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0128D3F281EDE4F005BE0B9 /* Launch Screen.storyboard */; };
 		F03D976427DD258E0011FA3D /* BoardMainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03D976327DD258E0011FA3D /* BoardMainTVC.swift */; };
 		F03D976627DDAC330011FA3D /* BestBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03D976527DDAC330011FA3D /* BestBoardViewController.swift */; };
 		F03D976827DDC4A10011FA3D /* BestBoardTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03D976727DDC4A10011FA3D /* BestBoardTVC.swift */; };
@@ -68,6 +73,11 @@
 
 /* Begin PBXFileReference section */
 		5492170291BB836C96181C46 /* Pods-EatDa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatDa.release.xcconfig"; path = "Target Support Files/Pods-EatDa/Pods-EatDa.release.xcconfig"; sourceTree = "<group>"; };
+		F0128D37281E517F005BE0B9 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		F0128D39281E5531005BE0B9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F0128D3B281E5E9B005BE0B9 /* ImageSliderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderCollectionViewCell.swift; sourceTree = "<group>"; };
+		F0128D3D281E86DD005BE0B9 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		F0128D3F281EDE4F005BE0B9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F03D976327DD258E0011FA3D /* BoardMainTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainTVC.swift; sourceTree = "<group>"; };
 		F03D976527DDAC330011FA3D /* BestBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestBoardViewController.swift; sourceTree = "<group>"; };
 		F03D976727DDC4A10011FA3D /* BestBoardTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestBoardTVC.swift; sourceTree = "<group>"; };
@@ -159,6 +169,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F0128D36281E515E005BE0B9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F0128D37281E517F005BE0B9 /* SplashViewController.swift */,
+				F0128D39281E5531005BE0B9 /* LoginViewController.swift */,
+				F0128D3B281E5E9B005BE0B9 /* ImageSliderCollectionViewCell.swift */,
+				F0128D3D281E86DD005BE0B9 /* BottomSheetViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		F03D976227DD256C0011FA3D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +230,7 @@
 		FD0CF62827A12B9600BDEA53 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F0128D36281E515E005BE0B9 /* Login */,
 				FD1BEEFB27DDB14000487D8C /* Event */,
 				F03FB65127A6DCAE0097D817 /* Common */,
 				FDD8DDCB27A422C10072034C /* Home */,
@@ -276,6 +298,7 @@
 				FD9C6F2E27BFD028005D88A6 /* Font */,
 				FD63339427A0DADD004783E3 /* Assets.xcassets */,
 				FD63339927A0DADD004783E3 /* Info.plist */,
+				F0128D3F281EDE4F005BE0B9 /* Launch Screen.storyboard */,
 			);
 			path = EatDa;
 			sourceTree = "<group>";
@@ -490,6 +513,7 @@
 				FD9C6F3627BFD04E005D88A6 /* AppleSDGothicNeoH.ttf in Resources */,
 				FD63339527A0DADD004783E3 /* Assets.xcassets in Resources */,
 				FD9C6F3827BFD053005D88A6 /* AppleSDGothicNeoM.ttf in Resources */,
+				F0128D40281EDE4F005BE0B9 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +569,7 @@
 				FDB7906E2805A783008621D1 /* ReviewFeedViewController.swift in Sources */,
 				FDB7906D2805A704008621D1 /* RestaurantTableViewCell.swift in Sources */,
 				FD63339027A0DADC004783E3 /* TabBarController.swift in Sources */,
+				F0128D38281E517F005BE0B9 /* SplashViewController.swift in Sources */,
 				FDE37EAB27D37DCB00618163 /* HomeViewModel.swift in Sources */,
 				FDEA5E4727F834AA008EFD5E /* FilterViewModel.swift in Sources */,
 				F03FB65F27B025460097D817 /* RestaurantMenuTVC.swift in Sources */,
@@ -559,12 +584,15 @@
 				FD9D4F7227B503090005205E /* TitleSectionView.swift in Sources */,
 				F03FB65627A6EBB90097D817 /* RestaurantImageCVC.swift in Sources */,
 				F03FB65327A6DDA40097D817 /* RestaurantDetailViewController.swift in Sources */,
+				F0128D3C281E5E9B005BE0B9 /* ImageSliderCollectionViewCell.swift in Sources */,
+				F0128D3E281E86DD005BE0B9 /* BottomSheetViewController.swift in Sources */,
 				FD0CF62F27A12BF400BDEA53 /* CommunityViewController.swift in Sources */,
 				F03FB66127B0333D0097D817 /* UILabel.swift in Sources */,
 				FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */,
 				FD94861D27A959EF009BE666 /* AroundRestaurantCollectionViewCell.swift in Sources */,
 				FDEA5E3E27F04620008EFD5E /* RecommendDetailViewModel.swift in Sources */,
 				FD9C6F5027C11838005D88A6 /* FilterView.swift in Sources */,
+				F0128D3A281E5531005BE0B9 /* LoginViewController.swift in Sources */,
 				FD63EA9B27CCEDEB00DFBD0B /* LikeHeaderView.swift in Sources */,
 				FDE37EAD27D389C400618163 /* SearchViewController.swift in Sources */,
 				FD94861427A955F6009BE666 /* FilterSectionView.swift in Sources */,
