@@ -20,6 +20,10 @@ extension UIColor {
     }
     
     // MARK: 메인 테마 색, 자주 쓰는 색 정의
+
+    // MARK: LoginViewController, TermsViewController
+    class var divideViewColor: UIColor { UIColor(hex: 0xE5E5E5) }
+    class var describeTextColor: UIColor { UIColor(hex: 0x717171) }
     
     // MARK: HomeViewController
     class var mainColor: UIColor { UIColor(hex: 0xFFC208) }

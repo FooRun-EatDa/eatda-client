@@ -91,6 +91,12 @@ class LoginViewController: UIViewController {
         button.layer.cornerRadius = 8
         button.setTitle("회원가입", for: .normal)
         button.titleLabel?.font = .myBoldSystemFont(ofSize: 14)
+        button.rx.tap
+            .bind {
+                let vc = TermsViewController()
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            }.disposed(by: disposeBag)
         return button
     }()
         
@@ -107,14 +113,26 @@ class LoginViewController: UIViewController {
         
         initUI()
         initTimer()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(printSomeThing(_:)), name: Notification.Name("doItSomeThing"), object: nil)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         timer?.invalidate()
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        print("SDFSDF")
+//        print(UserDefaults.standard.bool(forKey: "switchState"))
+//        if UserDefaults.standard.bool(forKey: "switchState") {
+//            self.navigationController?.pushViewController(TabBarController(), animated: true)
+//        }
+//    }
+    
+    
     func initUI(){
-        [collectionView, pageControl, loginButton, regiesterButton, noLoginLinkButton].forEach { view.addSubview($0) }
+        [pageControl, loginButton, regiesterButton, noLoginLinkButton, collectionView].forEach { view.addSubview($0) }
         noLoginLinkButton.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(18)
             make.centerX.equalToSuperview()
@@ -166,6 +184,29 @@ class LoginViewController: UIViewController {
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(pageValueDidChanged), userInfo: nil, repeats: true)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let temp = scrollView.contentOffset.x / collectionView.frame.size.width
+        if !temp.isNaN {
+            currentIndex = Int(temp)
+            pageControl.currentPage = currentIndex
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(pageValueDidChanged), userInfo: nil, repeats: true)
+        }
+    }
+
+    @objc func printSomeThing(_ notification: Notification) {
+            print("Test Notification")
+        let vc = TabBarController()
+        
+//        let appDelegate = UIApplication.shared.delegate as! SceneDelegate
+//        appDelegate.window?.rootViewController = vc
+        
+        self.view.window?.rootViewController = vc
+        self.view.window?.makeKeyAndVisible()
+        
+//        navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
 
@@ -188,18 +229,13 @@ extension LoginViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-    }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        currentIndex = Int(scrollView.contentOffset.x / collectionView.frame.size.width)
-        pageControl.currentPage = currentIndex
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(pageValueDidChanged), userInfo: nil, repeats: true)
+        print(view.frame.width)
+        return CGSize(width: view.frame.width, height: collectionView.frame.height)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
            return 0
     }
+
 }
 

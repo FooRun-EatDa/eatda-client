@@ -19,13 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.backgroundColor = .systemBackground
         window?.tintColor = .label
 //        window?.rootViewController = TabBarController()
-        window?.rootViewController = LoginViewController()
+        //유저의 상태에 따라 다르게 보여줘야함. 지금은 그냥 푸시됨
+        let rootVC = LoginViewController()
+        let navVC = UINavigationController(rootViewController: rootVC)
+        window?.rootViewController = navVC
+        
         window?.makeKeyAndVisible()
-
-
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) { [self] in
-//            window?.rootViewController = LoginViewController()
-//        }
         
     }
 
