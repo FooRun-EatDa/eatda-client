@@ -74,6 +74,10 @@
 		FDEA5E4227F830F1008EFD5E /* FilterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA5E4127F830F1008EFD5E /* FilterDetailViewController.swift */; };
 		FDEA5E4427F83294008EFD5E /* FilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA5E4327F83294008EFD5E /* FilterHeaderView.swift */; };
 		FDEA5E4727F834AA008EFD5E /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA5E4627F834AA008EFD5E /* FilterViewModel.swift */; };
+		FDEEA23C282E211600520340 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEEA23B282E211600520340 /* NavigationBar.swift */; };
+		FDEEA23E282E233A00520340 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEEA23D282E233A00520340 /* BackButton.swift */; };
+		FDEEA240282E264A00520340 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEEA23F282E264A00520340 /* SearchButton.swift */; };
+		FDEEA242282E265900520340 /* NoticeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEEA241282E265900520340 /* NoticeButton.swift */; };
 		FDF78A2527EB421B005D37C8 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF78A2427EB421B005D37C8 /* NoticeViewController.swift */; };
 		FDF78A2727EB4284005D37C8 /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF78A2627EB4284005D37C8 /* NoticeViewModel.swift */; };
 		FDF78A2927EB45AE005D37C8 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF78A2827EB45AE005D37C8 /* NoticeTableViewCell.swift */; };
@@ -152,6 +156,10 @@
 		FDEA5E4127F830F1008EFD5E /* FilterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDetailViewController.swift; sourceTree = "<group>"; };
 		FDEA5E4327F83294008EFD5E /* FilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderView.swift; sourceTree = "<group>"; };
 		FDEA5E4627F834AA008EFD5E /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		FDEEA23B282E211600520340 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		FDEEA23D282E233A00520340 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		FDEEA23F282E264A00520340 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
+		FDEEA241282E265900520340 /* NoticeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeButton.swift; sourceTree = "<group>"; };
 		FDF78A2427EB421B005D37C8 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		FDF78A2627EB4284005D37C8 /* NoticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewModel.swift; sourceTree = "<group>"; };
 		FDF78A2827EB45AE005D37C8 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
@@ -320,8 +328,8 @@
 				FD63338B27A0DADC004783E3 /* AppDelegate.swift */,
 				FD63338D27A0DADC004783E3 /* SceneDelegate.swift */,
 				FD0CF62827A12B9600BDEA53 /* Scenes */,
-				FDD8DDD127A425A60072034C /* Extensions */,
-				FD9C6F2E27BFD028005D88A6 /* Font */,
+				FDEEA238282E207800520340 /* Global */,
+				FDEEA243282E269300520340 /* Network */,
 				FD63339427A0DADD004783E3 /* Assets.xcassets */,
 				FD63339927A0DADD004783E3 /* Info.plist */,
 				F0128D3F281EDE4F005BE0B9 /* Launch Screen.storyboard */,
@@ -454,6 +462,42 @@
 				FDEA5E4627F834AA008EFD5E /* FilterViewModel.swift */,
 			);
 			path = FilterDetail;
+			sourceTree = "<group>";
+		};
+		FDEEA238282E207800520340 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				FDEEA239282E209E00520340 /* DesignSystem */,
+				FDD8DDD127A425A60072034C /* Extensions */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		FDEEA239282E209E00520340 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				FDEEA23A282E20ED00520340 /* UIComponent */,
+				FD9C6F2E27BFD028005D88A6 /* Font */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		FDEEA23A282E20ED00520340 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				FDEEA23B282E211600520340 /* NavigationBar.swift */,
+				FDEEA23D282E233A00520340 /* BackButton.swift */,
+				FDEEA23F282E264A00520340 /* SearchButton.swift */,
+				FDEEA241282E265900520340 /* NoticeButton.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		FDEEA243282E269300520340 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		FDF78A2327EB4161005D37C8 /* Notice */ = {
@@ -595,6 +639,7 @@
 			files = (
 				FDB7906E2805A783008621D1 /* ReviewFeedViewController.swift in Sources */,
 				F0224C36282963560092683A /* InputSchoolViewController.swift in Sources */,
+				FDEEA242282E265900520340 /* NoticeButton.swift in Sources */,
 				FDB7906D2805A704008621D1 /* RestaurantTableViewCell.swift in Sources */,
 				FD63339027A0DADC004783E3 /* TabBarController.swift in Sources */,
 				F0224C3C28296FB90092683A /* VerifyEmailViewController.swift in Sources */,
@@ -616,6 +661,7 @@
 				F03FB65327A6DDA40097D817 /* RestaurantDetailViewController.swift in Sources */,
 				F0128D3C281E5E9B005BE0B9 /* ImageSliderCollectionViewCell.swift in Sources */,
 				F0128D3E281E86DD005BE0B9 /* BottomSheetViewController.swift in Sources */,
+				FDEEA23C282E211600520340 /* NavigationBar.swift in Sources */,
 				FD0CF62F27A12BF400BDEA53 /* CommunityViewController.swift in Sources */,
 				F03FB66127B0333D0097D817 /* UILabel.swift in Sources */,
 				FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */,
@@ -624,6 +670,7 @@
 				FD9C6F5027C11838005D88A6 /* FilterView.swift in Sources */,
 				F0224C44282970840092683A /* RegistCompleteViewController.swift in Sources */,
 				F0128D3A281E5531005BE0B9 /* LoginViewController.swift in Sources */,
+				FDEEA23E282E233A00520340 /* BackButton.swift in Sources */,
 				FD63EA9B27CCEDEB00DFBD0B /* LikeHeaderView.swift in Sources */,
 				FDE37EAD27D389C400618163 /* SearchViewController.swift in Sources */,
 				FD94861427A955F6009BE666 /* FilterSectionView.swift in Sources */,
@@ -651,6 +698,7 @@
 				F03D976627DDAC330011FA3D /* BestBoardViewController.swift in Sources */,
 				FD9C6F3A27BFDA4F005D88A6 /* RecommendCollectionViewCell.swift in Sources */,
 				F03FB66327B52B2E0097D817 /* RestaurantReviewTVC.swift in Sources */,
+				FDEEA240282E264A00520340 /* SearchButton.swift in Sources */,
 				F03FB65D27A95D620097D817 /* RestauranthashTagCVC.swift in Sources */,
 				F03FB65A27A93C3A0097D817 /* RestaurantDetailTVC.swift in Sources */,
 				FDF78A2927EB45AE005D37C8 /* NoticeTableViewCell.swift in Sources */,
