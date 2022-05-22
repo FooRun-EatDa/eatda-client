@@ -9,10 +9,16 @@ import Foundation
 import UIKit
 import SnapKit
 import RxSwift
+import RxRelay
 
 final class TermsViewController: UIViewController {
     
     let disposeBag = DisposeBag()
+    
+    let selectedAllObervable = BehaviorRelay<Bool>(value: false)
+    let selectedterm1Obervable = BehaviorRelay<Bool>(value: false)
+    let selectedterm2Obervable = BehaviorRelay<Bool>(value: false)
+    let selectedterm3Obervable = BehaviorRelay<Bool>(value: false)
 
     private lazy var naviBar: UIView = {
         let view = UIView()
@@ -48,12 +54,17 @@ final class TermsViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "termUncheck"), for: .normal)
         button.setImage(UIImage(named: "termCheck"), for: .selected)
-        button.setTitle("  약관 전체 동의", for: .normal)
+        button.setTitle("   약관 전체 동의", for: .normal)
         button.setTitleColor(UIColor.mainTextColor, for: .normal)
         button.titleLabel?.font = .mySystemFont(ofSize: 15)
         button.rx.tap
-            .bind {
+            .bind { [self] in
+                let tempBtns = [self.allowTerm1, self.allowTerm2, self.allowTerm3]
                 button.isSelected = !button.isSelected
+                self.selectedAllObervable.accept(button.isSelected)
+                for btn in tempBtns {
+                    btn.isSelected = button.isSelected
+                }
             }.disposed(by: disposeBag)
         return button
     }()
@@ -62,12 +73,13 @@ final class TermsViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "termUncheck"), for: .normal)
         button.setImage(UIImage(named: "termCheck"), for: .selected)
-        button.setTitle("  이용약관 동의(필수)", for: .normal)
+        button.setTitle("   이용약관 동의(필수)", for: .normal)
         button.setTitleColor(UIColor.mainTextColor, for: .normal)
         button.titleLabel?.font = .mySystemFont(ofSize: 15)
         button.rx.tap
             .bind {
                 button.isSelected = !button.isSelected
+                self.selectedterm1Obervable.accept(button.isSelected)
             }.disposed(by: disposeBag)
         return button
     }()
@@ -75,12 +87,13 @@ final class TermsViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "termUncheck"), for: .normal)
         button.setImage(UIImage(named: "termCheck"), for: .selected)
-        button.setTitle("  개인정보 수집 및 이용동의(필수)", for: .normal)
+        button.setTitle("   개인정보 수집 및 이용동의(필수)", for: .normal)
         button.setTitleColor(UIColor.mainTextColor, for: .normal)
         button.titleLabel?.font = .mySystemFont(ofSize: 15)
         button.rx.tap
             .bind {
                 button.isSelected = !button.isSelected
+                self.selectedterm2Obervable.accept(button.isSelected)
             }.disposed(by: disposeBag)
         return button
     }()
@@ -90,10 +103,12 @@ final class TermsViewController: UIViewController {
         button.setImage(UIImage(named: "termCheck"), for: .selected)
         button.setTitle("  이벤트 수신 동의(선택)", for: .normal)
         button.setTitleColor(UIColor.mainTextColor, for: .normal)
+        button.titleLabel?.numberOfLines = 2
         button.titleLabel?.font = .mySystemFont(ofSize: 15)
         button.rx.tap
             .bind {
                 button.isSelected = !button.isSelected
+                self.selectedterm3Obervable.accept(button.isSelected)
             }.disposed(by: disposeBag)
         return button
     }()
@@ -102,6 +117,7 @@ final class TermsViewController: UIViewController {
         titleLabel.numberOfLines = 0
         titleLabel.text = "다양한 대학교 맛집들의 이벤트 정보를 보내드립니다."
         titleLabel.font = .mySystemFont(ofSize: 12)
+        titleLabel.textColor = .describeTextColor
         return titleLabel
     }()
 
@@ -120,32 +136,46 @@ final class TermsViewController: UIViewController {
         return view
     }()
     
-    private lazy var regiesterButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .applyButtonColor
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("확인", for: .normal)
-        button.titleLabel?.font = .myBoldSystemFont(ofSize: 18)
-        button.rx.tap
-            .bind {
-                let vc = InputSchoolViewController()
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: false)
-            }.disposed(by: disposeBag)
+    private lazy var regiesterButton: BottomStickyButton = {
+        let button = BottomStickyButton()
+
+        button.rx.tap.bind {
+            let vc = InputSchoolViewController()
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: false)
+        }.disposed(by: disposeBag)
+
         return button
     }()
     
-    private lazy var registerBottomView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .applyButtonColor
-        return view
-    }()
-    
+    func a() {
+        let vc = InputSchoolViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         initUI()
+        binding()
+    }
+    
+    func binding() {
+        
+        Observable.combineLatest(selectedterm1Obervable, selectedterm2Obervable, selectedterm3Obervable, resultSelector: { t1, t2, t3 in
+            return t1 && t2 && t3
+        }).subscribe {
+            self.allowAllButton.isSelected = $0
+        }.disposed(by: disposeBag)
+ 
+        Observable.combineLatest(selectedterm1Obervable,selectedterm2Obervable) {$0 && $1}
+            .bind(to: self.regiesterButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+
+        selectedAllObervable.bind(to: self.regiesterButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+
     }
     
     func initUI(){
@@ -161,7 +191,7 @@ final class TermsViewController: UIViewController {
             make.leading.equalToSuperview().offset(22)
         }
         
-        [logoImage, titleLable, allowAllButton, divideView, stackView, regiesterButton, registerBottomView].forEach{ view.addSubview($0) }
+        [logoImage, titleLable, allowAllButton, divideView, stackView, regiesterButton,  allowTerm3Description].forEach{ view.addSubview($0) }
         logoImage.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(180)
             make.leading.equalToSuperview().offset(24)
@@ -173,22 +203,15 @@ final class TermsViewController: UIViewController {
             make.height.equalTo(72)
         }
 
-        registerBottomView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            make.bottom.equalTo(view.snp.bottom)
-            make.height.equalTo(30)
-        }
-        
         regiesterButton.snp.makeConstraints { make in
-            make.bottom.equalTo(registerBottomView.snp.top)
+            make.bottom.equalTo(view.snp.bottom)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(60)
+            make.height.equalTo(94)
         }
-
         
         stackView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(24)
-            make.bottom.equalTo(regiesterButton.snp.top).offset(-35)
+            make.bottom.equalTo(regiesterButton.snp.top).offset(-57)
         }
         stackView.addArrangedSubview(allowTerm1)
         stackView.addArrangedSubview(allowTerm2)
@@ -204,7 +227,10 @@ final class TermsViewController: UIViewController {
             make.leading.equalToSuperview().inset(24)
             make.bottom.equalTo(divideView.snp.top).offset(-13)
         }
-        
+        allowTerm3Description.snp.makeConstraints { make in
+            make.top.equalTo(stackView.snp.bottom).offset(5)
+            make.leading.trailing.equalToSuperview().offset(50)
+        }
     }
     
 }

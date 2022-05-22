@@ -35,14 +35,11 @@ final class EnterUserInfoViewController: UIViewController {
         return view
     }()
 
-    private lazy var stepStackView: UIStackView = {
-        let view = UIStackView()
-        view.spacing = 8
-        view.distribution = .fillEqually
-        view.axis = .horizontal
+    private lazy var stepStackView: ProgressCheck = {
+        let view = ProgressCheck(index: 4, range: 5)
         return view
     }()
-    
+
     lazy var stepList: [UIImageView] = []
 
     private lazy var step1View: UIImageView = {
@@ -113,27 +110,18 @@ final class EnterUserInfoViewController: UIViewController {
         return view
     }()
     
-    private lazy var regiesterButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .applyButtonColor
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("확인", for: .normal)
-        button.titleLabel?.font = .myBoldSystemFont(ofSize: 18)
-        button.rx.tap
-            .bind {
-                let vc = EnterNicknameViewController()
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: false)
-            }.disposed(by: disposeBag)
+    private lazy var regiesterButton: BottomStickyButton = {
+        let button = BottomStickyButton()
+        button.isEnabled = true
+        button.rx.tap.bind {
+            let vc = RegistCompleteViewController()
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: false)
+        }.disposed(by: disposeBag)
+
         return button
     }()
-    
-    private lazy var registerBottomView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .applyButtonColor
-        return view
-    }()
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -163,13 +151,7 @@ final class EnterUserInfoViewController: UIViewController {
             make.centerY.equalTo(stepView)
         }
 
-        stepStackView.addArrangedSubview(step1View)
-        stepStackView.addArrangedSubview(step2View)
-        stepStackView.addArrangedSubview(step3View)
-        stepStackView.addArrangedSubview(step4View)
-        stepStackView.addArrangedSubview(step5View)
-
-        [titleLable, inputSchoolButton, divideView, regiesterButton, registerBottomView].forEach{ view.addSubview($0) }
+        [titleLable, inputSchoolButton, divideView, regiesterButton].forEach{ view.addSubview($0) }
         titleLable.snp.makeConstraints { make in
             make.top.equalTo(naviBar.snp.bottom).offset(28)
             make.leading.equalToSuperview().offset(24)
@@ -186,18 +168,12 @@ final class EnterUserInfoViewController: UIViewController {
             make.height.equalTo(1)
         }
         
-        registerBottomView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            make.bottom.equalTo(view.snp.bottom)
-            make.height.equalTo(30)
-        }
-        
         regiesterButton.snp.makeConstraints { make in
-            make.bottom.equalTo(registerBottomView.snp.top)
+            make.bottom.equalTo(view.snp.bottom)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(60)
+            make.height.equalTo(94)
         }
-        
+
     }
 
 }

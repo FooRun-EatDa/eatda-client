@@ -34,58 +34,12 @@ final class InputEmailViewController: UIViewController {
         view.backgroundColor = UIColor.divideViewColor
         return view
     }()
-
-    private lazy var stepStackView: UIStackView = {
-        let view = UIStackView()
-        view.spacing = 8
-        view.distribution = .fillEqually
-        view.axis = .horizontal
-        return view
-    }()
     
-    lazy var stepList: [UIImageView] = []
-
-    private lazy var step1View: UIImageView = {
-        let view = UIImageView()
-        view.backgroundColor = .black
-        view.image =  UIImage(named: "termUncheck")
-        view.tag = 1
-        stepList.append(view)
+    private lazy var stepStackView: ProgressCheck = {
+        let view = ProgressCheck(index: 1, range: 5)
         return view
     }()
 
-    private lazy var step2View: UIImageView = {
-        let view = UIImageView()
-        view.image =  UIImage(named: "termUncheck")
-        view.tag = 2
-        stepList.append(view)
-        return view
-    }()
-
-    private lazy var step3View: UIImageView = {
-        let view = UIImageView()
-        view.image =  UIImage(named: "termUncheck")
-        view.tag = 3
-        stepList.append(view)
-        return view
-    }()
-
-    private lazy var step4View: UIImageView = {
-        let view = UIImageView()
-        view.image =  UIImage(named: "termUncheck")
-        view.tag = 4
-        stepList.append(view)
-        return view
-    }()
-
-    private lazy var step5View: UIImageView = {
-        let view = UIImageView()
-        view.image =  UIImage(named: "termUncheck")
-        view.tag = 5
-        stepList.append(view)
-        return view
-    }()
-    
     private lazy var titleLable: UILabel = {
         let titleLabel = UILabel()
         titleLabel.numberOfLines = 0
@@ -95,44 +49,48 @@ final class InputEmailViewController: UIViewController {
         return titleLabel
     }()
     
-    private lazy var inputSchoolButton: UIButton = {
-        let button = UIButton()
-        button.setTitleColor(UIColor.divideViewColor, for: .normal)
-        button.setTitle("학교검색하기", for: .normal)
-        button.titleLabel?.font = .mySystemFont(ofSize: 12)
-        button.rx.tap
-            .bind {
-                //TODO: 모달 올라와야함
-            }.disposed(by: disposeBag)
-        return button
+    private lazy var inputEmailTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "unieat2022"
+        textField.textColor = .mainTextColor
+        textField.font = .mySystemFont(ofSize: 16)
+        return textField
     }()
     
-    private lazy var divideView: UIView = {
+    private lazy var emailCheckView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.divideViewColor
+        view.backgroundColor = UIColor.emailCheckColor
         return view
     }()
+
+    private lazy var emilDomainLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.text = "@ khu.ac.kr"
+        titleLabel.font = .mySystemFont(ofSize: 16)
+        return titleLabel
+    }()
+
+    private lazy var emilCheckLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.text = "이미 가입된 메일입니다"
+        titleLabel.font = .myMediumSystemFont(ofSize: 12)
+        titleLabel.textColor = .emailErrorColor
+        titleLabel.isHidden = true
+        return titleLabel
+    }()
     
-    private lazy var regiesterButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .applyButtonColor
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("확인", for: .normal)
-        button.titleLabel?.font = .myBoldSystemFont(ofSize: 18)
-        button.rx.tap
-            .bind {
-                let vc = VerifyEmailViewController()
-                vc.modalPresentationStyle = .overFullScreen
-                self.present(vc, animated: false)
-            }.disposed(by: disposeBag)
+    private lazy var regiesterButton: BottomStickyButton = {
+        let button = BottomStickyButton()
+        button.isEnabled = true
+        button.rx.tap.bind {
+            let vc = VerifyEmailViewController()
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: false)
+        }.disposed(by: disposeBag)
+
         return button
     }()
-    
-    private lazy var registerBottomView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .applyButtonColor
-        return view
-    }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -163,39 +121,39 @@ final class InputEmailViewController: UIViewController {
             make.centerY.equalTo(stepView)
         }
 
-        stepStackView.addArrangedSubview(step1View)
-        stepStackView.addArrangedSubview(step2View)
-        stepStackView.addArrangedSubview(step3View)
-        stepStackView.addArrangedSubview(step4View)
-        stepStackView.addArrangedSubview(step5View)
 
-        [titleLable, inputSchoolButton, divideView, regiesterButton, registerBottomView].forEach{ view.addSubview($0) }
+        [titleLable, inputEmailTextField, emailCheckView, emilDomainLabel, emilCheckLabel, regiesterButton].forEach{ view.addSubview($0) }
         titleLable.snp.makeConstraints { make in
             make.top.equalTo(naviBar.snp.bottom).offset(28)
             make.leading.equalToSuperview().offset(24)
         }
         
-        inputSchoolButton.snp.makeConstraints { make in
+        inputEmailTextField.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(24)
+            make.width.equalTo(132)
             make.top.equalTo(titleLable.snp.bottom).offset(56)
         }
         
-        divideView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(24)
-            make.bottom.equalTo(inputSchoolButton.snp.bottom)
+        emilDomainLabel.snp.makeConstraints { make in
+            make.leading.equalTo(inputEmailTextField.snp.trailing)
+            make.centerY.equalTo(inputEmailTextField)
+        }
+        
+        emailCheckView.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(inputEmailTextField)
+            make.top.equalTo(inputEmailTextField.snp.bottom).offset(5)
             make.height.equalTo(1)
         }
         
-        registerBottomView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            make.bottom.equalTo(view.snp.bottom)
-            make.height.equalTo(30)
+        emilCheckLabel.snp.makeConstraints { make in
+            make.top.equalTo(emailCheckView.snp.bottom).offset(12)
+            make.leading.equalToSuperview().inset(24)
         }
         
         regiesterButton.snp.makeConstraints { make in
-            make.bottom.equalTo(registerBottomView.snp.top)
+            make.bottom.equalTo(view.snp.bottom)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            make.height.equalTo(60)
+            make.height.equalTo(94)
         }
         
     }

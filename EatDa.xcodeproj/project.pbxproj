@@ -14,7 +14,6 @@
 		F0128D3E281E86DD005BE0B9 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0128D3D281E86DD005BE0B9 /* BottomSheetViewController.swift */; };
 		F0128D40281EDE4F005BE0B9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0128D3F281EDE4F005BE0B9 /* Launch Screen.storyboard */; };
 		F0224C36282963560092683A /* InputSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0224C35282963560092683A /* InputSchoolViewController.swift */; };
-		F0224C38282964F70092683A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0224C37282964F70092683A /* UIViewController.swift */; };
 		F0224C3A28296F240092683A /* InputEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0224C3928296F240092683A /* InputEmailViewController.swift */; };
 		F0224C3C28296FB90092683A /* VerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0224C3B28296FB90092683A /* VerifyEmailViewController.swift */; };
 		F0224C3E28296FEB0092683A /* EnterPasswordViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0224C3D28296FEB0092683A /* EnterPasswordViewContoller.swift */; };
@@ -32,6 +31,12 @@
 		F03FB66127B0333D0097D817 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03FB66027B0333D0097D817 /* UILabel.swift */; };
 		F03FB66327B52B2E0097D817 /* RestaurantReviewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03FB66227B52B2E0097D817 /* RestaurantReviewTVC.swift */; };
 		F0B279E6282816AA000B35FF /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B279E5282816AA000B35FF /* TermsViewController.swift */; };
+		F0CCC0E92838C9BA007DCBD0 /* SchoolSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0E82838C9BA007DCBD0 /* SchoolSearchViewController.swift */; };
+		F0CCC0EB2838D09E007DCBD0 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0EA2838D09E007DCBD0 /* UIButton.swift */; };
+		F0CCC0F02838DDB8007DCBD0 /* BottomStickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0EF2838DDB8007DCBD0 /* BottomStickyButton.swift */; };
+		F0CCC0F428394226007DCBD0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0F328394226007DCBD0 /* APIResponse.swift */; };
+		F0CCC0FA2839B830007DCBD0 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0F92839B830007DCBD0 /* School.swift */; };
+		F0CCC0FD2839E8DD007DCBD0 /* ProgressCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0FC2839E8DD007DCBD0 /* ProgressCheck.swift */; };
 		F0E4285B27FC8EDC00C623E1 /* WritePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4285A27FC8EDC00C623E1 /* WritePostViewController.swift */; };
 		FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62A27A12BC400BDEA53 /* TalkViewController.swift */; };
 		FD0CF62F27A12BF400BDEA53 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62E27A12BF400BDEA53 /* CommunityViewController.swift */; };
@@ -74,10 +79,6 @@
 		FDEA5E4227F830F1008EFD5E /* FilterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA5E4127F830F1008EFD5E /* FilterDetailViewController.swift */; };
 		FDEA5E4427F83294008EFD5E /* FilterHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA5E4327F83294008EFD5E /* FilterHeaderView.swift */; };
 		FDEA5E4727F834AA008EFD5E /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA5E4627F834AA008EFD5E /* FilterViewModel.swift */; };
-		FDEEA23C282E211600520340 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEEA23B282E211600520340 /* NavigationBar.swift */; };
-		FDEEA23E282E233A00520340 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEEA23D282E233A00520340 /* BackButton.swift */; };
-		FDEEA240282E264A00520340 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEEA23F282E264A00520340 /* SearchButton.swift */; };
-		FDEEA242282E265900520340 /* NoticeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEEA241282E265900520340 /* NoticeButton.swift */; };
 		FDF78A2527EB421B005D37C8 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF78A2427EB421B005D37C8 /* NoticeViewController.swift */; };
 		FDF78A2727EB4284005D37C8 /* NoticeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF78A2627EB4284005D37C8 /* NoticeViewModel.swift */; };
 		FDF78A2927EB45AE005D37C8 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF78A2827EB45AE005D37C8 /* NoticeTableViewCell.swift */; };
@@ -92,7 +93,6 @@
 		F0128D3D281E86DD005BE0B9 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		F0128D3F281EDE4F005BE0B9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F0224C35282963560092683A /* InputSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSchoolViewController.swift; sourceTree = "<group>"; };
-		F0224C37282964F70092683A /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		F0224C3928296F240092683A /* InputEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputEmailViewController.swift; sourceTree = "<group>"; };
 		F0224C3B28296FB90092683A /* VerifyEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyEmailViewController.swift; sourceTree = "<group>"; };
 		F0224C3D28296FEB0092683A /* EnterPasswordViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPasswordViewContoller.swift; sourceTree = "<group>"; };
@@ -110,6 +110,12 @@
 		F03FB66027B0333D0097D817 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		F03FB66227B52B2E0097D817 /* RestaurantReviewTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewTVC.swift; sourceTree = "<group>"; };
 		F0B279E5282816AA000B35FF /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		F0CCC0E82838C9BA007DCBD0 /* SchoolSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSearchViewController.swift; sourceTree = "<group>"; };
+		F0CCC0EA2838D09E007DCBD0 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		F0CCC0EF2838DDB8007DCBD0 /* BottomStickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStickyButton.swift; sourceTree = "<group>"; };
+		F0CCC0F328394226007DCBD0 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		F0CCC0F92839B830007DCBD0 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
+		F0CCC0FC2839E8DD007DCBD0 /* ProgressCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCheck.swift; sourceTree = "<group>"; };
 		F0E4285A27FC8EDC00C623E1 /* WritePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePostViewController.swift; sourceTree = "<group>"; };
 		F3BE5607C6653930EC611246 /* Pods-EatDa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatDa.debug.xcconfig"; path = "Target Support Files/Pods-EatDa/Pods-EatDa.debug.xcconfig"; sourceTree = "<group>"; };
 		F6AB1F6EAB7375AC712E1EDD /* Pods_EatDa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatDa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,10 +162,6 @@
 		FDEA5E4127F830F1008EFD5E /* FilterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDetailViewController.swift; sourceTree = "<group>"; };
 		FDEA5E4327F83294008EFD5E /* FilterHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderView.swift; sourceTree = "<group>"; };
 		FDEA5E4627F834AA008EFD5E /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
-		FDEEA23B282E211600520340 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
-		FDEEA23D282E233A00520340 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
-		FDEEA23F282E264A00520340 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
-		FDEEA241282E265900520340 /* NoticeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeButton.swift; sourceTree = "<group>"; };
 		FDF78A2427EB421B005D37C8 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		FDF78A2627EB4284005D37C8 /* NoticeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewModel.swift; sourceTree = "<group>"; };
 		FDF78A2827EB45AE005D37C8 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
@@ -198,12 +200,14 @@
 		F0128D36281E515E005BE0B9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F0CCC0F22839420C007DCBD0 /* LoginModels */,
 				F0128D37281E517F005BE0B9 /* SplashViewController.swift */,
 				F0128D39281E5531005BE0B9 /* LoginViewController.swift */,
 				F0128D3B281E5E9B005BE0B9 /* ImageSliderCollectionViewCell.swift */,
 				F0128D3D281E86DD005BE0B9 /* BottomSheetViewController.swift */,
 				F0B279E5282816AA000B35FF /* TermsViewController.swift */,
 				F0224C35282963560092683A /* InputSchoolViewController.swift */,
+				F0CCC0E82838C9BA007DCBD0 /* SchoolSearchViewController.swift */,
 				F0224C3928296F240092683A /* InputEmailViewController.swift */,
 				F0224C3B28296FB90092683A /* VerifyEmailViewController.swift */,
 				F0224C3D28296FEB0092683A /* EnterPasswordViewContoller.swift */,
@@ -251,6 +255,38 @@
 				F03FB65227A6DDA40097D817 /* RestaurantDetailViewController.swift */,
 			);
 			path = RestaurantDetail;
+			sourceTree = "<group>";
+		};
+		F0CCC0EC2838D304007DCBD0 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				F0CCC0EF2838DDB8007DCBD0 /* BottomStickyButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		F0CCC0F1283941F1007DCBD0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F0CCC0F328394226007DCBD0 /* APIResponse.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		F0CCC0F22839420C007DCBD0 /* LoginModels */ = {
+			isa = PBXGroup;
+			children = (
+				F0CCC0F92839B830007DCBD0 /* School.swift */,
+			);
+			path = LoginModels;
+			sourceTree = "<group>";
+		};
+		F0CCC0FB2839E880007DCBD0 /* ProgressCheck */ = {
+			isa = PBXGroup;
+			children = (
+				F0CCC0FC2839E8DD007DCBD0 /* ProgressCheck.swift */,
+			);
+			path = ProgressCheck;
 			sourceTree = "<group>";
 		};
 		F0E4285927FC8EBD00C623E1 /* WritePost */ = {
@@ -329,7 +365,6 @@
 				FD63338D27A0DADC004783E3 /* SceneDelegate.swift */,
 				FD0CF62827A12B9600BDEA53 /* Scenes */,
 				FDEEA238282E207800520340 /* Global */,
-				FDEEA243282E269300520340 /* Network */,
 				FD63339427A0DADD004783E3 /* Assets.xcassets */,
 				FD63339927A0DADD004783E3 /* Info.plist */,
 				F0128D3F281EDE4F005BE0B9 /* Launch Screen.storyboard */,
@@ -439,7 +474,7 @@
 				FD9D4F6F27B4EBA70005205E /* UIView.swift */,
 				FD9C6F4627C10140005D88A6 /* UIFont.swift */,
 				F03FB66027B0333D0097D817 /* UILabel.swift */,
-				F0224C37282964F70092683A /* UIViewController.swift */,
+				F0CCC0EA2838D09E007DCBD0 /* UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -467,6 +502,7 @@
 		FDEEA238282E207800520340 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				F0CCC0F1283941F1007DCBD0 /* Util */,
 				FDEEA239282E209E00520340 /* DesignSystem */,
 				FDD8DDD127A425A60072034C /* Extensions */,
 			);
@@ -476,28 +512,11 @@
 		FDEEA239282E209E00520340 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				FDEEA23A282E20ED00520340 /* UIComponent */,
+				F0CCC0FB2839E880007DCBD0 /* ProgressCheck */,
+				F0CCC0EC2838D304007DCBD0 /* Button */,
 				FD9C6F2E27BFD028005D88A6 /* Font */,
 			);
 			path = DesignSystem;
-			sourceTree = "<group>";
-		};
-		FDEEA23A282E20ED00520340 /* UIComponent */ = {
-			isa = PBXGroup;
-			children = (
-				FDEEA23B282E211600520340 /* NavigationBar.swift */,
-				FDEEA23D282E233A00520340 /* BackButton.swift */,
-				FDEEA23F282E264A00520340 /* SearchButton.swift */,
-				FDEEA241282E265900520340 /* NoticeButton.swift */,
-			);
-			path = UIComponent;
-			sourceTree = "<group>";
-		};
-		FDEEA243282E269300520340 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		FDF78A2327EB4161005D37C8 /* Notice */ = {
@@ -639,9 +658,12 @@
 			files = (
 				FDB7906E2805A783008621D1 /* ReviewFeedViewController.swift in Sources */,
 				F0224C36282963560092683A /* InputSchoolViewController.swift in Sources */,
-				FDEEA242282E265900520340 /* NoticeButton.swift in Sources */,
+				F0CCC0FA2839B830007DCBD0 /* School.swift in Sources */,
 				FDB7906D2805A704008621D1 /* RestaurantTableViewCell.swift in Sources */,
+				F0CCC0EB2838D09E007DCBD0 /* UIButton.swift in Sources */,
+				F0CCC0FD2839E8DD007DCBD0 /* ProgressCheck.swift in Sources */,
 				FD63339027A0DADC004783E3 /* TabBarController.swift in Sources */,
+				F0CCC0F428394226007DCBD0 /* APIResponse.swift in Sources */,
 				F0224C3C28296FB90092683A /* VerifyEmailViewController.swift in Sources */,
 				F0128D38281E517F005BE0B9 /* SplashViewController.swift in Sources */,
 				FDE37EAB27D37DCB00618163 /* HomeViewModel.swift in Sources */,
@@ -661,7 +683,6 @@
 				F03FB65327A6DDA40097D817 /* RestaurantDetailViewController.swift in Sources */,
 				F0128D3C281E5E9B005BE0B9 /* ImageSliderCollectionViewCell.swift in Sources */,
 				F0128D3E281E86DD005BE0B9 /* BottomSheetViewController.swift in Sources */,
-				FDEEA23C282E211600520340 /* NavigationBar.swift in Sources */,
 				FD0CF62F27A12BF400BDEA53 /* CommunityViewController.swift in Sources */,
 				F03FB66127B0333D0097D817 /* UILabel.swift in Sources */,
 				FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */,
@@ -670,7 +691,6 @@
 				FD9C6F5027C11838005D88A6 /* FilterView.swift in Sources */,
 				F0224C44282970840092683A /* RegistCompleteViewController.swift in Sources */,
 				F0128D3A281E5531005BE0B9 /* LoginViewController.swift in Sources */,
-				FDEEA23E282E233A00520340 /* BackButton.swift in Sources */,
 				FD63EA9B27CCEDEB00DFBD0B /* LikeHeaderView.swift in Sources */,
 				FDE37EAD27D389C400618163 /* SearchViewController.swift in Sources */,
 				FD94861427A955F6009BE666 /* FilterSectionView.swift in Sources */,
@@ -679,14 +699,15 @@
 				F03D976827DDC4A10011FA3D /* BestBoardTVC.swift in Sources */,
 				FDD8DDD327A426C40072034C /* UIColor.swift in Sources */,
 				FD0DBC6027B8D9770001E526 /* MapSectionView.swift in Sources */,
+				F0CCC0E92838C9BA007DCBD0 /* SchoolSearchViewController.swift in Sources */,
 				FDEA5E3827EF10BF008EFD5E /* RecommendDetailViewController.swift in Sources */,
 				F0224C3E28296FEB0092683A /* EnterPasswordViewContoller.swift in Sources */,
 				FD9C6F4727C10140005D88A6 /* UIFont.swift in Sources */,
 				F03D976427DD258E0011FA3D /* BoardMainTVC.swift in Sources */,
 				FDD8DDD027A423740072034C /* FilterButtonView.swift in Sources */,
+				F0CCC0F02838DDB8007DCBD0 /* BottomStickyButton.swift in Sources */,
 				FD94861827A9598C009BE666 /* AroundSectionView.swift in Sources */,
 				FD9D4F7027B4EBA70005205E /* UIView.swift in Sources */,
-				F0224C38282964F70092683A /* UIViewController.swift in Sources */,
 				FD94861627A95987009BE666 /* RecommendSectionView.swift in Sources */,
 				FD9C6F4E27C10A75005D88A6 /* FilterSectionViewModel.swift in Sources */,
 				FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */,
@@ -698,7 +719,6 @@
 				F03D976627DDAC330011FA3D /* BestBoardViewController.swift in Sources */,
 				FD9C6F3A27BFDA4F005D88A6 /* RecommendCollectionViewCell.swift in Sources */,
 				F03FB66327B52B2E0097D817 /* RestaurantReviewTVC.swift in Sources */,
-				FDEEA240282E264A00520340 /* SearchButton.swift in Sources */,
 				F03FB65D27A95D620097D817 /* RestauranthashTagCVC.swift in Sources */,
 				F03FB65A27A93C3A0097D817 /* RestaurantDetailTVC.swift in Sources */,
 				FDF78A2927EB45AE005D37C8 /* NoticeTableViewCell.swift in Sources */,

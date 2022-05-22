@@ -114,21 +114,13 @@ class LoginViewController: UIViewController {
         initUI()
         initTimer()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(printSomeThing(_:)), name: Notification.Name("doItSomeThing"), object: nil)
-
+        NotificationCenter.default.addObserver(self, selector: #selector(printSomeThing(_:)), name: Notification.Name("loginComplete"), object: nil)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         timer?.invalidate()
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        print("SDFSDF")
-//        print(UserDefaults.standard.bool(forKey: "switchState"))
-//        if UserDefaults.standard.bool(forKey: "switchState") {
-//            self.navigationController?.pushViewController(TabBarController(), animated: true)
-//        }
-//    }
     
     
     func initUI(){
@@ -198,7 +190,7 @@ class LoginViewController: UIViewController {
     @objc func printSomeThing(_ notification: Notification) {
             print("Test Notification")
         let vc = TabBarController()
-        
+//        navigationController?.pushViewController(vc, animated: <#T##Bool#>)
 //        let appDelegate = UIApplication.shared.delegate as! SceneDelegate
 //        appDelegate.window?.rootViewController = vc
         

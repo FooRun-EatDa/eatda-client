@@ -18,16 +18,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .systemBackground
         window?.tintColor = .label
-//        window?.rootViewController = TabBarController()
-        //유저의 상태에 따라 다르게 보여줘야함. 지금은 그냥 푸시됨
-        let rootVC = LoginViewController()
-        let navVC = UINavigationController(rootViewController: rootVC)
-        window?.rootViewController = navVC
+
+        var rootVC: UIViewController
+        if UserDefaults.standard.bool(forKey: "loginComplete") {
+            rootVC = TabBarController()
+            
+            window?.rootViewController = rootVC
+            window?.makeKeyAndVisible()
+        }else {
+            rootVC = LoginViewController()
+            let navVC = UINavigationController(rootViewController: rootVC)
+            window?.rootViewController = navVC
+            window?.makeKeyAndVisible()
+        }
         
-        window?.makeKeyAndVisible()
-        
+//        let navVC = UINavigationController(rootViewController: rootVC)
+//        window?.rootViewController = navVC
+//        window?.makeKeyAndVisible()
     }
-
-
 }
 

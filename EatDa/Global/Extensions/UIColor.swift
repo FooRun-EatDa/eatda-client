@@ -24,6 +24,9 @@ extension UIColor {
     // MARK: LoginViewController, TermsViewController
     class var divideViewColor: UIColor { UIColor(hex: 0xE5E5E5) }
     class var describeTextColor: UIColor { UIColor(hex: 0x717171) }
+    class var buttonDisableColor: UIColor { UIColor(hex: 0xC8C8C8) }
+    class var emailCheckColor: UIColor { UIColor(hex: 0x191991) }
+    class var emailErrorColor: UIColor { UIColor(hex: 0xEB5757) }
     
     // MARK: HomeViewController
     class var mainColor: UIColor { UIColor(hex: 0xFFC208) }
