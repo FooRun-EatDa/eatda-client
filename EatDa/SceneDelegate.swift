@@ -17,11 +17,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = TabBarController()
-        window?.makeKeyAndVisible()
 
+        var rootVC: UIViewController
+        if UserDefaults.standard.bool(forKey: "loginComplete") {
+            rootVC = TabBarController()
+            
+            window?.rootViewController = rootVC
+            window?.makeKeyAndVisible()
+        }else {
+            rootVC = LoginViewController()
+            let navVC = UINavigationController(rootViewController: rootVC)
+            window?.rootViewController = navVC
+            window?.makeKeyAndVisible()
+        }
+        
+//        let navVC = UINavigationController(rootViewController: rootVC)
+//        window?.rootViewController = navVC
+//        window?.makeKeyAndVisible()
     }
-
-
 }
 
