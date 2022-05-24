@@ -89,7 +89,14 @@ class HomeViewController: UIViewController {
         aroundSectionView.showAllButton.rx.tap
             .bind(to: viewModel.aroundDetailButtonTapped)
             .disposed(by: disposeBag)
-
+        
+        mapSectionView.mapView.rx.tapGesture()
+            .when(.recognized)
+            .bind { _ in
+                viewModel.mapViewTapped.onNext(())
+            }
+            .disposed(by: disposeBag)
+        
         
         viewModel.pushSearchViewController
             .drive(onNext: { viewModel in
@@ -129,6 +136,16 @@ class HomeViewController: UIViewController {
             .drive(onNext: {
                 let viewController = AroundDetailViewController()
                 //viewController.bind(viewModel)
+                self.show(viewController, sender: nil)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.mapViewTapped
+            .asDriver(onErrorDriveWith: .empty())
+            .drive(onNext: {
+                let viewController = MapViewController()
+                //viewController.bind(viewModel)
+                viewController.hidesBottomBarWhenPushed = true
                 self.show(viewController, sender: nil)
             })
             .disposed(by: disposeBag)

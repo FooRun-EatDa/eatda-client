@@ -57,6 +57,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         tabBar.backgroundColor = .white
+        tabBar.tintColor = .mainTextColor
         
         let mypageViewController = UIViewController()
         mypageViewController.tabBarItem = UITabBarItem(title: "마이", image: UIImage(named: "my"), tag: 4)
