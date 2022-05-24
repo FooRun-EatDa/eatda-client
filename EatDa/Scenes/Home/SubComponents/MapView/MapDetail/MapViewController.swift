@@ -16,8 +16,11 @@ class MapViewController: UIViewController {
     let disposeBag = DisposeBag()
     
     let mapView = MapView()
+    // 어느 화면에서 들어왔느냐에 따라 initialCoordinate 지정해야함
+    // 홈화면 -> initialCoordinate: 해당 유저의 학교
+    // 식당 디테일 화면 -> initialCoordinate: 해당 식당
     let initialCoordinate = CLLocationCoordinate2D(latitude: 37.2429616, longitude: 127.0800525)
-    let initialCoordinate2 = CLLocationCoordinate2D(latitude: 37.23296, longitude: 127.0800525)
+    let initialCoordinate2 = CLLocationCoordinate2D(latitude: 37.24896, longitude: 127.0800525)
     let locationManager = CLLocationManager()
     
     override func loadView() {
