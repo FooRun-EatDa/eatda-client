@@ -17,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .systemBackground
-        window?.tintColor = .label
 
         var rootVC: UIViewController
         if UserDefaults.standard.bool(forKey: "loginComplete") {

@@ -84,7 +84,7 @@ private extension FilterButtonView {
         
         categoryImage.snp.makeConstraints {
             $0.top.equalToSuperview().inset(14.0)
-            $0.leading.trailing.equalToSuperview().inset(20.0)
+            $0.centerX.equalToSuperview()
             $0.height.width.equalTo(32.0)
         }
         

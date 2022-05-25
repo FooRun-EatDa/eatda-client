@@ -34,5 +34,23 @@ extension UILabel{
                attributeString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSMakeRange(0, text.count))
                self.attributedText = attributeString
            }
-       }
+    }
+    
+    func makeTag(_ content: String) {
+        text = content
+        layer.borderWidth = 1.0
+        layer.cornerRadius = 12
+        layer.borderColor = UIColor.hashTagBackgroundColor.cgColor
+        layer.masksToBounds = true
+        backgroundColor = .hashTagBackgroundColor
+        font = .mySystemFont(ofSize: 12.0)
+        textColor = .hashTagTextColor
+        textAlignment = .center
+        
+        self.snp.makeConstraints {
+            $0.width.equalTo(50.0)
+            $0.height.equalTo(26.0)
+        }
+    }
+
 }

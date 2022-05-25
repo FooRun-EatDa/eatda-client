@@ -38,6 +38,11 @@
 		F0CCC0FA2839B830007DCBD0 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0F92839B830007DCBD0 /* School.swift */; };
 		F0CCC0FD2839E8DD007DCBD0 /* ProgressCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0FC2839E8DD007DCBD0 /* ProgressCheck.swift */; };
 		F0E4285B27FC8EDC00C623E1 /* WritePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4285A27FC8EDC00C623E1 /* WritePostViewController.swift */; };
+		FD022E3C2833673800FC32E9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD022E3B2833673800FC32E9 /* MapView.swift */; };
+		FD022E3E2833692100FC32E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD022E3D2833692100FC32E9 /* MapViewController.swift */; };
+		FD022E4028337E4F00FC32E9 /* MapDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD022E3F28337E4F00FC32E9 /* MapDetailView.swift */; };
+		FD022E452833ADFE00FC32E9 /* MapDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD022E442833ADFE00FC32E9 /* MapDetailModel.swift */; };
+		FD022E482833BB2200FC32E9 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD022E472833BB2200FC32E9 /* LikeButton.swift */; };
 		FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62A27A12BC400BDEA53 /* TalkViewController.swift */; };
 		FD0CF62F27A12BF400BDEA53 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62E27A12BF400BDEA53 /* CommunityViewController.swift */; };
 		FD0DBC6027B8D9770001E526 /* MapSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0DBC5F27B8D9770001E526 /* MapSectionView.swift */; };
@@ -49,6 +54,9 @@
 		FD63339527A0DADD004783E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD63339427A0DADD004783E3 /* Assets.xcassets */; };
 		FD63EA9927CCEDD600DFBD0B /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD63EA9827CCEDD600DFBD0B /* LikeViewController.swift */; };
 		FD63EA9B27CCEDEB00DFBD0B /* LikeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD63EA9A27CCEDEB00DFBD0B /* LikeHeaderView.swift */; };
+		FD6FBDAB28379E2500BD7E20 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FBDAA28379E2500BD7E20 /* CustomAnnotation.swift */; };
+		FD6FBDB9283CF4A900BD7E20 /* RestaurantDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FBDB8283CF4A900BD7E20 /* RestaurantDetailViewModel.swift */; };
+		FD6FBDBB283CF52700BD7E20 /* RestaurantMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6FBDBA283CF52700BD7E20 /* RestaurantMapView.swift */; };
 		FD94861427A955F6009BE666 /* FilterSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94861327A955F6009BE666 /* FilterSectionView.swift */; };
 		FD94861627A95987009BE666 /* RecommendSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94861527A95987009BE666 /* RecommendSectionView.swift */; };
 		FD94861827A9598C009BE666 /* AroundSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94861727A9598C009BE666 /* AroundSectionView.swift */; };
@@ -119,6 +127,11 @@
 		F0E4285A27FC8EDC00C623E1 /* WritePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePostViewController.swift; sourceTree = "<group>"; };
 		F3BE5607C6653930EC611246 /* Pods-EatDa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatDa.debug.xcconfig"; path = "Target Support Files/Pods-EatDa/Pods-EatDa.debug.xcconfig"; sourceTree = "<group>"; };
 		F6AB1F6EAB7375AC712E1EDD /* Pods_EatDa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatDa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD022E3B2833673800FC32E9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		FD022E3D2833692100FC32E9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		FD022E3F28337E4F00FC32E9 /* MapDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailView.swift; sourceTree = "<group>"; };
+		FD022E442833ADFE00FC32E9 /* MapDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailModel.swift; sourceTree = "<group>"; };
+		FD022E472833BB2200FC32E9 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		FD0CF62A27A12BC400BDEA53 /* TalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkViewController.swift; sourceTree = "<group>"; };
 		FD0CF62C27A12BDA00BDEA53 /* ReviewFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedViewController.swift; sourceTree = "<group>"; };
 		FD0CF62E27A12BF400BDEA53 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +146,9 @@
 		FD63339927A0DADD004783E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD63EA9827CCEDD600DFBD0B /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
 		FD63EA9A27CCEDEB00DFBD0B /* LikeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeHeaderView.swift; sourceTree = "<group>"; };
+		FD6FBDAA28379E2500BD7E20 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		FD6FBDB8283CF4A900BD7E20 /* RestaurantDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewModel.swift; sourceTree = "<group>"; };
+		FD6FBDBA283CF52700BD7E20 /* RestaurantMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapView.swift; sourceTree = "<group>"; };
 		FD94861327A955F6009BE666 /* FilterSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionView.swift; sourceTree = "<group>"; };
 		FD94861527A95987009BE666 /* RecommendSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendSectionView.swift; sourceTree = "<group>"; };
 		FD94861727A9598C009BE666 /* AroundSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundSectionView.swift; sourceTree = "<group>"; };
@@ -244,6 +260,7 @@
 				F03FB65C27A95D620097D817 /* RestauranthashTagCVC.swift */,
 				F03FB65E27B025460097D817 /* RestaurantMenuTVC.swift */,
 				F03FB66227B52B2E0097D817 /* RestaurantReviewTVC.swift */,
+				FD6FBDBA283CF52700BD7E20 /* RestaurantMapView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -253,6 +270,7 @@
 			children = (
 				F03FB65427A6EB930097D817 /* Cell */,
 				F03FB65227A6DDA40097D817 /* RestaurantDetailViewController.swift */,
+				FD6FBDB8283CF4A900BD7E20 /* RestaurantDetailViewModel.swift */,
 			);
 			path = RestaurantDetail;
 			sourceTree = "<group>";
@@ -295,6 +313,33 @@
 				F0E4285A27FC8EDC00C623E1 /* WritePostViewController.swift */,
 			);
 			path = WritePost;
+			sourceTree = "<group>";
+		};
+		FD022E3A2833672200FC32E9 /* MapDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FD022E3B2833673800FC32E9 /* MapView.swift */,
+				FD022E3D2833692100FC32E9 /* MapViewController.swift */,
+				FD022E3F28337E4F00FC32E9 /* MapDetailView.swift */,
+				FD6FBDAA28379E2500BD7E20 /* CustomAnnotation.swift */,
+			);
+			path = MapDetail;
+			sourceTree = "<group>";
+		};
+		FD022E432833ADF600FC32E9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FD022E442833ADFE00FC32E9 /* MapDetailModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FD022E462833BB0900FC32E9 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				FD022E472833BB2200FC32E9 /* LikeButton.swift */,
+			);
+			path = UIComponent;
 			sourceTree = "<group>";
 		};
 		FD0CF62827A12B9600BDEA53 /* Scenes */ = {
@@ -363,8 +408,8 @@
 			children = (
 				FD63338B27A0DADC004783E3 /* AppDelegate.swift */,
 				FD63338D27A0DADC004783E3 /* SceneDelegate.swift */,
-				FD0CF62827A12B9600BDEA53 /* Scenes */,
 				FDEEA238282E207800520340 /* Global */,
+				FD0CF62827A12B9600BDEA53 /* Scenes */,
 				FD63339427A0DADD004783E3 /* Assets.xcassets */,
 				FD63339927A0DADD004783E3 /* Info.plist */,
 				F0128D3F281EDE4F005BE0B9 /* Launch Screen.storyboard */,
@@ -429,6 +474,7 @@
 		FD9C6F4B27C108EF005D88A6 /* MapView */ = {
 			isa = PBXGroup;
 			children = (
+				FD022E3A2833672200FC32E9 /* MapDetail */,
 				FD0DBC5F27B8D9770001E526 /* MapSectionView.swift */,
 			);
 			path = MapView;
@@ -502,7 +548,7 @@
 		FDEEA238282E207800520340 /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				F0CCC0F1283941F1007DCBD0 /* Util */,
+				FDEEA243282E269300520340 /* Network */,
 				FDEEA239282E209E00520340 /* DesignSystem */,
 				FDD8DDD127A425A60072034C /* Extensions */,
 			);
@@ -512,11 +558,21 @@
 		FDEEA239282E209E00520340 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				FD022E462833BB0900FC32E9 /* UIComponent */,
 				F0CCC0FB2839E880007DCBD0 /* ProgressCheck */,
 				F0CCC0EC2838D304007DCBD0 /* Button */,
 				FD9C6F2E27BFD028005D88A6 /* Font */,
 			);
 			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		FDEEA243282E269300520340 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F0CCC0F1283941F1007DCBD0 /* Util */,
+				FD022E432833ADF600FC32E9 /* Entities */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		FDF78A2327EB4161005D37C8 /* Notice */ = {
@@ -668,9 +724,11 @@
 				F0128D38281E517F005BE0B9 /* SplashViewController.swift in Sources */,
 				FDE37EAB27D37DCB00618163 /* HomeViewModel.swift in Sources */,
 				FDEA5E4727F834AA008EFD5E /* FilterViewModel.swift in Sources */,
+				FD6FBDB9283CF4A900BD7E20 /* RestaurantDetailViewModel.swift in Sources */,
 				F03FB65F27B025460097D817 /* RestaurantMenuTVC.swift in Sources */,
 				FDF78A2727EB4284005D37C8 /* NoticeViewModel.swift in Sources */,
 				FD63338C27A0DADC004783E3 /* AppDelegate.swift in Sources */,
+				FD022E482833BB2200FC32E9 /* LikeButton.swift in Sources */,
 				F0224C3A28296F240092683A /* InputEmailViewController.swift in Sources */,
 				FDEA5E4227F830F1008EFD5E /* FilterDetailViewController.swift in Sources */,
 				FD1BEEFD27DDB18500487D8C /* EventViewController.swift in Sources */,
@@ -680,11 +738,13 @@
 				FD94861E27A959EF009BE666 /* SeperatorView.swift in Sources */,
 				FD9D4F7227B503090005205E /* TitleSectionView.swift in Sources */,
 				F03FB65627A6EBB90097D817 /* RestaurantImageCVC.swift in Sources */,
+				FD022E4028337E4F00FC32E9 /* MapDetailView.swift in Sources */,
 				F03FB65327A6DDA40097D817 /* RestaurantDetailViewController.swift in Sources */,
 				F0128D3C281E5E9B005BE0B9 /* ImageSliderCollectionViewCell.swift in Sources */,
 				F0128D3E281E86DD005BE0B9 /* BottomSheetViewController.swift in Sources */,
 				FD0CF62F27A12BF400BDEA53 /* CommunityViewController.swift in Sources */,
 				F03FB66127B0333D0097D817 /* UILabel.swift in Sources */,
+				FD022E3E2833692100FC32E9 /* MapViewController.swift in Sources */,
 				FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */,
 				FD94861D27A959EF009BE666 /* AroundRestaurantCollectionViewCell.swift in Sources */,
 				FDEA5E3E27F04620008EFD5E /* RecommendDetailViewModel.swift in Sources */,
@@ -704,19 +764,23 @@
 				F0224C3E28296FEB0092683A /* EnterPasswordViewContoller.swift in Sources */,
 				FD9C6F4727C10140005D88A6 /* UIFont.swift in Sources */,
 				F03D976427DD258E0011FA3D /* BoardMainTVC.swift in Sources */,
+				FD022E452833ADFE00FC32E9 /* MapDetailModel.swift in Sources */,
 				FDD8DDD027A423740072034C /* FilterButtonView.swift in Sources */,
 				F0CCC0F02838DDB8007DCBD0 /* BottomStickyButton.swift in Sources */,
 				FD94861827A9598C009BE666 /* AroundSectionView.swift in Sources */,
 				FD9D4F7027B4EBA70005205E /* UIView.swift in Sources */,
+				FD6FBDAB28379E2500BD7E20 /* CustomAnnotation.swift in Sources */,
 				FD94861627A95987009BE666 /* RecommendSectionView.swift in Sources */,
 				FD9C6F4E27C10A75005D88A6 /* FilterSectionViewModel.swift in Sources */,
 				FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */,
 				F0E4285B27FC8EDC00C623E1 /* WritePostViewController.swift in Sources */,
 				F0B279E6282816AA000B35FF /* TermsViewController.swift in Sources */,
 				FDE37EAF27D389CF00618163 /* SearchViewModel.swift in Sources */,
+				FD6FBDBB283CF52700BD7E20 /* RestaurantMapView.swift in Sources */,
 				FD63338E27A0DADC004783E3 /* SceneDelegate.swift in Sources */,
 				F0224C40282970230092683A /* EnterUserInfoViewController.swift in Sources */,
 				F03D976627DDAC330011FA3D /* BestBoardViewController.swift in Sources */,
+				FD022E3C2833673800FC32E9 /* MapView.swift in Sources */,
 				FD9C6F3A27BFDA4F005D88A6 /* RecommendCollectionViewCell.swift in Sources */,
 				F03FB66327B52B2E0097D817 /* RestaurantReviewTVC.swift in Sources */,
 				F03FB65D27A95D620097D817 /* RestauranthashTagCVC.swift in Sources */,
@@ -859,7 +923,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nahee.EatDa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foorun.uniEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -879,7 +943,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nahee.EatDa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.foorun.uniEat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

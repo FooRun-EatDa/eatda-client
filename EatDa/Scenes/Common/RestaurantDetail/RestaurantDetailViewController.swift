@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import RxSwift
+import MapKit
 
 class RestaurantDetailViewController: UIViewController {
+    let disposeBag = DisposeBag()
+    let viewModel = RestaurantDetailViewModel()
+
  
     // MARK: - UIComponent
     private lazy var shareButton: UIBarButtonItem = {
@@ -139,8 +144,12 @@ class RestaurantDetailViewController: UIViewController {
         label.font = .boldSystemFont(ofSize: 19)
         return label
     }()
-    private let mapView = UIView()
-    
+    private let mapView: UIView = {
+        // 받아온 위도, 경도, 맛집 종류(노랑색:0, 빨강색:1) 핀 두가지 중 무엇인지
+        let view = RestaurantMapView(restaurantCoordinate: CLLocationCoordinate2D(latitude: 37.2429616, longitude: 127.0800525), categoryID: 0)
+        
+        return view
+    }()
     
     
     //restaurantReviewView
@@ -196,8 +205,29 @@ class RestaurantDetailViewController: UIViewController {
         
         setRightBarButtonItem()
         setLayout()
+        bind(viewModel)
     }
 
+    
+    func bind(_ viewModel: RestaurantDetailViewModel) {
+        mapView.rx.tapGesture()
+            .when(.recognized)
+            .bind { _ in
+                viewModel.mapViewTapped.onNext(())
+            }
+            .disposed(by: disposeBag)
+        
+        
+        viewModel.mapViewTapped
+            .asDriver(onErrorDriveWith: .empty())
+            .drive(onNext: {
+                let viewController = MapViewController()
+                //viewController.bind(viewModel)
+                viewController.hidesBottomBarWhenPushed = true
+                self.show(viewController, sender: nil)
+            })
+            .disposed(by: disposeBag)
+    }
     
     @objc func showDetail(_ sender: AnyObject?){
         

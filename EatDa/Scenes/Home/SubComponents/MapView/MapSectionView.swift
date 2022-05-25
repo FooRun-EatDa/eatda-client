@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import MapKit
 
 final class MapSectionView: UIView {
 
@@ -14,7 +15,7 @@ final class MapSectionView: UIView {
         let label = UILabel()
         label.font = .myBoldSystemFont(ofSize: 16)
         label.textColor = .label
-        label.text = "클릭하면 주변 맛집이?"
+        label.text = "우리 학교 맛집 🏫"
 
         return label
     }()
@@ -22,11 +23,8 @@ final class MapSectionView: UIView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .myBoldSystemFont(ofSize: 19)
-        label.textColor = .label
-        label.text = "내 동네 맛집은?"
-        let attributedString = NSMutableAttributedString(string: label.text ?? "")
-        attributedString.addAttribute(.foregroundColor, value: UIColor.homeTitleColor, range: (label.text! as NSString).range(of:"내 동네 맛집"))
-        label.attributedText = attributedString
+        label.textColor = .homeTitleColor
+        label.text = "TOP 50"
         
         return label
     }()
@@ -38,15 +36,22 @@ final class MapSectionView: UIView {
         return button
     }()
     
-    private lazy var mapImageView: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "map"))
+    lazy var mapView: MKMapView = {
+        let view  = MKMapView()
+        let initialCoordinate = CLLocationCoordinate2D(latitude: 37.24, longitude: 127.08)
+        view.setRegion(MKCoordinateRegion(center: initialCoordinate, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)), animated: false)
+        view.isScrollEnabled = false
         
+        let image = UIImageView(image: UIImage(named: "map_logo"))
+
+        view.addSubview(image)
         image.snp.makeConstraints {
-            $0.height.equalTo(218.0)
-            $0.width.equalTo(343.0)
+            $0.width.height.equalTo(51)
+            $0.centerY.equalToSuperview()
+            $0.centerX.equalToSuperview()
         }
 
-        return image
+        return view
     }()
 
     override init(frame: CGRect) {
@@ -67,7 +72,7 @@ private extension MapSectionView {
         [
             subTitleLabel,
             titleLabel,
-            mapImageView
+            mapView
         ].forEach { addSubview($0) }
 
         subTitleLabel.snp.makeConstraints {
@@ -80,10 +85,12 @@ private extension MapSectionView {
             $0.leading.equalTo(subTitleLabel.snp.leading)
         }
         
-        mapImageView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom)
+        mapView.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
+            $0.height.equalTo(230.0)
+            $0.width.equalTo(343.0)
         }
         
     }
