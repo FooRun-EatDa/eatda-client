@@ -131,7 +131,7 @@
 		FD022E3D2833692100FC32E9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FD022E3F28337E4F00FC32E9 /* MapDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailView.swift; sourceTree = "<group>"; };
 		FD022E442833ADFE00FC32E9 /* MapDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailModel.swift; sourceTree = "<group>"; };
-		FD022E472833BB2200FC32E9 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		FD022E472833BB2200FC32E9 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LikeButton.swift; path = ../UIComponent/LikeButton.swift; sourceTree = "<group>"; };
 		FD0CF62A27A12BC400BDEA53 /* TalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkViewController.swift; sourceTree = "<group>"; };
 		FD0CF62C27A12BDA00BDEA53 /* ReviewFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedViewController.swift; sourceTree = "<group>"; };
 		FD0CF62E27A12BF400BDEA53 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				F0CCC0EF2838DDB8007DCBD0 /* BottomStickyButton.swift */,
+				FD022E472833BB2200FC32E9 /* LikeButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -337,7 +338,6 @@
 		FD022E462833BB0900FC32E9 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
-				FD022E472833BB2200FC32E9 /* LikeButton.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
