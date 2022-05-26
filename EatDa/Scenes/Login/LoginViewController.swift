@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import RxSwift
+import Alamofire
 
 class GuideVO {
     var image: String?
@@ -74,10 +75,10 @@ class LoginViewController: UIViewController {
         button.titleLabel?.font = .myBoldSystemFont(ofSize: 14)
         button.rx.tap
             .bind {
-                let bottomSheetVC = BottomSheetViewController(contentViewController: SplashViewController())
-                bottomSheetVC.modalPresentationStyle = .overFullScreen
-                self.present(bottomSheetVC, animated: false, completion: nil)
-                
+//                let bottomSheetVC = BottomSheetViewController(contentViewController: SplashViewController())
+//                bottomSheetVC.modalPresentationStyle = .overFullScreen
+//                self.present(bottomSheetVC, animated: false, completion: nil)
+                self.signIn() // 임시
             }.disposed(by: disposeBag)
         return button
     }()
@@ -122,6 +123,20 @@ class LoginViewController: UIViewController {
         timer?.invalidate()
     }
     
+    func signIn() {
+        // 임의로 정보 넣어둠
+        let body: Parameters = [
+            "email": "cha2.hoon@gmail.com",
+            "password": 1
+        ]
+        
+        let apiCall = API<[SignIn]>(url: APIConstants.POST_SIGN_IN, method: .post, parameters: body)
+        apiCall.postSignInWithToken { result in
+            UserDefaults.standard.set(true, forKey: "loginComplete")
+            
+        }
+        
+    }
     
     func initUI(){
         [pageControl, loginButton, regiesterButton, noLoginLinkButton, collectionView].forEach { view.addSubview($0) }
