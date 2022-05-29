@@ -73,6 +73,10 @@
 		FD9C6F5027C11838005D88A6 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9C6F4F27C11838005D88A6 /* FilterView.swift */; };
 		FD9D4F7027B4EBA70005205E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D4F6F27B4EBA70005205E /* UIView.swift */; };
 		FD9D4F7227B503090005205E /* TitleSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D4F7127B503090005205E /* TitleSectionView.swift */; };
+		FDB40681283E11A8003C70A8 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB40680283E11A8003C70A8 /* Const.swift */; };
+		FDB40685283E14B1003C70A8 /* KeyChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB40684283E14B1003C70A8 /* KeyChainKey.swift */; };
+		FDB40687283E14D5003C70A8 /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB40686283E14D5003C70A8 /* TokenUtils.swift */; };
+		FDB4068B283E3EB2003C70A8 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4068A283E3EB2003C70A8 /* SignIn.swift */; };
 		FDB7906D2805A704008621D1 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB7906C2805A704008621D1 /* RestaurantTableViewCell.swift */; };
 		FDB7906E2805A783008621D1 /* ReviewFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62C27A12BDA00BDEA53 /* ReviewFeedViewController.swift */; };
 		FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8DDCC27A423450072034C /* HomeViewController.swift */; };
@@ -165,6 +169,10 @@
 		FD9C6F4F27C11838005D88A6 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		FD9D4F6F27B4EBA70005205E /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		FD9D4F7127B503090005205E /* TitleSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSectionView.swift; sourceTree = "<group>"; };
+		FDB40680283E11A8003C70A8 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		FDB40684283E14B1003C70A8 /* KeyChainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainKey.swift; sourceTree = "<group>"; };
+		FDB40686283E14D5003C70A8 /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
+		FDB4068A283E3EB2003C70A8 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		FDB7906C2805A704008621D1 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		FDD8DDCC27A423450072034C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FDD8DDCF27A423740072034C /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
@@ -281,12 +289,14 @@
 				F0CCC0EF2838DDB8007DCBD0 /* BottomStickyButton.swift */,
 				FD022E472833BB2200FC32E9 /* LikeButton.swift */,
 			);
-			path = Button;
+			name = Button;
+			path = ../Button;
 			sourceTree = "<group>";
 		};
 		F0CCC0F1283941F1007DCBD0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				FDB4067F283E116E003C70A8 /* Constants */,
 				F0CCC0F328394226007DCBD0 /* APIResponse.swift */,
 			);
 			path = Util;
@@ -296,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				F0CCC0F92839B830007DCBD0 /* School.swift */,
+				FDB4068A283E3EB2003C70A8 /* SignIn.swift */,
 			);
 			path = LoginModels;
 			sourceTree = "<group>";
@@ -305,7 +316,8 @@
 			children = (
 				F0CCC0FC2839E8DD007DCBD0 /* ProgressCheck.swift */,
 			);
-			path = ProgressCheck;
+			name = ProgressCheck;
+			path = ../ProgressCheck;
 			sourceTree = "<group>";
 		};
 		F0E4285927FC8EBD00C623E1 /* WritePost */ = {
@@ -338,6 +350,8 @@
 		FD022E462833BB0900FC32E9 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				F0CCC0EC2838D304007DCBD0 /* Button */,
+				F0CCC0FB2839E880007DCBD0 /* ProgressCheck */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -488,6 +502,23 @@
 			path = TitleView;
 			sourceTree = "<group>";
 		};
+		FDB4067F283E116E003C70A8 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FDB40680283E11A8003C70A8 /* Const.swift */,
+				FDB40686283E14D5003C70A8 /* TokenUtils.swift */,
+				FDB40684283E14B1003C70A8 /* KeyChainKey.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		FDB4068C283F461E003C70A8 /* UserService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserService;
+			sourceTree = "<group>";
+		};
 		FDD8DDCB27A422C10072034C /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,8 +590,6 @@
 			isa = PBXGroup;
 			children = (
 				FD022E462833BB0900FC32E9 /* UIComponent */,
-				F0CCC0FB2839E880007DCBD0 /* ProgressCheck */,
-				F0CCC0EC2838D304007DCBD0 /* Button */,
 				FD9C6F2E27BFD028005D88A6 /* Font */,
 			);
 			path = DesignSystem;
@@ -570,6 +599,7 @@
 			isa = PBXGroup;
 			children = (
 				F0CCC0F1283941F1007DCBD0 /* Util */,
+				FDB4068C283F461E003C70A8 /* UserService */,
 				FD022E432833ADF600FC32E9 /* Entities */,
 			);
 			path = Network;
@@ -722,6 +752,7 @@
 				F0CCC0F428394226007DCBD0 /* APIResponse.swift in Sources */,
 				F0224C3C28296FB90092683A /* VerifyEmailViewController.swift in Sources */,
 				F0128D38281E517F005BE0B9 /* SplashViewController.swift in Sources */,
+				FDB40685283E14B1003C70A8 /* KeyChainKey.swift in Sources */,
 				FDE37EAB27D37DCB00618163 /* HomeViewModel.swift in Sources */,
 				FDEA5E4727F834AA008EFD5E /* FilterViewModel.swift in Sources */,
 				FD6FBDB9283CF4A900BD7E20 /* RestaurantDetailViewModel.swift in Sources */,
@@ -748,6 +779,7 @@
 				FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */,
 				FD94861D27A959EF009BE666 /* AroundRestaurantCollectionViewCell.swift in Sources */,
 				FDEA5E3E27F04620008EFD5E /* RecommendDetailViewModel.swift in Sources */,
+				FDB40687283E14D5003C70A8 /* TokenUtils.swift in Sources */,
 				FD9C6F5027C11838005D88A6 /* FilterView.swift in Sources */,
 				F0224C44282970840092683A /* RegistCompleteViewController.swift in Sources */,
 				F0128D3A281E5531005BE0B9 /* LoginViewController.swift in Sources */,
@@ -757,6 +789,7 @@
 				F0224C422829704C0092683A /* EnterNicknameViewController.swift in Sources */,
 				FDF78A2527EB421B005D37C8 /* NoticeViewController.swift in Sources */,
 				F03D976827DDC4A10011FA3D /* BestBoardTVC.swift in Sources */,
+				FDB4068B283E3EB2003C70A8 /* SignIn.swift in Sources */,
 				FDD8DDD327A426C40072034C /* UIColor.swift in Sources */,
 				FD0DBC6027B8D9770001E526 /* MapSectionView.swift in Sources */,
 				F0CCC0E92838C9BA007DCBD0 /* SchoolSearchViewController.swift in Sources */,
@@ -788,6 +821,7 @@
 				FDF78A2927EB45AE005D37C8 /* NoticeTableViewCell.swift in Sources */,
 				FD63EA9927CCEDD600DFBD0B /* LikeViewController.swift in Sources */,
 				FDF78A2B27EB4C13005D37C8 /* NoticeHeaderView.swift in Sources */,
+				FDB40681283E11A8003C70A8 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
