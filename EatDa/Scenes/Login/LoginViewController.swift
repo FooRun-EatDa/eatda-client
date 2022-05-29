@@ -131,9 +131,11 @@ class LoginViewController: UIViewController {
         ]
         
         let apiCall = API<[SignIn]>(url: APIConstants.POST_SIGN_IN, method: .post, parameters: body)
-        apiCall.postSignInWithToken { result in
+        apiCall.fetch { result in
             UserDefaults.standard.set(true, forKey: "loginComplete")
-            
+            let mainVC = TabBarController()
+            mainVC.modalPresentationStyle = .fullScreen
+            self.present(mainVC, animated: false, completion: nil)
         }
         
     }

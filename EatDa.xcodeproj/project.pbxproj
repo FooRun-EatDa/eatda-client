@@ -512,13 +512,6 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		FDB4068C283F461E003C70A8 /* UserService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UserService;
-			sourceTree = "<group>";
-		};
 		FDD8DDCB27A422C10072034C /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -599,7 +592,6 @@
 			isa = PBXGroup;
 			children = (
 				F0CCC0F1283941F1007DCBD0 /* Util */,
-				FDB4068C283F461E003C70A8 /* UserService */,
 				FD022E432833ADF600FC32E9 /* Entities */,
 			);
 			path = Network;
