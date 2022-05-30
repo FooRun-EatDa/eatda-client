@@ -9,4 +9,6 @@ import Foundation
 
 struct Const {
     static var headerToken: String = TokenUtils.read(key: Const.KeyChainKey.accessToken) ?? ""
+    static var refreshToken: String = TokenUtils.read(key: Const.KeyChainKey.refreshToken) ?? ""
+
 }

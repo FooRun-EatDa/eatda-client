@@ -17,11 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .systemBackground
-        let accessToken = TokenUtils.read(key: Const.KeyChainKey.accessToken)
-        var rootVC: UIViewController
         
-        if accessToken != nil {
+        var rootVC: UIViewController
+                
+        if Const.headerToken != nil {
             if UserDefaults.standard.bool(forKey: "loginComplete") {
+                
+                print(Const.headerToken)
+                print(Const.headerToken)
+                
                 rootVC = TabBarController()
                 window?.rootViewController = rootVC
                 window?.makeKeyAndVisible()
