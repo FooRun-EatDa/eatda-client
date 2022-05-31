@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import RxSwift
 
-struct RecommendDetailViewModel {
-    
+struct RecommendDetailViewModel {    
+    // 뷰를 가지고 있으니 모델들도 가지고 있어야함
+    let listViewModel = RestaurantListViewModel()
 }
