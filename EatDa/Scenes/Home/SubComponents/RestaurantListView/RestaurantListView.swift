@@ -38,8 +38,19 @@ class RestaurantListView: UITableView {
     }
     
     
-    func bind(_ viewModel: RestaurantListViewModel) {
+    func bindRecommendRestaurantData(_ viewModel: RestaurantListViewModel) {
         viewModel.recommendRestaurantData
+            .drive(self.rx.items) { tableview, row, data in
+                let index = IndexPath(row: row, section: 0)
+                let cell = tableview.dequeueReusableCell(withIdentifier: "RestaurantListCell") as! RestaurantListCell
+                cell.setData(data)
+                return cell
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    func bindSearchRestaurantData(_ viewModel: SearchDetailViewModel) {
+        viewModel.searchRestaurantData
             .drive(self.rx.items) { tableview, row, data in
                 let index = IndexPath(row: row, section: 0)
                 let cell = tableview.dequeueReusableCell(withIdentifier: "RestaurantListCell") as! RestaurantListCell

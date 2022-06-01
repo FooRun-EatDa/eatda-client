@@ -74,12 +74,12 @@ extension RecommendCollectionViewCell {
         }
         
         titleLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(8.0)
+            $0.leading.trailing.equalToSuperview().inset(8.0)
             $0.top.equalTo(imageView.snp.bottom).offset(10.13)
         }
         
         descriptionLabel.snp.makeConstraints {
-            $0.leading.equalTo(titleLabel.snp.leading)
+            $0.leading.trailing.equalTo(titleLabel.snp.leading)
             $0.top.equalTo(titleLabel.snp.bottom).offset(3.36)
         }
         

@@ -31,6 +31,8 @@ struct APIConstants {
     static let GET_RECOMMEND_RESTAURANT = "/restaurant"
     static let GET_AROUND_RESTAURANT = "/restaurant/near"
 
+    // MARK: SEARCH
+    static let GET_SEARCH_RESTAURANT = "/restaurant/search"
 
 }
 
