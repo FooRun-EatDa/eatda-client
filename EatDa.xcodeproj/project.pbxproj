@@ -85,9 +85,9 @@
 		FDE30738284640FF00EA15CF /* RestaurantListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE30737284640FF00EA15CF /* RestaurantListCell.swift */; };
 		FDE3073A2846411A00EA15CF /* RestaurantListNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE307392846411A00EA15CF /* RestaurantListNetwork.swift */; };
 		FDE3074A28470FB300EA15CF /* ProgressCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3074628470FB300EA15CF /* ProgressCheck.swift */; };
-		FDE3074B28470FB300EA15CF /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3074828470FB300EA15CF /* LikeButton.swift */; };
-		FDE3074C28470FB300EA15CF /* BottomStickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3074928470FB300EA15CF /* BottomStickyButton.swift */; };
 		FDE3075228471C6600EA15CF /* RecommendCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3075128471C6600EA15CF /* RecommendCollectionView.swift */; };
+		FDE307572847209E00EA15CF /* BottomStickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE307562847209E00EA15CF /* BottomStickyButton.swift */; };
+		FDE30759284720AF00EA15CF /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE30758284720AF00EA15CF /* LikeButton.swift */; };
 		FDE37EAB27D37DCB00618163 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAA27D37DCB00618163 /* HomeViewModel.swift */; };
 		FDE37EAD27D389C400618163 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAC27D389C400618163 /* SearchViewController.swift */; };
 		FDE37EAF27D389CF00618163 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAE27D389CF00618163 /* SearchViewModel.swift */; };
@@ -186,9 +186,9 @@
 		FDE30737284640FF00EA15CF /* RestaurantListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListCell.swift; sourceTree = "<group>"; };
 		FDE307392846411A00EA15CF /* RestaurantListNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListNetwork.swift; sourceTree = "<group>"; };
 		FDE3074628470FB300EA15CF /* ProgressCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCheck.swift; sourceTree = "<group>"; };
-		FDE3074828470FB300EA15CF /* LikeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
-		FDE3074928470FB300EA15CF /* BottomStickyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomStickyButton.swift; sourceTree = "<group>"; };
 		FDE3075128471C6600EA15CF /* RecommendCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionView.swift; sourceTree = "<group>"; };
+		FDE307562847209E00EA15CF /* BottomStickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStickyButton.swift; sourceTree = "<group>"; };
+		FDE30758284720AF00EA15CF /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		FDE37EAA27D37DCB00618163 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FDE37EAC27D389C400618163 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FDE37EAE27D389CF00618163 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -343,7 +343,7 @@
 		FD022E462833BB0900FC32E9 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
-				FDE3074728470FB300EA15CF /* Button */,
+				FDE307552847206D00EA15CF /* Button */,
 				FDE3074528470FB300EA15CF /* ProgressCheck */,
 			);
 			path = UIComponent;
@@ -580,11 +580,11 @@
 			path = ProgressCheck;
 			sourceTree = "<group>";
 		};
-		FDE3074728470FB300EA15CF /* Button */ = {
+		FDE307552847206D00EA15CF /* Button */ = {
 			isa = PBXGroup;
 			children = (
-				FDE3074828470FB300EA15CF /* LikeButton.swift */,
-				FDE3074928470FB300EA15CF /* BottomStickyButton.swift */,
+				FDE307562847209E00EA15CF /* BottomStickyButton.swift */,
+				FDE30758284720AF00EA15CF /* LikeButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -795,7 +795,7 @@
 				FDEA5E4227F830F1008EFD5E /* FilterDetailViewController.swift in Sources */,
 				FDE3074A28470FB300EA15CF /* ProgressCheck.swift in Sources */,
 				FD1BEEFD27DDB18500487D8C /* EventViewController.swift in Sources */,
-				FDE3074C28470FB300EA15CF /* BottomStickyButton.swift in Sources */,
+				FDE307572847209E00EA15CF /* BottomStickyButton.swift in Sources */,
 				FD1BEF0027DDB74000487D8C /* EventCollectionViewCell.swift in Sources */,
 				FDEA5E3A27EF10CD008EFD5E /* AroundDetailViewController.swift in Sources */,
 				FDEA5E4427F83294008EFD5E /* FilterHeaderView.swift in Sources */,
@@ -852,11 +852,11 @@
 				F03D976627DDAC330011FA3D /* BestBoardViewController.swift in Sources */,
 				FD022E3C2833673800FC32E9 /* MapView.swift in Sources */,
 				FD9C6F3A27BFDA4F005D88A6 /* RecommendCollectionViewCell.swift in Sources */,
-				FDE3074B28470FB300EA15CF /* LikeButton.swift in Sources */,
 				F03FB66327B52B2E0097D817 /* RestaurantReviewTVC.swift in Sources */,
 				F03FB65D27A95D620097D817 /* RestauranthashTagCVC.swift in Sources */,
 				F03FB65A27A93C3A0097D817 /* RestaurantDetailTVC.swift in Sources */,
 				FDF78A2927EB45AE005D37C8 /* NoticeTableViewCell.swift in Sources */,
+				FDE30759284720AF00EA15CF /* LikeButton.swift in Sources */,
 				FD63EA9927CCEDD600DFBD0B /* LikeViewController.swift in Sources */,
 				FDF78A2B27EB4C13005D37C8 /* NoticeHeaderView.swift in Sources */,
 				FDB40681283E11A8003C70A8 /* Const.swift in Sources */,
