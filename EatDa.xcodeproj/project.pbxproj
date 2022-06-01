@@ -31,6 +31,8 @@
 		F03FB66127B0333D0097D817 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03FB66027B0333D0097D817 /* UILabel.swift */; };
 		F03FB66327B52B2E0097D817 /* RestaurantReviewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03FB66227B52B2E0097D817 /* RestaurantReviewTVC.swift */; };
 		F0B279E6282816AA000B35FF /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B279E5282816AA000B35FF /* TermsViewController.swift */; };
+		F0CB983228472BA3002FCD94 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CB983128472BA3002FCD94 /* MypageViewController.swift */; };
+		F0CB9834284734D1002FCD94 /* ChangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CB9833284734D1002FCD94 /* ChangeProfileViewController.swift */; };
 		F0CCC0E92838C9BA007DCBD0 /* SchoolSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0E82838C9BA007DCBD0 /* SchoolSearchViewController.swift */; };
 		F0CCC0EB2838D09E007DCBD0 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0EA2838D09E007DCBD0 /* UIButton.swift */; };
 		F0CCC0F428394226007DCBD0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0F328394226007DCBD0 /* APIResponse.swift */; };
@@ -128,6 +130,8 @@
 		F03FB66027B0333D0097D817 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		F03FB66227B52B2E0097D817 /* RestaurantReviewTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewTVC.swift; sourceTree = "<group>"; };
 		F0B279E5282816AA000B35FF /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		F0CB983128472BA3002FCD94 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
+		F0CB9833284734D1002FCD94 /* ChangeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewController.swift; sourceTree = "<group>"; };
 		F0CCC0E82838C9BA007DCBD0 /* SchoolSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSearchViewController.swift; sourceTree = "<group>"; };
 		F0CCC0EA2838D09E007DCBD0 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		F0CCC0F328394226007DCBD0 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
@@ -295,6 +299,15 @@
 			path = RestaurantDetail;
 			sourceTree = "<group>";
 		};
+		F0CB983028472B78002FCD94 /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				F0CB983128472BA3002FCD94 /* MypageViewController.swift */,
+				F0CB9833284734D1002FCD94 /* ChangeProfileViewController.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
 		F0CCC0F1283941F1007DCBD0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +372,7 @@
 				FD63EA9527CCED8400DFBD0B /* Like */,
 				FD0CF62927A12BAB00BDEA53 /* Talk */,
 				FD63338F27A0DADC004783E3 /* TabBarController.swift */,
+				F0CB983028472B78002FCD94 /* Mypage */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -820,6 +834,7 @@
 				F0224C44282970840092683A /* RegistCompleteViewController.swift in Sources */,
 				F0128D3A281E5531005BE0B9 /* LoginViewController.swift in Sources */,
 				FD63EA9B27CCEDEB00DFBD0B /* LikeHeaderView.swift in Sources */,
+				F0CB9834284734D1002FCD94 /* ChangeProfileViewController.swift in Sources */,
 				FDE37EAD27D389C400618163 /* SearchViewController.swift in Sources */,
 				FD94861427A955F6009BE666 /* FilterSectionView.swift in Sources */,
 				F0224C422829704C0092683A /* EnterNicknameViewController.swift in Sources */,
@@ -849,6 +864,7 @@
 				FD6FBDBB283CF52700BD7E20 /* RestaurantMapView.swift in Sources */,
 				FD63338E27A0DADC004783E3 /* SceneDelegate.swift in Sources */,
 				F0224C40282970230092683A /* EnterUserInfoViewController.swift in Sources */,
+				F0CB983228472BA3002FCD94 /* MypageViewController.swift in Sources */,
 				F03D976627DDAC330011FA3D /* BestBoardViewController.swift in Sources */,
 				FD022E3C2833673800FC32E9 /* MapView.swift in Sources */,
 				FD9C6F3A27BFDA4F005D88A6 /* RecommendCollectionViewCell.swift in Sources */,

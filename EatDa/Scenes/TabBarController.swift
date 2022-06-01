@@ -53,15 +53,23 @@ class TabBarController: UITabBarController {
         
     }()
     
+    private lazy var mypageViewController: UIViewController = {
+        let viewController = UINavigationController(rootViewController: MyPageViewController())
+        viewController.tabBarItem = UITabBarItem(
+            title: "마이",
+            image: UIImage(named: "my"),
+            tag: 4
+        )
+        return viewController
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tabBar.backgroundColor = .white
         tabBar.tintColor = .mainTextColor
-        
-        let mypageViewController = UIViewController()
-        mypageViewController.tabBarItem = UITabBarItem(title: "마이", image: UIImage(named: "my"), tag: 4)
-        
+                
         viewControllers = [homeViewController, likeViewController, communityViewController, eventViewController, mypageViewController]
         
     }

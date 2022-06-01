@@ -35,52 +35,6 @@ final class ProgressCheck: UIView {
         return view
     }()
     
-    private lazy var step1View: UIImageView = {
-        let view = UIImageView()
-        view.backgroundColor = .white
-        view.image =  UIImage(named: "termUncheck")
-        view.tag = 1
-        stepList.append(view)
-        return view
-    }()
-
-    private lazy var step2View: UIImageView = {
-        let view = UIImageView()
-        view.backgroundColor = .white
-        view.image =  UIImage(named: "termUncheck")
-        view.tag = 2
-        stepList.append(view)
-        return view
-    }()
-
-    private lazy var step3View: UIImageView = {
-        let view = UIImageView()
-        view.backgroundColor = .white
-        view.image =  UIImage(named: "termUncheck")
-        view.tag = 3
-        stepList.append(view)
-        return view
-    }()
-
-    private lazy var step4View: UIImageView = {
-        let view = UIImageView()
-        view.backgroundColor = .white
-        view.image =  UIImage(named: "termUncheck")
-        view.tag = 4
-        stepList.append(view)
-        return view
-    }()
-
-    private lazy var step5View: UIImageView = {
-        let view = UIImageView()
-        view.backgroundColor = .white
-        view.image =  UIImage(named: "termUncheck")
-        view.tag = 5
-        stepList.append(view)
-        return view
-    }()
-    
-    
     func setupUI(){
         addSubview(stepStackView)
         stepStackView.snp.makeConstraints { make in

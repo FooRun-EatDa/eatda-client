@@ -60,4 +60,7 @@ extension UIColor {
     // MARK: 탭바 컬러
     class var gray1: UIColor { UIColor(hex: 0xBABABC) }
 
+    // MARK: 마이페이지
+    class var discribeTextColor: UIColor { UIColor(hex: 0x555555) }
+    
 }
