@@ -7,9 +7,12 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 final class RecommendSectionView: UIView {
-
+    let disposeBag = DisposeBag()
+    
+    // MARK: UIComponents
     private lazy var subTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .myBoldSystemFont(ofSize: 16)
@@ -43,61 +46,29 @@ final class RecommendSectionView: UIView {
         return button
     }()
     
-    private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = .systemBackground
-
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(RecommendCollectionViewCell.self, forCellWithReuseIdentifier: "RecommendCollectionViewCell")
-        
-        return collectionView
-    }()
+    let collectionView = RecommendCollectionView()
     
-
     private let seperatorView = SeperatorView(frame: .zero)
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        collectionView.bind(RestaurantListViewModel())
         setupViews()
+        bind()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-}
-
-extension RecommendSectionView: UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: RecommendCollectionViewCell.width , height: RecommendCollectionViewCell.height)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 0.0, left: 14.68, bottom: 0.0, right: 13.41)
-    }
     
-
-}
-
-extension RecommendSectionView: UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+    func bind() {
+        collectionView.rx.modelSelected(RestaurantListData.self)
+            .subscribe(onNext: { model in
+                print(">> ", model.id)
+            }).disposed(by: disposeBag)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecommendCollectionViewCell", for: indexPath) as? RecommendCollectionViewCell
 
-        
-        cell?.setup()
-        
-        return cell ?? UICollectionViewCell()
-    }
 }
 
 
@@ -141,5 +112,5 @@ private extension RecommendSectionView {
         }
 
     }
-    
+
 }

@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import RxSwift
 
 final class RecommendDetailViewController: UIViewController {
+    let disposeBag = DisposeBag()
 
     // MARK: - UIComponent
     private lazy var  searchBarButton: UIBarButtonItem = {
@@ -22,67 +24,30 @@ final class RecommendDetailViewController: UIViewController {
         return button
     }()
 
-    private lazy var emptyHeaderView: UITableViewHeaderFooterView = {
-        let headerView = UITableViewHeaderFooterView()
-        return headerView
-    }()
+    let listView = RestaurantListView()
     
-    private lazy var recommendTableView: UITableView = {
-        let tableview = UITableView()
-        tableview.backgroundColor = .systemBackground
-        tableview.rowHeight = 87.34
-        tableview.separatorColor = .lightGray
-        tableview.tableHeaderView = emptyHeaderView
-
-        // api 연결할때 rx로 코드 변경할 예정
-        tableview.delegate = self
-        tableview.dataSource = self
-
-        tableview.register(RestaurantTableViewCell.self, forCellReuseIdentifier: "RestaurantTableViewCell")
-
-        return tableview
-    }()
-
+    override func loadView() {
+        super.loadView()
+        self.view = listView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLayout()
+        setNavigation()
     }
     
     func bind(_ viewModel: RecommendDetailViewModel) {
-        
+        listView.bind(viewModel.listViewModel)
+        listView.rx.modelSelected(RestaurantListData.self)
+            .subscribe(onNext: { model in
+                print(">> ", model.id)
+            }).disposed(by: disposeBag)
     }
 
 }
 
-extension RecommendDetailViewController: UITableViewDataSource, UITableViewDelegate{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell", for: indexPath) as? RestaurantTableViewCell
-        cell?.separatorInset = UIEdgeInsets.zero
-        cell?.setupLayout()
-
-        return cell ?? UITableViewCell()
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 97.34
-    }
-
-}
 
 private extension RecommendDetailViewController {
-    func setLayout() {
-        setNavigation()
-        view.addSubview(recommendTableView)
-        recommendTableView.snp.makeConstraints {
-            $0.leading.trailing.bottom.equalToSuperview()
-            $0.top.equalToSuperview().inset(30.0)
-        }
-    }
-    
     func setNavigation() {
         self.navigationItem.title = "추천 맛집"
         self.navigationItem.rightBarButtonItems = [noticeBarButton, searchBarButton]

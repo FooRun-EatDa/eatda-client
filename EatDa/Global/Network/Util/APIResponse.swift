@@ -20,13 +20,21 @@ struct APIResponse<T: Decodable>: Decodable {
 }
 
 struct APIConstants {
+    // MARK: BASE URL
     static let BASE_URL = "http://api.foorun.co.kr"
+    
+    // MARK: SIGNUP/SIGNIN
     static let GET_SCHOOL_DATA = "/school"
     static let POST_SIGN_IN = "/member/sign-in"
+    
+    // MARK: HOME
+    static let GET_RECOMMEND_RESTAURANT = "/restaurant"
+    static let GET_AROUND_RESTAURANT = "/restaurant/near"
+
+
 }
 
 class API<T: Decodable> {
-    
     var fetchURL: String
     var method: HTTPMethod
     var parameters: Parameters
@@ -63,29 +71,40 @@ class API<T: Decodable> {
                    headers: headers)
         .validate(statusCode: 200..<300)
         .responseJSON { response in
-            // 토큰 설정
-            guard let accessToken = response.response?.allHeaderFields["Authorization"] as? String else { return }
-            guard let refreshToken = response.response?.allHeaderFields["X-Refresh-Token"] as? String else { return }
-            // 토큰 키체인에 저장
-            TokenUtils.create(key: Const.KeyChainKey.accessToken, token: accessToken)
-            TokenUtils.create(key: Const.KeyChainKey.refreshToken, token: refreshToken)
+            if self.fetchURL == APIConstants.BASE_URL + APIConstants.POST_SIGN_IN {
+                guard let accessToken = response.response?.allHeaderFields["Authorization"] as? String else { return }
+                guard let refreshToken = response.response?.allHeaderFields["X-Refresh-Token"] as? String else { return }
+                // 로그인 시 토큰 키체인에 저장
+                TokenUtils.create(key: Const.KeyChainKey.accessToken, token: accessToken)
+                TokenUtils.create(key: Const.KeyChainKey.refreshToken, token: refreshToken)
+            }
             
             switch response.result {
             case .success(let value):
-                
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
                     let result = try JSONDecoder().decode(APIResponse<T>.self, from: jsonData)
-                   
                     completion(result)
                 } catch (let err){
-                    print(err.localizedDescription)
+                    print("네트워크 에러: ", err.localizedDescription)
                 }
                 
             case .failure(let error):
-                print(error.localizedDescription)
+                print("네트워크 에러: ", error.localizedDescription)
             }
-            
+        }
+    }
+    
+    func fetchWithRx() -> Observable<T> {
+        return Observable.create { emitter in
+            self.fetch() { result in
+                guard result.data != nil else{
+                    print("데이터가 존재하지 않습니다.")
+                    return
+                }
+                emitter.onNext(result.data!)
+            }
+            return Disposables.create()
         }
     }
 

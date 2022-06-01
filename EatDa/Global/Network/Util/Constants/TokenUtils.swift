@@ -41,7 +41,7 @@ class TokenUtils {
                 return value
             } else { return nil }
         } else {
-            print("\(status) 에러: 로딩에 실패하였습니다.")
+            print("\(status) 에러: 토큰 값 로딩에 실패하였습니다.")
             return nil
         }
     }

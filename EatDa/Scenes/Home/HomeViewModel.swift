@@ -9,6 +9,8 @@ import RxSwift
 import RxCocoa
 
 struct HomeViewModel {
+    let disposeBag = DisposeBag()
+    
     let searchButtonTapped = PublishRelay<Void>()
     let pushSearchViewController: Driver<SearchViewModel>
     
@@ -16,13 +18,20 @@ struct HomeViewModel {
     let pushNoticeViewController: Driver<NoticeViewModel>
 
     let filterButtonTapped = PublishRelay<Void>()
+    
     let recommendDetailButtonTapped = PublishRelay<Void>()
+    let pushRecommendDetailViewController: Driver<RecommendDetailViewModel>
+    
     let aroundDetailButtonTapped = PublishRelay<Void>()
-    let mapViewTapped = PublishSubject<Void>()
+    let pushAroundDetailViewController: Driver<AroundDetailViewModel>
 
-    init() {
+    let mapViewTapped = PublishSubject<Void>()
+    
+    init(model: RestaurantListNetwork = RestaurantListNetwork()) {
         let searchViewModel = SearchViewModel()
         let noticeViewModel = NoticeViewModel()
+        let recommendDetailViewModel = RecommendDetailViewModel()
+        let aroundDetailViewModel = AroundDetailViewModel()
 
         self.pushSearchViewController = searchButtonTapped
             .map { return searchViewModel }
@@ -31,5 +40,15 @@ struct HomeViewModel {
         self.pushNoticeViewController = noticeButtonTapped
             .map { return noticeViewModel }
             .asDriver(onErrorDriveWith: .empty())
+        
+        self.pushRecommendDetailViewController = recommendDetailButtonTapped
+            .map { return recommendDetailViewModel }
+            .asDriver(onErrorDriveWith: .empty())
+        
+        self.pushAroundDetailViewController = aroundDetailButtonTapped
+            .map { return aroundDetailViewModel }
+            .asDriver(onErrorDriveWith: .empty())
+            
     }
+    
 }

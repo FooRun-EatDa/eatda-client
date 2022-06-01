@@ -10,5 +10,4 @@ import RxCocoa
 
 struct RestaurantDetailViewModel {
     let mapViewTapped = PublishSubject<Void>()
-
 }

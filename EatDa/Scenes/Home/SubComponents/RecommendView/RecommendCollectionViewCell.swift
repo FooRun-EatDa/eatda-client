@@ -54,13 +54,15 @@ final class RecommendCollectionViewCell: UICollectionViewCell{
         return label
     }()
     
-    func setup(){
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
         setupLayout()
     }
 }
 
 
-private extension RecommendCollectionViewCell {
+extension RecommendCollectionViewCell {
     func setupLayout(){
         [imageView, titleLabel, descriptionLabel, hashTagLabel]
             .forEach { addSubview($0) }
@@ -88,6 +90,12 @@ private extension RecommendCollectionViewCell {
             $0.height.equalTo(26.0)
         }
         
+    }
+    
+    func setData(_ data: RestaurantListData){
+        self.titleLabel.text = data.name ?? ""
+        self.descriptionLabel.text = data.explanation ?? ""
+        self.hashTagLabel.text = data.hashTagRestaurants ?? ""
     }
 
 }
