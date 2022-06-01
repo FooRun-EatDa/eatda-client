@@ -33,16 +33,13 @@
 		F0B279E6282816AA000B35FF /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B279E5282816AA000B35FF /* TermsViewController.swift */; };
 		F0CCC0E92838C9BA007DCBD0 /* SchoolSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0E82838C9BA007DCBD0 /* SchoolSearchViewController.swift */; };
 		F0CCC0EB2838D09E007DCBD0 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0EA2838D09E007DCBD0 /* UIButton.swift */; };
-		F0CCC0F02838DDB8007DCBD0 /* BottomStickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0EF2838DDB8007DCBD0 /* BottomStickyButton.swift */; };
 		F0CCC0F428394226007DCBD0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0F328394226007DCBD0 /* APIResponse.swift */; };
 		F0CCC0FA2839B830007DCBD0 /* School.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0F92839B830007DCBD0 /* School.swift */; };
-		F0CCC0FD2839E8DD007DCBD0 /* ProgressCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC0FC2839E8DD007DCBD0 /* ProgressCheck.swift */; };
 		F0E4285B27FC8EDC00C623E1 /* WritePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4285A27FC8EDC00C623E1 /* WritePostViewController.swift */; };
 		FD022E3C2833673800FC32E9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD022E3B2833673800FC32E9 /* MapView.swift */; };
 		FD022E3E2833692100FC32E9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD022E3D2833692100FC32E9 /* MapViewController.swift */; };
 		FD022E4028337E4F00FC32E9 /* MapDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD022E3F28337E4F00FC32E9 /* MapDetailView.swift */; };
 		FD022E452833ADFE00FC32E9 /* MapDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD022E442833ADFE00FC32E9 /* MapDetailModel.swift */; };
-		FD022E482833BB2200FC32E9 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD022E472833BB2200FC32E9 /* LikeButton.swift */; };
 		FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62A27A12BC400BDEA53 /* TalkViewController.swift */; };
 		FD0CF62F27A12BF400BDEA53 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62E27A12BF400BDEA53 /* CommunityViewController.swift */; };
 		FD0DBC6027B8D9770001E526 /* MapSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0DBC5F27B8D9770001E526 /* MapSectionView.swift */; };
@@ -82,15 +79,15 @@
 		FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8DDCC27A423450072034C /* HomeViewController.swift */; };
 		FDD8DDD027A423740072034C /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8DDCF27A423740072034C /* FilterButtonView.swift */; };
 		FDD8DDD327A426C40072034C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8DDD227A426C40072034C /* UIColor.swift */; };
-		FDE30726284343C500EA15CF /* AroundDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE30725284343C500EA15CF /* AroundDetailViewModel.swift */; };
-		FDE3072828434CA600EA15CF /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3072728434CA600EA15CF /* HomeModel.swift */; };
-		FDE3072B284474A900EA15CF /* RecommendCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3072A284474A900EA15CF /* RecommendCollectionView.swift */; };
-		FDE3072D2844CB9400EA15CF /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3072C2844CB9300EA15CF /* SearchView.swift */; };
 		FDE30732284640B500EA15CF /* RestaurantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE30731284640B500EA15CF /* RestaurantListView.swift */; };
 		FDE30734284640CE00EA15CF /* RestaurantListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE30733284640CE00EA15CF /* RestaurantListViewModel.swift */; };
 		FDE30736284640EA00EA15CF /* RestaurantListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE30735284640EA00EA15CF /* RestaurantListData.swift */; };
 		FDE30738284640FF00EA15CF /* RestaurantListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE30737284640FF00EA15CF /* RestaurantListCell.swift */; };
 		FDE3073A2846411A00EA15CF /* RestaurantListNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE307392846411A00EA15CF /* RestaurantListNetwork.swift */; };
+		FDE3074A28470FB300EA15CF /* ProgressCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3074628470FB300EA15CF /* ProgressCheck.swift */; };
+		FDE3074B28470FB300EA15CF /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3074828470FB300EA15CF /* LikeButton.swift */; };
+		FDE3074C28470FB300EA15CF /* BottomStickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3074928470FB300EA15CF /* BottomStickyButton.swift */; };
+		FDE3074E28470FE800EA15CF /* RecommendCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3074D28470FE800EA15CF /* RecommendCollectionView.swift */; };
 		FDE37EAB27D37DCB00618163 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAA27D37DCB00618163 /* HomeViewModel.swift */; };
 		FDE37EAD27D389C400618163 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAC27D389C400618163 /* SearchViewController.swift */; };
 		FDE37EAF27D389CF00618163 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAE27D389CF00618163 /* SearchViewModel.swift */; };
@@ -133,10 +130,8 @@
 		F0B279E5282816AA000B35FF /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		F0CCC0E82838C9BA007DCBD0 /* SchoolSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSearchViewController.swift; sourceTree = "<group>"; };
 		F0CCC0EA2838D09E007DCBD0 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		F0CCC0EF2838DDB8007DCBD0 /* BottomStickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStickyButton.swift; sourceTree = "<group>"; };
 		F0CCC0F328394226007DCBD0 /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		F0CCC0F92839B830007DCBD0 /* School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School.swift; sourceTree = "<group>"; };
-		F0CCC0FC2839E8DD007DCBD0 /* ProgressCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCheck.swift; sourceTree = "<group>"; };
 		F0E4285A27FC8EDC00C623E1 /* WritePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePostViewController.swift; sourceTree = "<group>"; };
 		F3BE5607C6653930EC611246 /* Pods-EatDa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EatDa.debug.xcconfig"; path = "Target Support Files/Pods-EatDa/Pods-EatDa.debug.xcconfig"; sourceTree = "<group>"; };
 		F6AB1F6EAB7375AC712E1EDD /* Pods_EatDa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EatDa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,7 +139,6 @@
 		FD022E3D2833692100FC32E9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FD022E3F28337E4F00FC32E9 /* MapDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailView.swift; sourceTree = "<group>"; };
 		FD022E442833ADFE00FC32E9 /* MapDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailModel.swift; sourceTree = "<group>"; };
-		FD022E472833BB2200FC32E9 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LikeButton.swift; path = ../UIComponent/LikeButton.swift; sourceTree = "<group>"; };
 		FD0CF62A27A12BC400BDEA53 /* TalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkViewController.swift; sourceTree = "<group>"; };
 		FD0CF62C27A12BDA00BDEA53 /* ReviewFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedViewController.swift; sourceTree = "<group>"; };
 		FD0CF62E27A12BF400BDEA53 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
@@ -186,15 +180,15 @@
 		FDD8DDCC27A423450072034C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FDD8DDCF27A423740072034C /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		FDD8DDD227A426C40072034C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		FDE30725284343C500EA15CF /* AroundDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundDetailViewModel.swift; sourceTree = "<group>"; };
-		FDE3072728434CA600EA15CF /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		FDE3072A284474A900EA15CF /* RecommendCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionView.swift; sourceTree = "<group>"; };
-		FDE3072C2844CB9300EA15CF /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FDE30731284640B500EA15CF /* RestaurantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListView.swift; sourceTree = "<group>"; };
 		FDE30733284640CE00EA15CF /* RestaurantListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModel.swift; sourceTree = "<group>"; };
 		FDE30735284640EA00EA15CF /* RestaurantListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListData.swift; sourceTree = "<group>"; };
 		FDE30737284640FF00EA15CF /* RestaurantListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListCell.swift; sourceTree = "<group>"; };
 		FDE307392846411A00EA15CF /* RestaurantListNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListNetwork.swift; sourceTree = "<group>"; };
+		FDE3074628470FB300EA15CF /* ProgressCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCheck.swift; sourceTree = "<group>"; };
+		FDE3074828470FB300EA15CF /* LikeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		FDE3074928470FB300EA15CF /* BottomStickyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomStickyButton.swift; sourceTree = "<group>"; };
+		FDE3074D28470FE800EA15CF /* RecommendCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionView.swift; sourceTree = "<group>"; };
 		FDE37EAA27D37DCB00618163 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FDE37EAC27D389C400618163 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FDE37EAE27D389CF00618163 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -301,16 +295,6 @@
 			path = RestaurantDetail;
 			sourceTree = "<group>";
 		};
-		F0CCC0EC2838D304007DCBD0 /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				F0CCC0EF2838DDB8007DCBD0 /* BottomStickyButton.swift */,
-				FD022E472833BB2200FC32E9 /* LikeButton.swift */,
-			);
-			name = Button;
-			path = ../Button;
-			sourceTree = "<group>";
-		};
 		F0CCC0F1283941F1007DCBD0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,15 +311,6 @@
 				FDB4068A283E3EB2003C70A8 /* SignIn.swift */,
 			);
 			path = LoginModels;
-			sourceTree = "<group>";
-		};
-		F0CCC0FB2839E880007DCBD0 /* ProgressCheck */ = {
-			isa = PBXGroup;
-			children = (
-				F0CCC0FC2839E8DD007DCBD0 /* ProgressCheck.swift */,
-			);
-			name = ProgressCheck;
-			path = ../ProgressCheck;
 			sourceTree = "<group>";
 		};
 		F0E4285927FC8EBD00C623E1 /* WritePost */ = {
@@ -368,8 +343,8 @@
 		FD022E462833BB0900FC32E9 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
-				F0CCC0EC2838D304007DCBD0 /* Button */,
-				F0CCC0FB2839E880007DCBD0 /* ProgressCheck */,
+				FDE3074728470FB300EA15CF /* Button */,
+				FDE3074528470FB300EA15CF /* ProgressCheck */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -487,7 +462,7 @@
 			children = (
 				FDE3072928446E1400EA15CF /* RecommendDetail */,
 				FD94861527A95987009BE666 /* RecommendSectionView.swift */,
-				FDE3072A284474A900EA15CF /* RecommendCollectionView.swift */,
+				FDE3074D28470FE800EA15CF /* RecommendCollectionView.swift */,
 				FD9C6F3927BFDA4F005D88A6 /* RecommendCollectionViewCell.swift */,
 			);
 			path = RecommendView;
@@ -535,7 +510,6 @@
 			children = (
 				FDD8DDCC27A423450072034C /* HomeViewController.swift */,
 				FDE37EAA27D37DCB00618163 /* HomeViewModel.swift */,
-				FDE3072728434CA600EA15CF /* HomeModel.swift */,
 				FDD8DDCE27A423620072034C /* SubComponents */,
 			);
 			path = Home;
@@ -573,7 +547,6 @@
 			isa = PBXGroup;
 			children = (
 				FDEA5E3927EF10CD008EFD5E /* AroundDetailViewController.swift */,
-				FDE30725284343C500EA15CF /* AroundDetailViewModel.swift */,
 			);
 			path = AroundDetail;
 			sourceTree = "<group>";
@@ -599,11 +572,27 @@
 			path = RestaurantListView;
 			sourceTree = "<group>";
 		};
+		FDE3074528470FB300EA15CF /* ProgressCheck */ = {
+			isa = PBXGroup;
+			children = (
+				FDE3074628470FB300EA15CF /* ProgressCheck.swift */,
+			);
+			path = ProgressCheck;
+			sourceTree = "<group>";
+		};
+		FDE3074728470FB300EA15CF /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				FDE3074828470FB300EA15CF /* LikeButton.swift */,
+				FDE3074928470FB300EA15CF /* BottomStickyButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		FDE37EA927D37BAA00618163 /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				FDE37EAC27D389C400618163 /* SearchViewController.swift */,
-				FDE3072C2844CB9300EA15CF /* SearchView.swift */,
 				FDE37EAE27D389CF00618163 /* SearchViewModel.swift */,
 			);
 			path = Search;
@@ -787,15 +776,11 @@
 			files = (
 				FDB7906E2805A783008621D1 /* ReviewFeedViewController.swift in Sources */,
 				F0224C36282963560092683A /* InputSchoolViewController.swift in Sources */,
-				FDE3072828434CA600EA15CF /* HomeModel.swift in Sources */,
-				FDE30726284343C500EA15CF /* AroundDetailViewModel.swift in Sources */,
 				F0CCC0FA2839B830007DCBD0 /* School.swift in Sources */,
 				FDB7906D2805A704008621D1 /* RestaurantTableViewCell.swift in Sources */,
 				F0CCC0EB2838D09E007DCBD0 /* UIButton.swift in Sources */,
-				F0CCC0FD2839E8DD007DCBD0 /* ProgressCheck.swift in Sources */,
 				FD63339027A0DADC004783E3 /* TabBarController.swift in Sources */,
 				F0CCC0F428394226007DCBD0 /* APIResponse.swift in Sources */,
-				FDE3072D2844CB9400EA15CF /* SearchView.swift in Sources */,
 				F0224C3C28296FB90092683A /* VerifyEmailViewController.swift in Sources */,
 				F0128D38281E517F005BE0B9 /* SplashViewController.swift in Sources */,
 				FDB40685283E14B1003C70A8 /* KeyChainKey.swift in Sources */,
@@ -806,10 +791,11 @@
 				FDE30732284640B500EA15CF /* RestaurantListView.swift in Sources */,
 				FDF78A2727EB4284005D37C8 /* NoticeViewModel.swift in Sources */,
 				FD63338C27A0DADC004783E3 /* AppDelegate.swift in Sources */,
-				FD022E482833BB2200FC32E9 /* LikeButton.swift in Sources */,
 				F0224C3A28296F240092683A /* InputEmailViewController.swift in Sources */,
 				FDEA5E4227F830F1008EFD5E /* FilterDetailViewController.swift in Sources */,
+				FDE3074A28470FB300EA15CF /* ProgressCheck.swift in Sources */,
 				FD1BEEFD27DDB18500487D8C /* EventViewController.swift in Sources */,
+				FDE3074C28470FB300EA15CF /* BottomStickyButton.swift in Sources */,
 				FD1BEF0027DDB74000487D8C /* EventCollectionViewCell.swift in Sources */,
 				FDEA5E3A27EF10CD008EFD5E /* AroundDetailViewController.swift in Sources */,
 				FDEA5E4427F83294008EFD5E /* FilterHeaderView.swift in Sources */,
@@ -821,7 +807,6 @@
 				F03FB65327A6DDA40097D817 /* RestaurantDetailViewController.swift in Sources */,
 				F0128D3C281E5E9B005BE0B9 /* ImageSliderCollectionViewCell.swift in Sources */,
 				F0128D3E281E86DD005BE0B9 /* BottomSheetViewController.swift in Sources */,
-				FDE3072B284474A900EA15CF /* RecommendCollectionView.swift in Sources */,
 				FD0CF62F27A12BF400BDEA53 /* CommunityViewController.swift in Sources */,
 				F03FB66127B0333D0097D817 /* UILabel.swift in Sources */,
 				FD022E3E2833692100FC32E9 /* MapViewController.swift in Sources */,
@@ -842,6 +827,7 @@
 				F03D976827DDC4A10011FA3D /* BestBoardTVC.swift in Sources */,
 				FDB4068B283E3EB2003C70A8 /* SignIn.swift in Sources */,
 				FDE30736284640EA00EA15CF /* RestaurantListData.swift in Sources */,
+				FDE3074E28470FE800EA15CF /* RecommendCollectionView.swift in Sources */,
 				FDD8DDD327A426C40072034C /* UIColor.swift in Sources */,
 				FD0DBC6027B8D9770001E526 /* MapSectionView.swift in Sources */,
 				F0CCC0E92838C9BA007DCBD0 /* SchoolSearchViewController.swift in Sources */,
@@ -851,7 +837,6 @@
 				F03D976427DD258E0011FA3D /* BoardMainTVC.swift in Sources */,
 				FD022E452833ADFE00FC32E9 /* MapDetailModel.swift in Sources */,
 				FDD8DDD027A423740072034C /* FilterButtonView.swift in Sources */,
-				F0CCC0F02838DDB8007DCBD0 /* BottomStickyButton.swift in Sources */,
 				FD94861827A9598C009BE666 /* AroundSectionView.swift in Sources */,
 				FD9D4F7027B4EBA70005205E /* UIView.swift in Sources */,
 				FD6FBDAB28379E2500BD7E20 /* CustomAnnotation.swift in Sources */,
@@ -867,6 +852,7 @@
 				F03D976627DDAC330011FA3D /* BestBoardViewController.swift in Sources */,
 				FD022E3C2833673800FC32E9 /* MapView.swift in Sources */,
 				FD9C6F3A27BFDA4F005D88A6 /* RecommendCollectionViewCell.swift in Sources */,
+				FDE3074B28470FB300EA15CF /* LikeButton.swift in Sources */,
 				F03FB66327B52B2E0097D817 /* RestaurantReviewTVC.swift in Sources */,
 				F03FB65D27A95D620097D817 /* RestauranthashTagCVC.swift in Sources */,
 				F03FB65A27A93C3A0097D817 /* RestaurantDetailTVC.swift in Sources */,

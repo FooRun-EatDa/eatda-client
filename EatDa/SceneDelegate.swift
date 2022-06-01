@@ -20,18 +20,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         var rootVC: UIViewController
                 
-        if Const.headerToken != nil {
-            if UserDefaults.standard.bool(forKey: "loginComplete") {
-                
+        
+        if UserDefaults.standard.bool(forKey: "loginComplete") { // 첫 시작이 아니라면
+            if Const.headerToken != nil { // 토큰 값 확인하는 로직으로 변경 예정 -> 토큰 값 다르다면 로그인 과정
                 print(Const.headerToken)
-                print(Const.headerToken)
+                print(Const.refreshToken)
                 
                 rootVC = TabBarController()
                 window?.rootViewController = rootVC
                 window?.makeKeyAndVisible()
             }
         } else {
-        
             rootVC = LoginViewController()
             let navVC = UINavigationController(rootViewController: rootVC)
             window?.rootViewController = navVC

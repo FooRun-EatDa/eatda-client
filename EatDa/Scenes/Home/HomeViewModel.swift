@@ -23,7 +23,7 @@ struct HomeViewModel {
     let pushRecommendDetailViewController: Driver<RecommendDetailViewModel>
     
     let aroundDetailButtonTapped = PublishRelay<Void>()
-    let pushAroundDetailViewController: Driver<AroundDetailViewModel>
+    //let pushAroundDetailViewController: Driver<AroundDetailViewModel>
 
     let mapViewTapped = PublishSubject<Void>()
     
@@ -31,7 +31,7 @@ struct HomeViewModel {
         let searchViewModel = SearchViewModel()
         let noticeViewModel = NoticeViewModel()
         let recommendDetailViewModel = RecommendDetailViewModel()
-        let aroundDetailViewModel = AroundDetailViewModel()
+//        let aroundDetailViewModel = AroundDetailViewModel()
 
         self.pushSearchViewController = searchButtonTapped
             .map { return searchViewModel }
@@ -45,9 +45,9 @@ struct HomeViewModel {
             .map { return recommendDetailViewModel }
             .asDriver(onErrorDriveWith: .empty())
         
-        self.pushAroundDetailViewController = aroundDetailButtonTapped
-            .map { return aroundDetailViewModel }
-            .asDriver(onErrorDriveWith: .empty())
+//        self.pushAroundDetailViewController = aroundDetailButtonTapped
+//            .map { return aroundDetailViewModel }
+//            .asDriver(onErrorDriveWith: .empty())
             
     }
     

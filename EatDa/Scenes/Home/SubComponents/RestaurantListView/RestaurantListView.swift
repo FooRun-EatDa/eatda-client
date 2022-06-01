@@ -39,7 +39,7 @@ class RestaurantListView: UITableView {
     
     
     func bind(_ viewModel: RestaurantListViewModel) {
-        viewModel.cellData
+        viewModel.recommendRestaurantData
             .drive(self.rx.items) { tableview, row, data in
                 let index = IndexPath(row: row, section: 0)
                 let cell = tableview.dequeueReusableCell(withIdentifier: "RestaurantListCell") as! RestaurantListCell

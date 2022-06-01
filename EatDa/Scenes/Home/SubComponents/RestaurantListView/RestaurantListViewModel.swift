@@ -9,13 +9,13 @@ import RxSwift
 import RxCocoa
 
 struct RestaurantListViewModel {
-    let cellData: Driver<[RestaurantListData]>
+    let recommendRestaurantData: Driver<[RestaurantListData]>
 
     init(model: RestaurantListNetwork = RestaurantListNetwork()) {
         let recommendDetailListViewData = model.getRecommendRestaurantValue()
         //let aroundDetailListViewData = model.getAroundRestaurantValue()
 
-        self.cellData = recommendDetailListViewData
+        self.recommendRestaurantData = recommendDetailListViewData
             .asDriver(onErrorJustReturn: [])
     }
 }
