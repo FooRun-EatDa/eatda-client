@@ -87,7 +87,7 @@
 		FDE3074A28470FB300EA15CF /* ProgressCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3074628470FB300EA15CF /* ProgressCheck.swift */; };
 		FDE3074B28470FB300EA15CF /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3074828470FB300EA15CF /* LikeButton.swift */; };
 		FDE3074C28470FB300EA15CF /* BottomStickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3074928470FB300EA15CF /* BottomStickyButton.swift */; };
-		FDE3074E28470FE800EA15CF /* RecommendCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3074D28470FE800EA15CF /* RecommendCollectionView.swift */; };
+		FDE3075228471C6600EA15CF /* RecommendCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3075128471C6600EA15CF /* RecommendCollectionView.swift */; };
 		FDE37EAB27D37DCB00618163 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAA27D37DCB00618163 /* HomeViewModel.swift */; };
 		FDE37EAD27D389C400618163 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAC27D389C400618163 /* SearchViewController.swift */; };
 		FDE37EAF27D389CF00618163 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAE27D389CF00618163 /* SearchViewModel.swift */; };
@@ -188,7 +188,7 @@
 		FDE3074628470FB300EA15CF /* ProgressCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCheck.swift; sourceTree = "<group>"; };
 		FDE3074828470FB300EA15CF /* LikeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		FDE3074928470FB300EA15CF /* BottomStickyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomStickyButton.swift; sourceTree = "<group>"; };
-		FDE3074D28470FE800EA15CF /* RecommendCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionView.swift; sourceTree = "<group>"; };
+		FDE3075128471C6600EA15CF /* RecommendCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionView.swift; sourceTree = "<group>"; };
 		FDE37EAA27D37DCB00618163 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FDE37EAC27D389C400618163 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FDE37EAE27D389CF00618163 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -462,8 +462,8 @@
 			children = (
 				FDE3072928446E1400EA15CF /* RecommendDetail */,
 				FD94861527A95987009BE666 /* RecommendSectionView.swift */,
-				FDE3074D28470FE800EA15CF /* RecommendCollectionView.swift */,
 				FD9C6F3927BFDA4F005D88A6 /* RecommendCollectionViewCell.swift */,
+				FDE3075128471C6600EA15CF /* RecommendCollectionView.swift */,
 			);
 			path = RecommendView;
 			sourceTree = "<group>";
@@ -827,7 +827,7 @@
 				F03D976827DDC4A10011FA3D /* BestBoardTVC.swift in Sources */,
 				FDB4068B283E3EB2003C70A8 /* SignIn.swift in Sources */,
 				FDE30736284640EA00EA15CF /* RestaurantListData.swift in Sources */,
-				FDE3074E28470FE800EA15CF /* RecommendCollectionView.swift in Sources */,
+				FDE3075228471C6600EA15CF /* RecommendCollectionView.swift in Sources */,
 				FDD8DDD327A426C40072034C /* UIColor.swift in Sources */,
 				FD0DBC6027B8D9770001E526 /* MapSectionView.swift in Sources */,
 				F0CCC0E92838C9BA007DCBD0 /* SchoolSearchViewController.swift in Sources */,
