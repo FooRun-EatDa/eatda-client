@@ -9,5 +9,5 @@ import RxSwift
 import RxCocoa
 
 struct SearchViewModel {
-    
+    let searchButtonTapped = PublishRelay<Void>()
 }

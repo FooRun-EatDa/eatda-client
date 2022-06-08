@@ -90,6 +90,9 @@
 		FDE3075228471C6600EA15CF /* RecommendCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3075128471C6600EA15CF /* RecommendCollectionView.swift */; };
 		FDE307572847209E00EA15CF /* BottomStickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE307562847209E00EA15CF /* BottomStickyButton.swift */; };
 		FDE30759284720AF00EA15CF /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE30758284720AF00EA15CF /* LikeButton.swift */; };
+		FDE3075B28473ED100EA15CF /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3075A28473ED100EA15CF /* SearchView.swift */; };
+		FDE3075E28473FC600EA15CF /* SearchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3075D28473FC600EA15CF /* SearchDetailViewModel.swift */; };
+		FDE307602847422A00EA15CF /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3075F2847422A00EA15CF /* SearchDetailViewController.swift */; };
 		FDE37EAB27D37DCB00618163 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAA27D37DCB00618163 /* HomeViewModel.swift */; };
 		FDE37EAD27D389C400618163 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAC27D389C400618163 /* SearchViewController.swift */; };
 		FDE37EAF27D389CF00618163 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE37EAE27D389CF00618163 /* SearchViewModel.swift */; };
@@ -193,6 +196,9 @@
 		FDE3075128471C6600EA15CF /* RecommendCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionView.swift; sourceTree = "<group>"; };
 		FDE307562847209E00EA15CF /* BottomStickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStickyButton.swift; sourceTree = "<group>"; };
 		FDE30758284720AF00EA15CF /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		FDE3075A28473ED100EA15CF /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		FDE3075D28473FC600EA15CF /* SearchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewModel.swift; sourceTree = "<group>"; };
+		FDE3075F2847422A00EA15CF /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		FDE37EAA27D37DCB00618163 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FDE37EAC27D389C400618163 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FDE37EAE27D389CF00618163 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -368,6 +374,7 @@
 				F0128D36281E515E005BE0B9 /* Login */,
 				FD1BEEFB27DDB14000487D8C /* Event */,
 				F03FB65127A6DCAE0097D817 /* Common */,
+				FDE37EA927D37BAA00618163 /* Search */,
 				FDD8DDCB27A422C10072034C /* Home */,
 				FD63EA9527CCED8400DFBD0B /* Like */,
 				FD0CF62927A12BAB00BDEA53 /* Talk */,
@@ -532,7 +539,6 @@
 		FDD8DDCE27A423620072034C /* SubComponents */ = {
 			isa = PBXGroup;
 			children = (
-				FDE37EA927D37BAA00618163 /* Search */,
 				FDF78A2327EB4161005D37C8 /* Notice */,
 				FD9C6F4C27C108FE005D88A6 /* TitleView */,
 				FD9C6F4827C1087E005D88A6 /* FilterView */,
@@ -603,11 +609,22 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		FDE3075C28473F8C00EA15CF /* SearchDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FDE3075D28473FC600EA15CF /* SearchDetailViewModel.swift */,
+				FDE3075F2847422A00EA15CF /* SearchDetailViewController.swift */,
+			);
+			path = SearchDetail;
+			sourceTree = "<group>";
+		};
 		FDE37EA927D37BAA00618163 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				FDE3075C28473F8C00EA15CF /* SearchDetail */,
 				FDE37EAC27D389C400618163 /* SearchViewController.swift */,
 				FDE37EAE27D389CF00618163 /* SearchViewModel.swift */,
+				FDE3075A28473ED100EA15CF /* SearchView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -835,6 +852,7 @@
 				F0128D3A281E5531005BE0B9 /* LoginViewController.swift in Sources */,
 				FD63EA9B27CCEDEB00DFBD0B /* LikeHeaderView.swift in Sources */,
 				F0CB9834284734D1002FCD94 /* ChangeProfileViewController.swift in Sources */,
+				FDE307602847422A00EA15CF /* SearchDetailViewController.swift in Sources */,
 				FDE37EAD27D389C400618163 /* SearchViewController.swift in Sources */,
 				FD94861427A955F6009BE666 /* FilterSectionView.swift in Sources */,
 				F0224C422829704C0092683A /* EnterNicknameViewController.swift in Sources */,
@@ -850,11 +868,13 @@
 				F0224C3E28296FEB0092683A /* EnterPasswordViewContoller.swift in Sources */,
 				FD9C6F4727C10140005D88A6 /* UIFont.swift in Sources */,
 				F03D976427DD258E0011FA3D /* BoardMainTVC.swift in Sources */,
+				FDE3075B28473ED100EA15CF /* SearchView.swift in Sources */,
 				FD022E452833ADFE00FC32E9 /* MapDetailModel.swift in Sources */,
 				FDD8DDD027A423740072034C /* FilterButtonView.swift in Sources */,
 				FD94861827A9598C009BE666 /* AroundSectionView.swift in Sources */,
 				FD9D4F7027B4EBA70005205E /* UIView.swift in Sources */,
 				FD6FBDAB28379E2500BD7E20 /* CustomAnnotation.swift in Sources */,
+				FDE3075E28473FC600EA15CF /* SearchDetailViewModel.swift in Sources */,
 				FD94861627A95987009BE666 /* RecommendSectionView.swift in Sources */,
 				FD9C6F4E27C10A75005D88A6 /* FilterSectionViewModel.swift in Sources */,
 				FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */,
