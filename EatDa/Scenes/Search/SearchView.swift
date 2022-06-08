@@ -1,30 +1,16 @@
 //
-//  SearchViewController.swift
+//  SearchView.swift
 //  EatDa
 //
-//  Created by 김나희 on 2022/03/05.
+//  Created by 김나희 on 5/30/22.
 //
 
+import Foundation
 import UIKit
-import SnapKit
 
-final class SearchViewController: UIViewController {
-    // MARK: - UIComponent
-    private lazy var  searchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.setImage(UIImage(), for: UISearchBar.Icon.search, state: .normal)
-        searchBar.searchTextField.font = UIFont.systemFont(ofSize: 12)
-        searchBar.searchTextField.backgroundColor = UIColor.searchBarBackgroundColor
-        searchBar.placeholder = "지역, 매장명, 메뉴 검색"
-        return searchBar
-    }()
+final class SearhView: UIView {
     
-    private lazy var searchBarButton: UIBarButtonItem = {
-        let button = UIBarButtonItem()
-        button.image = UIImage(imageLiteralResourceName: "search")
-        return button
-    }()
-    
+    // MARK: UIComponents
     private lazy var recentSearchLabel: UILabel = {
         let label = UILabel()
         label.text = "최근 검색어"
@@ -33,7 +19,7 @@ final class SearchViewController: UIViewController {
     }()
     
     private lazy var recentSearchTerms: UIStackView = {
-        // text 수정 필요
+        // text 수정 필요 -> api 생성 시 수정
         let first = setRecentSearchButton("한식")
         let second = setRecentSearchButton("분식")
         let third = setRecentSearchButton("디저트, 커피")
@@ -96,33 +82,20 @@ final class SearchViewController: UIViewController {
         return stackView
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .white
-        setNavigationBar()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setLayout()
     }
     
-    func bind(_ viewModel: SearchViewModel) {
-        
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
-private extension SearchViewController {
-    func setNavigationBar() {
-        let backButtonImage = UIImage(named: "back")?.withAlignmentRectInsets(UIEdgeInsets(top: 0, left: -15, bottom: 0, right: 0))
-        self.navigationController?.navigationBar.backIndicatorImage = backButtonImage
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
-        self.navigationController?.navigationBar.topItem?.title = ""
-        self.navigationController?.navigationBar.backgroundColor = .white
-        self.navigationItem.titleView = searchBar
-        self.navigationItem.rightBarButtonItem = searchBarButton
-    }
-    
+extension SearhView {
     func setLayout() {
         [recentSearchLabel, recentSearchTerms, seperatorView, topSearchLabel, standardTimeLabel, topSearchTerms]
-            .forEach { view.addSubview($0) }
+            .forEach { addSubview($0) }
         
         recentSearchLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(27.09)

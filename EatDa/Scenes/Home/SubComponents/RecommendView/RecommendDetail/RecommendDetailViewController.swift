@@ -37,7 +37,7 @@ final class RecommendDetailViewController: UIViewController {
     }
     
     func bind(_ viewModel: RecommendDetailViewModel) {
-        listView.bind(viewModel.listViewModel)
+        listView.bindRecommendRestaurantData(viewModel.listViewModel)
         listView.rx.modelSelected(RestaurantListData.self)
             .subscribe(onNext: { model in
                 print(">> ", model.id)
