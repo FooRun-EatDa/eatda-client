@@ -33,6 +33,7 @@ struct APIConstants {
 
     // MARK: SEARCH
     static let GET_SEARCH_RESTAURANT = "/restaurant/search"
+    static let GET_SEARCH_LOG = "/restaurant/searchLog"
 
 }
 
