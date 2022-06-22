@@ -23,5 +23,9 @@ struct RestaurantListNetwork {
 //        let apiCall = API<[RestaurantListData]>(url: APIConstants.GET_AROUND_RESTAURANT, method: .get, parameters: ["page": 1])
 //        return apiCall.fetchWithRx()
 //    }
-    
+
+    func getRestaurantDetailValue(_ id: Int) -> Observable<RestaurantDetailModel> {
+        let apiCall = API<RestaurantDetailModel>(url: APIConstants.GET_RESTAURANT_DETAIL + "\(id)", method: .get, parameters: [:])
+        return apiCall.fetchWithRx()
+    }
 }

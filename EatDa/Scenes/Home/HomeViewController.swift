@@ -97,6 +97,12 @@ class HomeViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
+        recommendSectionView.isFetchedData.subscribe(onNext: { model in
+            let vc = RestaurantDetailViewController()
+            vc.viewModel = RestaurantDetailViewModel(model.id ?? 0)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }).disposed(by: disposeBag)
+
         
         viewModel.pushSearchViewController
             .drive(onNext: { viewModel in

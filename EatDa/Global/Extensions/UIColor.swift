@@ -56,6 +56,8 @@ extension UIColor {
     class var subTextColor: UIColor { UIColor(hex: 0x6B7280) }
     class var timeTextColor: UIColor {UIColor(hex: 0xBBBBBB) }
     class var highlightTextColor: UIColor { UIColor(hex: 0x16B96A) }
+    class var lightGreyColor: UIColor { UIColor(hex: 0xFAFAFA) }
+    class var pointTextColor: UIColor { UIColor(hex: 0xFFAF38) }
 
     // MARK: 탭바 컬러
     class var gray1: UIColor { UIColor(hex: 0xBABABC) }

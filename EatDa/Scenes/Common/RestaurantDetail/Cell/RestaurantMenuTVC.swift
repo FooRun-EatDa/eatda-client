@@ -14,12 +14,13 @@ class RestaurantMenuTVC: UITableViewCell {
     let menuTitle = UILabel()
     let menuDetail = UILabel()
     let menuPrice = UILabel()
+    let reviewDivider = UIView()
         
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        _ = [menuImage, menuTitle, menuDetail, menuPrice].map{ contentView.addSubview($0)}
+        _ = [menuImage, menuTitle, menuDetail, menuPrice, reviewDivider].map{ contentView.addSubview($0)}
 
         
         menuImage.image = UIImage(named: "menu_datail")
@@ -27,20 +28,20 @@ class RestaurantMenuTVC: UITableViewCell {
         menuImage.clipsToBounds = true
         menuImage.contentMode = .scaleAspectFill
         menuImage.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().offset(28)
-            $0.width.height.equalTo(104)
+            $0.top.bottom.equalToSuperview().inset(17)
+            $0.leading.equalToSuperview().offset(20)
+            $0.width.height.equalTo(111)
         }
         
         menuTitle.font = .boldSystemFont(ofSize: 15)
         menuTitle.textColor = UIColor.mainTextColor
         menuTitle.text = "대패삼겹살 전골"
         menuTitle.snp.makeConstraints {
-            $0.top.equalTo(menuImage.snp.top)
+            $0.top.equalTo(menuImage.snp.top).offset(5)
             $0.leading.equalTo(menuImage.snp.trailing).offset(18)
         }
         
-        menuDetail.font = .boldSystemFont(ofSize: 13)
+        menuDetail.font = .myMediumSystemFont(ofSize: 13)
         menuDetail.textColor = UIColor.subTextColor
         menuDetail.text = "주호식당 시그니처 메뉴\n대패 삼겹살 전골입니다"
         menuDetail.numberOfLines = 2
@@ -54,10 +55,15 @@ class RestaurantMenuTVC: UITableViewCell {
         menuPrice.textColor = UIColor.mainTextColor
         menuPrice.text = "14,000원"
         menuPrice.snp.makeConstraints {
-            $0.bottom.equalTo(menuImage.snp.bottom)
+            $0.bottom.equalTo(menuImage.snp.bottom).offset(-5)
             $0.leading.equalTo(menuImage.snp.trailing).offset(18)
         }
 
+        reviewDivider.backgroundColor = .seperatorColor
+        reviewDivider.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(1)
+        }
 
     }
         
