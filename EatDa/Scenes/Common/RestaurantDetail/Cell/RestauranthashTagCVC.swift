@@ -17,6 +17,7 @@ class RestauranthashTagCVC: UICollectionViewCell {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.font = .mySystemFont(ofSize: 13)
 
         return label
     }()
@@ -39,10 +40,15 @@ class RestauranthashTagCVC: UICollectionViewCell {
     }
 
     private func configure() {
+        
+        backgroundColor = .hashTagBackgroundColor
+        titleLabel.textColor = .hashTagTextColor
+        layer.cornerRadius = 15
+
         titleLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(13)
+            make.top.bottom.equalToSuperview().inset(6)
         }
-        backgroundColor = .placeholderText
     }
 
     private func bind() {

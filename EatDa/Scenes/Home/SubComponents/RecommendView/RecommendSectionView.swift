@@ -11,6 +11,7 @@ import RxSwift
 
 final class RecommendSectionView: UIView {
     let disposeBag = DisposeBag()
+    let isFetchedData = PublishSubject<RestaurantListData>()
     
     // MARK: UIComponents
     private lazy var subTitleLabel: UILabel = {
@@ -65,7 +66,9 @@ final class RecommendSectionView: UIView {
     func bind() {
         collectionView.rx.modelSelected(RestaurantListModel.self)
             .subscribe(onNext: { model in
-                print(">> ", model.id)
+                print(">>1 ", model.id)
+                self.isFetchedData.onNext(model)
+                
             }).disposed(by: disposeBag)
     }
 

@@ -35,6 +35,8 @@ struct APIConstants {
     static let GET_SEARCH_RESTAURANT = "/restaurant/search"
     static let GET_SEARCH_LOG = "/restaurant/searchLog"
 
+    // MARK: DETAIL
+    static let GET_RESTAURANT_DETAIL = "/restaurant/"
 }
 
 class API<T: Decodable> {
