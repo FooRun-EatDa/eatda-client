@@ -26,7 +26,7 @@ final class SearchDetailViewController: UIViewController {
     
     func bind(_ viewModel: SearchDetailViewModel) {
         listView.bindSearchRestaurantData(viewModel)
-        listView.rx.modelSelected(RestaurantListData.self)
+        listView.rx.modelSelected(RestaurantListModel.self)
             .subscribe(onNext: { model in
                 print(">> ", model.id)
             }).disposed(by: disposeBag)

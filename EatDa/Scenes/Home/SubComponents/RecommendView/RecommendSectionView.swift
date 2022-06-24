@@ -64,7 +64,7 @@ final class RecommendSectionView: UIView {
     }
     
     func bind() {
-        collectionView.rx.modelSelected(RestaurantListData.self)
+        collectionView.rx.modelSelected(RestaurantListModel.self)
             .subscribe(onNext: { model in
                 print(">>1 ", model.id)
                 self.isFetchedData.onNext(model)

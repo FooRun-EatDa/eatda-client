@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 struct SearchDetailViewModel {
-    let searchRestaurantData: Driver<[RestaurantListData]>
+    let searchRestaurantData: Driver<[RestaurantListModel]>
     let disposeBag = DisposeBag()
 
     init(_ keyword: String?, _ lastPage: Int, model: RestaurantListNetwork = RestaurantListNetwork()) {
