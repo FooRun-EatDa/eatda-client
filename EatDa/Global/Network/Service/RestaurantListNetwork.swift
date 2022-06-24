@@ -9,8 +9,25 @@ import Foundation
 import RxSwift
 
 struct RestaurantListNetwork {
+    let disposeBag = DisposeBag()
+    
+    func getLikedRestaurantValue() -> Observable<[RestaurantListModel]> {
+        let apiCall = API<[RestaurantListModel]>(url: APIConstants.GET_LIKED_RESTAURANT, method: .get, parameters: [:])
+        return apiCall.fetchWithRx()
+    }
+    
+    func postLikedRestaurant(_ restaurantId: Int) {
+        let apiCall = API<BasicModel>(url: APIConstants.GET_LIKED_RESTAURANT+"/"+String(restaurantId), method: .post, parameters: [:])
+        apiCall.fetch(completion: { _ in return })
+    }
+    
+    func deleteLikedRestaurant(_ restaurantId: Int) {
+        let apiCall = API<BasicModel>(url: APIConstants.GET_LIKED_RESTAURANT+"/"+String(restaurantId), method: .delete, parameters: ["restaurantId": restaurantId])
+        apiCall.fetch(completion: { _ in return })
+    }
+    
     func getRecommendRestaurantValue() -> Observable<[RestaurantListModel]> {
-        let apiCall = API<[RestaurantListModel]>(url: APIConstants.GET_RECOMMEND_RESTAURANT, method: .get, parameters: ["page": 1])
+        let apiCall = API<[RestaurantListModel]>(url: APIConstants.GET_RECOMMEND_RESTAURANT, method: .get, parameters: ["lastPage": 0])
         return apiCall.fetchWithRx()
     }
     

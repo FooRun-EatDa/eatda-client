@@ -22,8 +22,6 @@ final class LikeHeaderView: UITableViewHeaderFooterView {
     
     private lazy var totalCountLabel: UILabel = {
         let label = UILabel()
-        // 수정필요 - 나중에 api 연결해서 바인딩
-        label.text = "총 4개"
         label.textColor = .label
         label.font = .systemFont(ofSize: 12.0)
         
@@ -41,6 +39,9 @@ final class LikeHeaderView: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupData(_ dataCount: Int) {
+        totalCountLabel.text = "총 \(dataCount)개"
+    }
 }
 
 // MARK: private

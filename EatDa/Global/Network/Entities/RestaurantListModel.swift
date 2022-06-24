@@ -13,5 +13,6 @@ struct RestaurantListModel: Decodable {
     let explanation: String?
     let imgUrl: String?
     let distance: Int?
-    let hashTagRestaurants: String?
+    let hashTags: [String]
+    let liked: Bool
 }

@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class LikeButton: UIButton {
-    private var isLiked = false
+    let disposeBag = DisposeBag()
+    
+    var id: Int = 0
+    var isLiked:Bool = false
 
     private let unlikedImage = UIImage(named: "heart")
     private let likedImage = UIImage(named: "heart_fill")
@@ -20,18 +24,26 @@ class LikeButton: UIButton {
         super.init(frame: frame)
 
         setImage(unlikedImage, for: .normal)
+        bind(RestaurantListViewModel())
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func flipLikedState() {
-        isLiked = !isLiked
-        animate()
+    public func setLikedState(_ restaurantId: Int, _ state: Bool) {
+        id = restaurantId
+        isLiked = state
+        if state {
+            setImage(likedImage, for: .normal)
+        } else {
+            setImage(unlikedImage, for: .normal)
+        }
     }
+    
 
-    private func animate() {
+    func flipLikedState() {
+        isLiked = !isLiked
         UIView.animate(withDuration: 0.1, animations: {
             let newImage = self.isLiked ? self.likedImage : self.unlikedImage
             let newScale = self.isLiked ? self.likedScale : self.unlikedScale
@@ -42,5 +54,20 @@ class LikeButton: UIButton {
                 self.transform = CGAffineTransform.identity
             })
         })
+    }
+
+    func bind(_ viewModel: RestaurantListViewModel) {
+        self.rx.tap
+            .map {
+                self.flipLikedState()
+                return (self.id, self.isLiked)
+            }
+            .bind(to: viewModel.likeButtonTapped)
+            .disposed(by: disposeBag)
+        
+        viewModel.likeButtonTapped
+            .subscribe(onNext: { button in
+                viewModel.tapLikeButton(button.0, button.1)
+            }).disposed(by: disposeBag)
     }
 }

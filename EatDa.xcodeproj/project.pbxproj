@@ -81,6 +81,8 @@
 		FDB4068B283E3EB2003C70A8 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4068A283E3EB2003C70A8 /* SignIn.swift */; };
 		FDB7906D2805A704008621D1 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB7906C2805A704008621D1 /* RestaurantTableViewCell.swift */; };
 		FDB7906E2805A783008621D1 /* ReviewFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62C27A12BDA00BDEA53 /* ReviewFeedViewController.swift */; };
+		FDBC11E3285D7C4500FCADF4 /* LikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC11E2285D7C4500FCADF4 /* LikeViewModel.swift */; };
+		FDBC11E5285D85BF00FCADF4 /* BasicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC11E4285D85BF00FCADF4 /* BasicModel.swift */; };
 		FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8DDCC27A423450072034C /* HomeViewController.swift */; };
 		FDD8DDD027A423740072034C /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8DDCF27A423740072034C /* FilterButtonView.swift */; };
 		FDD8DDD327A426C40072034C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8DDD227A426C40072034C /* UIColor.swift */; };
@@ -190,6 +192,8 @@
 		FDB40686283E14D5003C70A8 /* TokenUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
 		FDB4068A283E3EB2003C70A8 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		FDB7906C2805A704008621D1 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		FDBC11E2285D7C4500FCADF4 /* LikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewModel.swift; sourceTree = "<group>"; };
+		FDBC11E4285D85BF00FCADF4 /* BasicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicModel.swift; sourceTree = "<group>"; };
 		FDD8DDCC27A423450072034C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FDD8DDCF27A423740072034C /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		FDD8DDD227A426C40072034C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -359,6 +363,7 @@
 		FD022E432833ADF600FC32E9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				FDBC11E4285D85BF00FCADF4 /* BasicModel.swift */,
 				FDE30735284640EA00EA15CF /* RestaurantListModel.swift */,
 				FD022E442833ADFE00FC32E9 /* MapDetailModel.swift */,
 				FD9D38E528533D3C005A0C86 /* SearchLogModel.swift */,
@@ -456,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				FD63EA9827CCEDD600DFBD0B /* LikeViewController.swift */,
+				FDBC11E2285D7C4500FCADF4 /* LikeViewModel.swift */,
 				FD63EA9A27CCEDEB00DFBD0B /* LikeHeaderView.swift */,
 				FDB7906C2805A704008621D1 /* RestaurantTableViewCell.swift */,
 			);
@@ -893,10 +899,12 @@
 				FDD8DDD027A423740072034C /* FilterButtonView.swift in Sources */,
 				FD94861827A9598C009BE666 /* AroundSectionView.swift in Sources */,
 				FD9D4F7027B4EBA70005205E /* UIView.swift in Sources */,
+				FDBC11E5285D85BF00FCADF4 /* BasicModel.swift in Sources */,
 				FD6FBDAB28379E2500BD7E20 /* CustomAnnotation.swift in Sources */,
 				FDE3075E28473FC600EA15CF /* SearchDetailViewModel.swift in Sources */,
 				FD94861627A95987009BE666 /* RecommendSectionView.swift in Sources */,
 				FD9C6F4E27C10A75005D88A6 /* FilterSectionViewModel.swift in Sources */,
+				FDBC11E3285D7C4500FCADF4 /* LikeViewModel.swift in Sources */,
 				FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */,
 				F0E4285B27FC8EDC00C623E1 /* WritePostViewController.swift in Sources */,
 				F0B279E6282816AA000B35FF /* TermsViewController.swift in Sources */,

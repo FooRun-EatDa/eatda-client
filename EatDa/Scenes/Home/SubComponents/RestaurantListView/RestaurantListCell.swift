@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import RxSwift
 
 final class RestaurantListCell: UITableViewCell {
+    var disposeBag = DisposeBag()
     
     var thumnailImageView: UIImageView = {
         let image = UIImageView(image: UIImage(named: "res"))
@@ -65,11 +67,10 @@ final class RestaurantListCell: UITableViewCell {
         return label
     }()
     
-    let likeImageView: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "like_fill"))
-        // 눌렀을때 event 추가 필요
+    let likeButton: LikeButton = {
+        let button = LikeButton()
 
-        return image
+        return button
     }()
     
     override func layoutSubviews() {
@@ -77,11 +78,12 @@ final class RestaurantListCell: UITableViewCell {
         
         setupLayout()
     }
+    
 }
 
 extension RestaurantListCell {
     func setupLayout(){
-        [thumnailImageView, titleLabel, districtLabel, hashtagLabel1, hashtagLabel2, likeImageView]
+        [thumnailImageView, titleLabel, districtLabel, hashtagLabel1, hashtagLabel2, likeButton]
             .forEach { contentView.addSubview($0) }
         
         thumnailImageView.snp.makeConstraints {
@@ -114,7 +116,7 @@ extension RestaurantListCell {
             $0.height.equalTo(27.0)
         }
         
-        likeImageView.snp.makeConstraints {
+        likeButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(25.34)
             $0.centerY.equalToSuperview()
         }
@@ -123,6 +125,8 @@ extension RestaurantListCell {
     func setData(_ data: RestaurantListModel){
         self.titleLabel.text = data.name ?? ""
         self.districtLabel.text = "\(String(describing: data.distance))"
-        self.hashtagLabel1.text = data.hashTagRestaurants ?? ""
+        //self.hashtagLabel1.text = data.hashTags ?? ""
+        self.likeButton.setLikedState(data.id ?? 0, data.liked)
     }
+    
 }
