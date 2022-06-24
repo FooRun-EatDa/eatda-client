@@ -9,7 +9,7 @@ import RxSwift
 import RxCocoa
 
 struct RestaurantListViewModel {
-    let recommendRestaurantData: Driver<[RestaurantListData]>
+    let recommendRestaurantData: Driver<[RestaurantListModel]>
 
     init(model: RestaurantListNetwork = RestaurantListNetwork()) {
         let recommendDetailListViewData = model.getRecommendRestaurantValue()

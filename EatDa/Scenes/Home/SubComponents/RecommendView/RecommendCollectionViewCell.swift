@@ -92,7 +92,7 @@ extension RecommendCollectionViewCell {
         
     }
     
-    func setData(_ data: RestaurantListData){
+    func setData(_ data: RestaurantListModel){
         self.titleLabel.text = data.name ?? ""
         self.descriptionLabel.text = data.explanation ?? ""
         self.hashTagLabel.text = data.hashTagRestaurants ?? ""

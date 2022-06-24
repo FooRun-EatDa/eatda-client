@@ -44,15 +44,26 @@ final class SearchViewController: UIViewController {
     }
     
     func bind(_ viewModel: SearchViewModel) {
+        searchView.bind(viewModel)
+        
         searchBarButton.rx.tap
             .asDriver(onErrorDriveWith: .empty())
             .drive(onNext: {
-                let viewModel = SearchDetailViewModel(self.searchBar.text, 1)
+                let viewModel = SearchDetailViewModel(self.searchBar.text, 0)
                 let viewController = SearchDetailViewController()
                 viewController.bind(viewModel)
                 self.show(viewController, sender: nil)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.pushSearchDetailViewController
+            .drive(onNext: { viewModel in
+                let viewController = SearchDetailViewController()
+                viewController.bind(viewModel)
+                self.show(viewController, sender: nil)
+            })
+            .disposed(by: disposeBag)
+
     }
 }
 

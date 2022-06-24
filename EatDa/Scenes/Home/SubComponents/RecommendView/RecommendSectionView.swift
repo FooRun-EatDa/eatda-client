@@ -63,7 +63,7 @@ final class RecommendSectionView: UIView {
     }
     
     func bind() {
-        collectionView.rx.modelSelected(RestaurantListData.self)
+        collectionView.rx.modelSelected(RestaurantListModel.self)
             .subscribe(onNext: { model in
                 print(">> ", model.id)
             }).disposed(by: disposeBag)

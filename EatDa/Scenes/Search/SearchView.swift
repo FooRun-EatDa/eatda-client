@@ -7,9 +7,12 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class SearhView: UIView {
-    
+    let disposeBag = DisposeBag()
+
     // MARK: UIComponents
     private lazy var recentSearchLabel: UILabel = {
         let label = UILabel()
@@ -18,21 +21,21 @@ final class SearhView: UIView {
         return label
     }()
     
-    private lazy var recentSearchTerms: UIStackView = {
-        // text 수정 필요 -> api 생성 시 수정
-        let first = setRecentSearchButton("한식")
-        let second = setRecentSearchButton("분식")
-        let third = setRecentSearchButton("디저트, 커피")
-        let fourth = setRecentSearchButton("디저트, 커피")
+    public lazy var searchLogCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 13.41)
 
-        let stackView = UIStackView(arrangedSubviews: [first, second, third, fourth])
-        stackView.axis = .horizontal
-        stackView.spacing = 13.0
-        stackView.distribution = .fillProportionally
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(SearchLogCell.self, forCellWithReuseIdentifier: "SearchLogCell")
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = .systemBackground
         
-        return stackView
+        return collectionView
     }()
-    
+
     private let seperatorView = SeperatorView(frame: .zero)
 
     private lazy var topSearchLabel: UILabel = {
@@ -90,11 +93,29 @@ final class SearhView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+
+    func bind(_ viewModel: SearchViewModel) {
+        viewModel.searchLogData
+            .drive(searchLogCollectionView.rx.items) { collectionView, row, data in
+                let indexPath = IndexPath(row: row, section: 0)
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchLogCell", for: indexPath) as! SearchLogCell
+                cell.setData(data.searchText ?? "")
+
+                return cell
+            }
+            .disposed(by: disposeBag)
+        
+        searchLogCollectionView.rx.modelSelected(SearchLogModel.self)
+            .bind(to: viewModel.selectedLogData)
+            .disposed(by: disposeBag)
+
+    }
 }
 
 extension SearhView {
     func setLayout() {
-        [recentSearchLabel, recentSearchTerms, seperatorView, topSearchLabel, standardTimeLabel, topSearchTerms]
+        [recentSearchLabel, searchLogCollectionView, seperatorView, topSearchLabel, standardTimeLabel, topSearchTerms]
             .forEach { addSubview($0) }
         
         recentSearchLabel.snp.makeConstraints {
@@ -102,13 +123,15 @@ extension SearhView {
             $0.leading.equalToSuperview().inset(25.85)
         }
         
-        recentSearchTerms.snp.makeConstraints {
+        searchLogCollectionView.snp.makeConstraints {
             $0.top.equalTo(recentSearchLabel.snp.bottom).offset(20.0)
-            $0.leading.equalToSuperview().inset(23.84)
+            $0.leading.equalToSuperview().inset(20)
+            $0.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(50)
         }
         
         seperatorView.snp.makeConstraints {
-            $0.top.equalTo(recentSearchTerms.snp.bottom).offset(23.46)
+            $0.top.equalTo(searchLogCollectionView.snp.bottom).offset(10)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(10.0)
         }
@@ -170,23 +193,6 @@ extension SearhView {
             return button
         }
     }
-    
-    func setRecentSearchButton(_ text: String) -> UIButton {
-        let button = UIButton()
-        button.setTitle(text, for: .normal)
-        button.setTitleColor(.label, for: .normal)
-        button.titleLabel?.font = .mySystemFont(ofSize: 13)
-        button.setImage(UIImage(named: "close"), for: .normal)
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 0)
-        button.semanticContentAttribute = .forceRightToLeft
-        
-        button.layer.borderWidth = 1.0
-        button.layer.cornerRadius = 20
-        button.layer.borderColor = UIColor.lightGrayBorderColor.cgColor
-        button.layer.masksToBounds = true
-        button.contentEdgeInsets = UIEdgeInsets(top: 11, left: 11, bottom: 11, right: 11)
-        
 
-        return button
-    }
 }
+

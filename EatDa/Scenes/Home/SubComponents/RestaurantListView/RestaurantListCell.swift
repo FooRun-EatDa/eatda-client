@@ -120,7 +120,7 @@ extension RestaurantListCell {
         }
     }
     
-    func setData(_ data: RestaurantListData){
+    func setData(_ data: RestaurantListModel){
         self.titleLabel.text = data.name ?? ""
         self.districtLabel.text = "\(String(describing: data.distance))"
         self.hashtagLabel1.text = data.hashTagRestaurants ?? ""
