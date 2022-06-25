@@ -19,6 +19,6 @@ struct RestaurantDetailViewModel {
         let searchRestauranListData = model.getRestaurantDetailValue(id)
     
         self.searchRestaurantData = searchRestauranListData
-            .asDriver(onErrorJustReturn: RestaurantDetailModel(id: 0, name: "", explanation: "", imgUrl: "", content: "", address: "", longitude: "", latitude: "", phoneNumber: "", operationTime: "", price: 0, district: "", categories: [], foods: [], reviews: [], liked: true) )
+            .asDriver(onErrorDriveWith: .empty() )
     }
 }

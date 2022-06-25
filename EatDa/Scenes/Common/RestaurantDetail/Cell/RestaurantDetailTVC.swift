@@ -24,7 +24,7 @@ class RestaurantDetailTVC: UITableViewCell {
         cellTitleLabel.textColor = .subTextColor
         cellTitleLabel.font = .mySystemFont(ofSize: 13)
         cellTitleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(16)
+            $0.top.equalToSuperview().offset(10)
             $0.leading.equalToSuperview().offset(24)
             $0.height.equalTo(20)
         }
@@ -33,19 +33,19 @@ class RestaurantDetailTVC: UITableViewCell {
         cellDetailTitleLabel.font = .mySystemFont(ofSize: 13)
         cellDetailTitleLabel.textAlignment = .right
         cellDetailTitleLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(16)
+            $0.top.equalToSuperview().offset(10)
             $0.trailing.equalToSuperview().offset(-24)
             $0.height.equalTo(20)
         }
         
-        cellDetailButton.setImage(UIImage(named: "termUncheck"), for: .normal)
+        cellDetailButton.setImage(UIImage(named: "call"), for: .normal)
         cellDetailButton.setTitleColor(.mainTextColor, for: .normal)
         cellDetailButton.titleLabel?.font = .mySystemFont(ofSize: 13)
         cellDetailButton.semanticContentAttribute = .forceRightToLeft
         cellDetailButton.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(16)
+            $0.top.equalToSuperview().offset(10)
             $0.trailing.equalToSuperview().offset(-24)
-            $0.height.equalTo(20)
+            $0.height.equalTo(24)
         }
         
         cellDetailOpenedLabeView.textColor = .mainTextColor
