@@ -306,7 +306,7 @@ class MyPageViewController: UIViewController {
     }
     
     func binding() {
-        collectionView.rx.modelSelected(RestaurantListData.self)
+        collectionView.rx.modelSelected(RestaurantListModel.self)
             .subscribe(onNext: { model in
                 print(">> ", model.id)
             }).disposed(by: disposeBag)

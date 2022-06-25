@@ -6,11 +6,21 @@
 //
 
 import UIKit
+import RxSwift
 
 final class LikeViewController: UIViewController {
-    
+    let disposeBag = DisposeBag()
+    let viewModel = LikeViewModel()
+
     // MARK: - UIComponent
-    let headerView = LikeHeaderView(
+    private lazy var  searchBarButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.image = UIImage(imageLiteralResourceName: "search")
+        return button
+    }()
+    
+    
+    private lazy var headerView = LikeHeaderView(
         frame: CGRect(
             origin: .zero,
             // 해당 디바이스 너비만큼
@@ -18,66 +28,64 @@ final class LikeViewController: UIViewController {
         )
     )
     
-    private lazy var  searchBarButton: UIBarButtonItem = {
-        let button = UIBarButtonItem()
-        button.image = UIImage(imageLiteralResourceName: "search")
-        return button
+    private lazy var listView: UITableView = {
+        let listView = UITableView()
+        listView.register(RestaurantListCell.self, forCellReuseIdentifier: "RestaurantListCell")
+        listView.separatorInset = UIEdgeInsets.zero
+        listView.separatorColor = .lightGray
+        listView.rowHeight = 97.34
+        listView.tableHeaderView = headerView
+        
+        return listView
     }()
     
-    private lazy var likeTableView: UITableView = {
-        let tableview = UITableView()
-        tableview.backgroundColor = .systemBackground
-        tableview.rowHeight = 87.34
-        tableview.separatorColor = .lightGray
-        tableview.tableHeaderView = headerView
-        
-        // api 연결할때 rx로 코드 변경할 예정
-        tableview.delegate = self
-        tableview.dataSource = self
-        
-        tableview.register(RestaurantTableViewCell.self, forCellReuseIdentifier: "RestaurantTableViewCell")
-        
-        return tableview
-    }()
+    override func loadView() {
+        super.loadView()
+        self.view = listView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setNavigation()
-        setLayout()
+        setNavigationBar()
+        bind(viewModel)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.refreshData()
+        listView.reloadData()
+    }
+    
+    func bind(_ viewModel: LikeViewModel) {
+        viewModel.likedRestaurantData.asDriver(onErrorJustReturn: [])
+            .drive(listView.rx.items) { tableview, row, data in
+                let cell = tableview.dequeueReusableCell(withIdentifier: "RestaurantListCell") as! RestaurantListCell
+                print(data)
+                cell.setData(data)
+                return cell
+            }
+            .disposed(by: disposeBag)
+        
+        listView.rx.modelSelected(RestaurantListModel.self)
+            .subscribe(onNext: { model in
+                print(">> ", model.id)
+            }).disposed(by: disposeBag)
+        
+        viewModel.likedRestaurantData
+            .asDriver(onErrorJustReturn: [])
+            .drive(onNext: { data in
+                self.headerView.setupData(data.count)
+            }).disposed(by: disposeBag)
+        
+    }
     
 }
 
-extension LikeViewController: UITableViewDataSource, UITableViewDelegate{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell", for: indexPath) as? RestaurantTableViewCell
-        cell?.separatorInset = UIEdgeInsets.zero
-        cell?.setupLayout()
-        
-        return cell ?? UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 97.34
-    }
-    
-}
 
 private extension LikeViewController {
-    func setNavigation() {
+    func setNavigationBar() {
         navigationItem.rightBarButtonItem = searchBarButton
     }
     
-    func setLayout() {
-        view.addSubview(likeTableView)
-        likeTableView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-    }
+
 }

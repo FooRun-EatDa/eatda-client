@@ -37,6 +37,9 @@ struct APIConstants {
 
     // MARK: DETAIL
     static let GET_RESTAURANT_DETAIL = "/restaurant/"
+
+    // MARK: LIKE
+    static let GET_LIKED_RESTAURANT = "/restaurant/bookmark"
 }
 
 class API<T: Decodable> {
@@ -69,6 +72,8 @@ class API<T: Decodable> {
             }
         }
         
+        print("요청: ", self.fetchURL)
+        
         AF.request(self.fetchURL,
                    method: self.method,
                    parameters: self.parameters,
@@ -79,6 +84,8 @@ class API<T: Decodable> {
             if self.fetchURL == APIConstants.BASE_URL + APIConstants.POST_SIGN_IN {
                 guard let accessToken = response.response?.allHeaderFields["Authorization"] as? String else { return }
                 guard let refreshToken = response.response?.allHeaderFields["X-Refresh-Token"] as? String else { return }
+                print(accessToken)
+                print(refreshToken)
                 // 로그인 시 토큰 키체인에 저장
                 TokenUtils.create(key: Const.KeyChainKey.accessToken, token: accessToken)
                 TokenUtils.create(key: Const.KeyChainKey.refreshToken, token: refreshToken)
