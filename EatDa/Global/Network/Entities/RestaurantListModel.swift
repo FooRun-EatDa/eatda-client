@@ -12,7 +12,7 @@ struct RestaurantListModel: Decodable {
     let name: String?
     let explanation: String?
     let imgUrl: String?
-    let distance: Int?
+    let distance: Double?
     let hashTags: [String]
     let liked: Bool
 }

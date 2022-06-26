@@ -50,20 +50,7 @@ final class AroundSectionView: UIView {
         return button
     }()
 
-    private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.backgroundColor = .systemBackground
-
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(AroundRestaurantCollectionViewCell.self, forCellWithReuseIdentifier: "RestaurantCollectionViewCell")
-        
-        return collectionView
-    }()
+    let collectionView = AroundCollectionView()
 
     private let seperatorView = SeperatorView(frame: .zero)
 
@@ -76,34 +63,6 @@ final class AroundSectionView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-}
-
-
-extension AroundSectionView: UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: AroundRestaurantCollectionViewCell.width , height: AroundRestaurantCollectionViewCell.height)
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 0.0, left: 14.68, bottom: 0.0, right: 16.0)
-    }
-    
-
-}
-
-extension AroundSectionView: UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RestaurantCollectionViewCell", for: indexPath) as? AroundRestaurantCollectionViewCell
-
-        
-        cell?.setup()
-        
-        return cell ?? UICollectionViewCell()
-    }
 }
 
 
@@ -145,7 +104,7 @@ private extension AroundSectionView {
         collectionView.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(17.41)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(AroundRestaurantCollectionViewCell.height + 10)
+            $0.height.equalTo(AroundCollectionViewCell.height + 10)
         }
         
         seperatorView.snp.makeConstraints {

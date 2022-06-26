@@ -137,13 +137,13 @@ class HomeViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-//        viewModel.pushAroundDetailViewController
-//            .drive(onNext: { viewModel in
-//                let viewController = AroundDetailViewController()
-//                viewController.bind(viewModel)
-//                self.show(viewController, sender: nil)
-//            })
-//            .disposed(by: disposeBag)
+        viewModel.pushAroundDetailViewController
+            .drive(onNext: { viewModel in
+                let viewController = AroundDetailViewController()
+                viewController.bind(viewModel)
+                self.show(viewController, sender: nil)
+            })
+            .disposed(by: disposeBag)
         
         
         viewModel.mapViewTapped

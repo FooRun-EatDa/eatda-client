@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import Alamofire
 
 struct RestaurantListNetwork {
     let disposeBag = DisposeBag()
@@ -36,10 +37,10 @@ struct RestaurantListNetwork {
         return apiCall.fetchWithRx()
     }
     
-//    func getAroundRestaurantValue() -> Observable<[RestaurantListData]> {
-//        let apiCall = API<[RestaurantListData]>(url: APIConstants.GET_AROUND_RESTAURANT, method: .get, parameters: ["page": 1])
-//        return apiCall.fetchWithRx()
-//    }
+    func getAroundRestaurantValue(body: Parameters) -> Observable<[RestaurantListModel]> {
+        let apiCall = API<[RestaurantListModel]>(url: APIConstants.GET_AROUND_RESTAURANT, method: .post, parameters: body)
+        return apiCall.fetchWithRx()
+    }
 
     func getRestaurantDetailValue(_ id: Int) -> Observable<RestaurantDetailModel> {
         let apiCall = API<RestaurantDetailModel>(url: APIConstants.GET_RESTAURANT_DETAIL + "\(id)", method: .get, parameters: [:])
