@@ -243,9 +243,31 @@ class RestaurantDetailViewController: UIViewController {
         setGesture()
         bind(viewModel ?? RestaurantDetailViewModel(0))
     }
-    
-            
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+
+//        print(viewModel!.searchRestaurantData.values)
+//        viewModel!.searchRestaurantData
+//            .asDriver(onErrorDriveWith: .empty())
+//            .drive(onNext: {a in
+//                self.nameLbl.text = a.address
+//                self.explanationLbl.text = a.explanation
+//            }).disposed(by: disposeBag)
+    }
+        
     func bind(_ viewModel: RestaurantDetailViewModel) {
+        floatButton.rx.tap
+            .asDriver(onErrorDriveWith: .empty())
+            .drive(onNext: {
+                let viewModel = WritePostViewModel(id: self.detailData?.id ?? 0)
+                let vc = WritePostViewController()
+                vc.bind(viewModel)
+                self.navigationController?.pushViewController(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
         mapView.rx.tapGesture()
             .when(.recognized)
             .bind { _ in
@@ -253,7 +275,12 @@ class RestaurantDetailViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        
+//        viewModel.pushWritePostViewController
+//            .drive(onNext: {_ in
+//                let vc = WritePostViewController()
+//                self.navigationController?.pushViewController(vc, animated: true)
+//            }).disposed(by: disposeBag)
+
         viewModel.mapViewTapped
             .asDriver(onErrorDriveWith: .empty())
             .drive(onNext: {
@@ -272,7 +299,6 @@ class RestaurantDetailViewController: UIViewController {
                 if let safeMenu = self.menudata {
                     menudata = safeMenu.sorted {$0.sequence < $1.sequence}
                 }
-
                 
                 self.detailData = detailData
                 self.nameLbl.text = detailData.name
@@ -285,17 +311,14 @@ class RestaurantDetailViewController: UIViewController {
                     $0.leading.trailing.equalToSuperview()
                     $0.height.equalTo(detailData.foods.count * 145)
                 }
-
-
             }).disposed(by: disposeBag)
-
     }
     
+
 
     
     func createViews() {
         navigationController?.isNavigationBarHidden = true
-        tabBarController?.tabBar.isHidden = true
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
@@ -485,7 +508,7 @@ class RestaurantDetailViewController: UIViewController {
         view.addSubview(floatButton)
         floatButton.snp.makeConstraints {
             $0.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview().inset(32)
+            $0.bottom.equalToSuperview()
             $0.height.width.equalTo(120)
         }
     }

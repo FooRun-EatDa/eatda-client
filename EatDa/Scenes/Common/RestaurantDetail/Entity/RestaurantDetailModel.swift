@@ -37,3 +37,8 @@ struct MenuDetailModel: Decodable {
 struct FoodImageModel: Decodable {
     let url: String
 }
+
+
+//struct ReviewDetailModel: Decodable {
+//
+//}
