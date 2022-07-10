@@ -10,15 +10,24 @@ import RxCocoa
 
 struct RestaurantDetailViewModel {
     let aroundDetailButtonTapped = PublishRelay<Void>()
+    
+//    let writePostTapped = PublishRelay<Void>()
+//    let pushWritePostViewController: Driver<WritePostViewModel>
 
     let mapViewTapped = PublishSubject<Void>()
     let searchRestaurantData: Driver<RestaurantDetailModel>
     let disposeBag = DisposeBag()
 
     init(_ id: Int, model: RestaurantListNetwork = RestaurantListNetwork()) {
+        
+//        let writePostViewModel = WritePostViewModel(id: id)
         let searchRestauranListData = model.getRestaurantDetailValue(id)
-    
+        
         self.searchRestaurantData = searchRestauranListData
-            .asDriver(onErrorJustReturn: RestaurantDetailModel(id: 0, name: "", explanation: "", imgUrl: "", content: "", address: "", longitude: "", latitude: "", phoneNumber: "", operationTime: "", price: 0, district: "", categories: [], foods: [], reviews: [], liked: true) )
+            .asDriver(onErrorDriveWith: .empty() )
+        
+//        self.pushWritePostViewController = writePostTapped
+//            .map { return writePostViewModel }
+//            .asDriver(onErrorDriveWith: .empty())
     }
 }

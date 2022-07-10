@@ -13,7 +13,8 @@ class RestaurantDetailViewController: UIViewController {
     let disposeBag = DisposeBag()
     var viewModel: RestaurantDetailViewModel?
     var nSelIndex = -1
-    
+    var detailData: RestaurantDetailModel?
+    var menudata: [MenuDetailModel]?
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -102,7 +103,7 @@ class RestaurantDetailViewController: UIViewController {
     }()
     private lazy var restaurantDiscripionDivideView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.init(hex: 0xE7E7E7)
+        view.backgroundColor = .lightGreyColor
         return view
     }()
     
@@ -140,7 +141,7 @@ class RestaurantDetailViewController: UIViewController {
     }()
     private let menuAllBtn: UIButton = {
         let button = UIButton()
-        button.setTitle("전체보기 ", for: .normal)
+        button.setTitle("전체 보기 ", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 12)
         button.setTitleColor(.mainTextColor, for: .normal)
         button.setImage(UIImage(named: "black_right"), for: .normal)
@@ -213,7 +214,7 @@ class RestaurantDetailViewController: UIViewController {
     }()
     private let reviewAllBtn: UIButton = {
         let button = UIButton()
-        button.setTitle("전체보기 ", for: .normal)
+        button.setTitle("전체 보기 ", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 12)
         button.setTitleColor(.mainTextColor, for: .normal)
         button.setImage(UIImage(named: "black_right"), for: .normal)
@@ -240,11 +241,13 @@ class RestaurantDetailViewController: UIViewController {
         createViews()
         setViewConstraints()
         setGesture()
-//        bind(viewModel!)
+        bind(viewModel ?? RestaurantDetailViewModel(0))
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+
 //        print(viewModel!.searchRestaurantData.values)
 //        viewModel!.searchRestaurantData
 //            .asDriver(onErrorDriveWith: .empty())
@@ -255,6 +258,16 @@ class RestaurantDetailViewController: UIViewController {
     }
         
     func bind(_ viewModel: RestaurantDetailViewModel) {
+        floatButton.rx.tap
+            .asDriver(onErrorDriveWith: .empty())
+            .drive(onNext: {
+                let viewModel = WritePostViewModel(id: self.detailData?.id ?? 0)
+                let vc = WritePostViewController()
+                vc.bind(viewModel)
+                self.navigationController?.pushViewController(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
         mapView.rx.tapGesture()
             .when(.recognized)
             .bind { _ in
@@ -262,7 +275,12 @@ class RestaurantDetailViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        
+//        viewModel.pushWritePostViewController
+//            .drive(onNext: {_ in
+//                let vc = WritePostViewController()
+//                self.navigationController?.pushViewController(vc, animated: true)
+//            }).disposed(by: disposeBag)
+
         viewModel.mapViewTapped
             .asDriver(onErrorDriveWith: .empty())
             .drive(onNext: {
@@ -272,12 +290,35 @@ class RestaurantDetailViewController: UIViewController {
                 self.show(viewController, sender: nil)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.searchRestaurantData
+            .asDriver(onErrorDriveWith: .empty())
+            .drive(onNext: { [self] detailData in
+
+                menudata = detailData.foods
+                if let safeMenu = self.menudata {
+                    menudata = safeMenu.sorted {$0.sequence < $1.sequence}
+                }
+                
+                self.detailData = detailData
+                self.nameLbl.text = detailData.name
+                self.explanationLbl.text = detailData.explanation
+                self.restaurantDetailTableView.reloadData()
+                self.menuTableView.reloadData()
+                
+                menuTableView.snp.remakeConstraints {
+                    $0.top.equalTo(menuTitleLbl.snp.bottom)
+                    $0.leading.trailing.equalToSuperview()
+                    $0.height.equalTo(detailData.foods.count * 145)
+                }
+            }).disposed(by: disposeBag)
     }
+    
+
 
     
     func createViews() {
         navigationController?.isNavigationBarHidden = true
-        tabBarController?.tabBar.isHidden = true
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
@@ -311,7 +352,6 @@ class RestaurantDetailViewController: UIViewController {
             make.leading.trailing.equalTo(view)
             make.top.equalTo(scrollView.snp.top).offset(220)
             make.bottom.equalTo(scrollView.snp.bottom)
-//            make.height.equalTo(2000)
         }
         
         let headerContainerViewBottom : NSLayoutConstraint!
@@ -343,7 +383,7 @@ class RestaurantDetailViewController: UIViewController {
         nameLbl.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(20)
             make.leading.equalToSuperview().inset(20)
-            make.trailing.equalToSuperview().inset(50)
+            make.trailing.equalToSuperview().inset(80)
         }
         explanationLbl.snp.makeConstraints { make in
             make.top.equalTo(nameLbl.snp.bottom).offset(5)
@@ -359,14 +399,14 @@ class RestaurantDetailViewController: UIViewController {
             make.height.equalTo(30)
         }
         restaurantDiscripionDivideView.snp.makeConstraints { make in
-            make.top.equalTo(hashTagCollectionView.snp.bottom).offset(27)
+            make.top.equalTo(hashTagCollectionView.snp.bottom).offset(22)
             make.height.equalTo(2)
             make.leading.trailing.equalToSuperview()
         }
         
         
         restaurantDetailTableView.snp.makeConstraints { make in
-            make.top.equalTo(restaurantDiscripionDivideView.snp.bottom).offset(16)
+            make.top.equalTo(restaurantDiscripionDivideView.snp.bottom).offset(10)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(216)
         }
@@ -391,7 +431,7 @@ class RestaurantDetailViewController: UIViewController {
             $0.trailing.equalToSuperview().offset(-24)
         }
         menuTableView.snp.makeConstraints {
-            $0.top.equalTo(menuTitleLbl.snp.bottom).offset(20)
+            $0.top.equalTo(menuTitleLbl.snp.bottom)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(430)
         }
@@ -468,7 +508,7 @@ class RestaurantDetailViewController: UIViewController {
         view.addSubview(floatButton)
         floatButton.snp.makeConstraints {
             $0.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview().inset(32)
+            $0.bottom.equalToSuperview()
             $0.height.width.equalTo(120)
         }
     }
@@ -553,7 +593,7 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
         if tableView.tag == 10 {
             return 5
         }else if tableView.tag == 11{
-            return 3
+            return menudata?.count ?? 0
         } else {
             return 2
         }
@@ -570,62 +610,67 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
             switch indexPath.row {
             case 0:
                 cell.cellTitleLabel.text = "종류"
-                cell.cellDetailTitleLabel.text = "요리주점"
+                cell.cellDetailTitleLabel.isHidden = false
+                cell.cellDetailTitleLabel.text = detailData?.content
                 cell.cellDetailButton.isHidden = true
-                
+                cell.cellDetailButton.setTitle("", for: .normal)
+
             case 1:
                 cell.cellTitleLabel.text = "전화번호"
-                cell.cellDetailButton.setTitle("010-1111-1111  ", for: .normal)
+                cell.cellDetailButton.isHidden = false
+                cell.cellDetailButton.setTitle("\(detailData?.phoneNumber ?? "") ", for: .normal)
                 cell.cellDetailTitleLabel.isHidden = true
-                
+                cell.cellDetailTitleLabel.text = ""
+
             case 2:
                 cell.cellTitleLabel.text = "지역"
-                cell.cellDetailButton.setTitle("정건  ", for: .normal)
-                cell.cellDetailTitleLabel.isHidden = true
+                cell.cellDetailButton.isHidden = false
+                cell.cellDetailButton.setTitle("\(detailData?.address ?? "") ", for: .normal)
                 cell.cellDetailButton.setImage(UIImage(named: "black_down"), for: .normal)
-                
+                cell.cellDetailTitleLabel.isHidden = true
+
                 cell.cellDetailButton.rx.tap.bind{ _ in
-                    print(self.nSelIndex)
-                    
+
                     if self.nSelIndex == indexPath.row {
                         cell.cellDetailOpenedLabeView.isHidden = true
                         cell.cellDetailButton.setImage(UIImage(named: "black_down"), for: .normal)
-                        
+
                         self.restaurantDetailTableView.snp.remakeConstraints { make in
                             make.top.equalTo(self.restaurantDiscripionDivideView.snp.bottom).offset(16)
                             make.leading.trailing.equalToSuperview()
                             make.height.equalTo(216)
                         }
-                        
+
                     }else{
                         cell.cellDetailOpenedLabeView.text = "경기 수원시 영통구 덕영대로 1699"
                         cell.cellDetailOpenedLabeView.isHidden = false
                         cell.cellDetailButton.setImage(UIImage(named: "black_up"), for: .normal)
-                        
+
                         self.restaurantDetailTableView.snp.remakeConstraints { make in
                             make.top.equalTo(self.restaurantDiscripionDivideView.snp.bottom).offset(16)
                             make.leading.trailing.equalToSuperview()
                             make.height.equalTo(250)
                         }
-                        
-                        
                     }
-                    
+
                     self.nSelIndex = indexPath.row
-                    print(self.nSelIndex)
-        
+
                 }.disposed(by: disposeBag)
                 
             case 3:
                 cell.cellTitleLabel.text = "가격대"
-                cell.cellDetailTitleLabel.text = "12,000 - 20,000원"
+                cell.cellDetailTitleLabel.isHidden = false
+                cell.cellDetailTitleLabel.text = "\(detailData?.price ?? 0) 원대"
                 cell.cellDetailButton.isHidden = true
+                cell.cellDetailButton.setTitle("", for: .normal)
                 
             case 4:
                 cell.cellTitleLabel.text = "영업시간"
+                cell.cellDetailButton.isHidden = false
                 cell.cellDetailButton.setTitle("09:00 - 11:00 ", for: .normal)
                 cell.cellDetailButton.setImage(UIImage(named: "black_down"), for: .normal)
                 cell.cellDetailTitleLabel.isHidden = true
+                cell.cellDetailTitleLabel.text = ""
                 
                 cell.cellDetailButton.rx.tap.bind{ _ in
                     print(self.nSelIndex)
@@ -653,7 +698,6 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
                     }
                     
                     self.nSelIndex = indexPath.row
-                    print(self.nSelIndex)
                     
                 }.disposed(by: disposeBag)
                 
@@ -669,6 +713,13 @@ extension RestaurantDetailViewController: UITableViewDelegate, UITableViewDataSo
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantMenuTVC", for: indexPath) as? RestaurantMenuTVC else {
                 return UITableViewCell()
             }
+            
+            guard let safeMenu = menudata else {
+                return UITableViewCell()
+            }
+            cell.menuTitle.text = safeMenu[indexPath.row].name
+            cell.menuPrice.text = "\(safeMenu[indexPath.row].price) 원"
+
             
             return cell
             

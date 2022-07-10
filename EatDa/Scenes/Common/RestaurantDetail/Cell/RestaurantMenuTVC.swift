@@ -20,7 +20,7 @@ class RestaurantMenuTVC: UITableViewCell {
        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        _ = [menuImage, menuTitle, menuDetail, menuPrice, reviewDivider].map{ contentView.addSubview($0)}
+        _ = [menuImage, menuTitle, menuDetail, menuPrice, reviewDivider].map{ contentView.addSubview($0) }
 
         
         menuImage.image = UIImage(named: "menu_datail")
@@ -39,6 +39,7 @@ class RestaurantMenuTVC: UITableViewCell {
         menuTitle.snp.makeConstraints {
             $0.top.equalTo(menuImage.snp.top).offset(5)
             $0.leading.equalTo(menuImage.snp.trailing).offset(18)
+            $0.trailing.equalToSuperview().offset(-20)
         }
         
         menuDetail.font = .myMediumSystemFont(ofSize: 13)

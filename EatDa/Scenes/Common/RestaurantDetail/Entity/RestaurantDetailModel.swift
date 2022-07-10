@@ -21,7 +21,24 @@ struct RestaurantDetailModel: Decodable {
     let price: Int
     let district: String
     let categories: [Int]
-    let foods: [Int]
+    let foods: [MenuDetailModel]
     let reviews: [Int]
     let liked: Bool
 }
+
+struct MenuDetailModel: Decodable {
+    let id: Int
+    let name: String
+    let price: Int
+    let sequence: Int
+    let files: [FoodImageModel]
+}
+
+struct FoodImageModel: Decodable {
+    let url: String
+}
+
+
+//struct ReviewDetailModel: Decodable {
+//
+//}

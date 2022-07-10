@@ -30,6 +30,7 @@
 		F03FB66127B0333D0097D817 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03FB66027B0333D0097D817 /* UILabel.swift */; };
 		F03FB66327B52B2E0097D817 /* RestaurantReviewTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03FB66227B52B2E0097D817 /* RestaurantReviewTVC.swift */; };
 		F05B0DC0285B8D290029CD3C /* RestaurantDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05B0DBF285B8D290029CD3C /* RestaurantDetailModel.swift */; };
+		F05B0DE428684F430029CD3C /* WritePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05B0DE328684F420029CD3C /* WritePostViewModel.swift */; };
 		F0B279E6282816AA000B35FF /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B279E5282816AA000B35FF /* TermsViewController.swift */; };
 		F0CB983228472BA3002FCD94 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CB983128472BA3002FCD94 /* MypageViewController.swift */; };
 		F0CB9834284734D1002FCD94 /* ChangeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CB9833284734D1002FCD94 /* ChangeProfileViewController.swift */; };
@@ -139,6 +140,7 @@
 		F03FB66027B0333D0097D817 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		F03FB66227B52B2E0097D817 /* RestaurantReviewTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewTVC.swift; sourceTree = "<group>"; };
 		F05B0DBF285B8D290029CD3C /* RestaurantDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailModel.swift; sourceTree = "<group>"; };
+		F05B0DE328684F420029CD3C /* WritePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePostViewModel.swift; sourceTree = "<group>"; };
 		F0B279E5282816AA000B35FF /* TermsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		F0CB983128472BA3002FCD94 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
 		F0CB9833284734D1002FCD94 /* ChangeProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileViewController.swift; sourceTree = "<group>"; };
@@ -311,11 +313,20 @@
 		F03FB65B27A958060097D817 /* RestaurantDetail */ = {
 			isa = PBXGroup;
 			children = (
+				F05B0DE6286859720029CD3C /* Entity */,
 				F03FB65427A6EB930097D817 /* Cell */,
 				F03FB65227A6DDA40097D817 /* RestaurantDetailViewController.swift */,
 				FD6FBDB8283CF4A900BD7E20 /* RestaurantDetailViewModel.swift */,
 			);
 			path = RestaurantDetail;
+			sourceTree = "<group>";
+		};
+		F05B0DE6286859720029CD3C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				F05B0DBF285B8D290029CD3C /* RestaurantDetailModel.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		F0CB983028472B78002FCD94 /* Mypage */ = {
@@ -349,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				F0E4285A27FC8EDC00C623E1 /* WritePostViewController.swift */,
+				F05B0DE328684F420029CD3C /* WritePostViewModel.swift */,
 			);
 			path = WritePost;
 			sourceTree = "<group>";
@@ -498,7 +510,6 @@
 		FD9C6F4927C108AC005D88A6 /* RecommendView */ = {
 			isa = PBXGroup;
 			children = (
-				F05B0DBF285B8D290029CD3C /* RestaurantDetailModel.swift */,
 				FDE3072928446E1400EA15CF /* RecommendDetail */,
 				FD94861527A95987009BE666 /* RecommendSectionView.swift */,
 				FD9C6F3927BFDA4F005D88A6 /* RecommendCollectionViewCell.swift */,
@@ -931,6 +942,7 @@
 				FDE30759284720AF00EA15CF /* LikeButton.swift in Sources */,
 				FD63EA9927CCEDD600DFBD0B /* LikeViewController.swift in Sources */,
 				FDF78A2B27EB4C13005D37C8 /* NoticeHeaderView.swift in Sources */,
+				F05B0DE428684F430029CD3C /* WritePostViewModel.swift in Sources */,
 				FDB40681283E11A8003C70A8 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
