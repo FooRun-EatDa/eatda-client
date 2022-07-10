@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class AroundRestaurantCollectionViewCell: UICollectionViewCell{
+final class AroundCollectionViewCell: UICollectionViewCell{
     static var width: CGFloat { 180.0 }
     static var height: CGFloat { 250.0 }
     
@@ -56,13 +56,21 @@ final class AroundRestaurantCollectionViewCell: UICollectionViewCell{
         return label
     }()
     
-    func setup(){
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
         setupLayout()
+    }
+    
+    func setData(_ data: RestaurantListModel){
+        self.titleLabel.text = data.name ?? ""
+        self.descriptionLabel.text = data.explanation ?? ""
+        //self.hashTagLabel.text = data.hashTags ?? ""
     }
 }
 
 
-private extension AroundRestaurantCollectionViewCell {
+private extension AroundCollectionViewCell {
     func setupLayout(){
 
         self.backgroundColor = .white
@@ -89,7 +97,7 @@ private extension AroundRestaurantCollectionViewCell {
         }
         
         titleLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(12.0)
+            $0.leading.trailing.equalToSuperview().inset(12.0)
             $0.top.equalTo(imageView.snp.bottom).offset(12.0)
         }
         

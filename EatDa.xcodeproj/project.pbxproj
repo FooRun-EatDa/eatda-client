@@ -59,7 +59,7 @@
 		FD94861427A955F6009BE666 /* FilterSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94861327A955F6009BE666 /* FilterSectionView.swift */; };
 		FD94861627A95987009BE666 /* RecommendSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94861527A95987009BE666 /* RecommendSectionView.swift */; };
 		FD94861827A9598C009BE666 /* AroundSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94861727A9598C009BE666 /* AroundSectionView.swift */; };
-		FD94861D27A959EF009BE666 /* AroundRestaurantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94861B27A959EF009BE666 /* AroundRestaurantCollectionViewCell.swift */; };
+		FD94861D27A959EF009BE666 /* AroundCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94861B27A959EF009BE666 /* AroundCollectionViewCell.swift */; };
 		FD94861E27A959EF009BE666 /* SeperatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94861C27A959EF009BE666 /* SeperatorView.swift */; };
 		FD9C6F3427BFD04A005D88A6 /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD9C6F3027BFD035005D88A6 /* AppleSDGothicNeoB.ttf */; };
 		FD9C6F3527BFD04C005D88A6 /* AppleSDGothicNeoEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD9C6F3327BFD035005D88A6 /* AppleSDGothicNeoEB.ttf */; };
@@ -83,6 +83,8 @@
 		FDB7906E2805A783008621D1 /* ReviewFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF62C27A12BDA00BDEA53 /* ReviewFeedViewController.swift */; };
 		FDBC11E3285D7C4500FCADF4 /* LikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC11E2285D7C4500FCADF4 /* LikeViewModel.swift */; };
 		FDBC11E5285D85BF00FCADF4 /* BasicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC11E4285D85BF00FCADF4 /* BasicModel.swift */; };
+		FDBC12082868135E00FCADF4 /* AroundDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC12072868135E00FCADF4 /* AroundDetailViewModel.swift */; };
+		FDBC120A2868162400FCADF4 /* AroundCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC12092868162400FCADF4 /* AroundCollectionView.swift */; };
 		FDD8DDCD27A423450072034C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8DDCC27A423450072034C /* HomeViewController.swift */; };
 		FDD8DDD027A423740072034C /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8DDCF27A423740072034C /* FilterButtonView.swift */; };
 		FDD8DDD327A426C40072034C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8DDD227A426C40072034C /* UIColor.swift */; };
@@ -171,7 +173,7 @@
 		FD94861327A955F6009BE666 /* FilterSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionView.swift; sourceTree = "<group>"; };
 		FD94861527A95987009BE666 /* RecommendSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendSectionView.swift; sourceTree = "<group>"; };
 		FD94861727A9598C009BE666 /* AroundSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundSectionView.swift; sourceTree = "<group>"; };
-		FD94861B27A959EF009BE666 /* AroundRestaurantCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundRestaurantCollectionViewCell.swift; sourceTree = "<group>"; };
+		FD94861B27A959EF009BE666 /* AroundCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD94861C27A959EF009BE666 /* SeperatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeperatorView.swift; sourceTree = "<group>"; };
 		FD9C6F2F27BFD035005D88A6 /* AppleSDGothicNeoM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoM.ttf; sourceTree = "<group>"; };
 		FD9C6F3027BFD035005D88A6 /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoB.ttf; sourceTree = "<group>"; };
@@ -194,6 +196,8 @@
 		FDB7906C2805A704008621D1 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		FDBC11E2285D7C4500FCADF4 /* LikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewModel.swift; sourceTree = "<group>"; };
 		FDBC11E4285D85BF00FCADF4 /* BasicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicModel.swift; sourceTree = "<group>"; };
+		FDBC12072868135E00FCADF4 /* AroundDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundDetailViewModel.swift; sourceTree = "<group>"; };
+		FDBC12092868162400FCADF4 /* AroundCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundCollectionView.swift; sourceTree = "<group>"; };
 		FDD8DDCC27A423450072034C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FDD8DDCF27A423740072034C /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		FDD8DDD227A426C40072034C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -508,7 +512,8 @@
 			children = (
 				FDE307242843433100EA15CF /* AroundDetail */,
 				FD94861727A9598C009BE666 /* AroundSectionView.swift */,
-				FD94861B27A959EF009BE666 /* AroundRestaurantCollectionViewCell.swift */,
+				FD94861B27A959EF009BE666 /* AroundCollectionViewCell.swift */,
+				FDBC12092868162400FCADF4 /* AroundCollectionView.swift */,
 			);
 			path = AroundView;
 			sourceTree = "<group>";
@@ -590,6 +595,7 @@
 			isa = PBXGroup;
 			children = (
 				FDEA5E3927EF10CD008EFD5E /* AroundDetailViewController.swift */,
+				FDBC12072868135E00FCADF4 /* AroundDetailViewModel.swift */,
 			);
 			path = AroundDetail;
 			sourceTree = "<group>";
@@ -866,7 +872,7 @@
 				F03FB66127B0333D0097D817 /* UILabel.swift in Sources */,
 				FD022E3E2833692100FC32E9 /* MapViewController.swift in Sources */,
 				FD0CF62B27A12BC400BDEA53 /* TalkViewController.swift in Sources */,
-				FD94861D27A959EF009BE666 /* AroundRestaurantCollectionViewCell.swift in Sources */,
+				FD94861D27A959EF009BE666 /* AroundCollectionViewCell.swift in Sources */,
 				FDEA5E3E27F04620008EFD5E /* RecommendDetailViewModel.swift in Sources */,
 				FDE3073A2846411A00EA15CF /* RestaurantListNetwork.swift in Sources */,
 				FDB40687283E14D5003C70A8 /* TokenUtils.swift in Sources */,
@@ -875,10 +881,12 @@
 				F0224C44282970840092683A /* RegistCompleteViewController.swift in Sources */,
 				F0128D3A281E5531005BE0B9 /* LoginViewController.swift in Sources */,
 				FD63EA9B27CCEDEB00DFBD0B /* LikeHeaderView.swift in Sources */,
+				FDBC120A2868162400FCADF4 /* AroundCollectionView.swift in Sources */,
 				F0CB9834284734D1002FCD94 /* ChangeProfileViewController.swift in Sources */,
 				FDE307602847422A00EA15CF /* SearchDetailViewController.swift in Sources */,
 				FDE37EAD27D389C400618163 /* SearchViewController.swift in Sources */,
 				FD94861427A955F6009BE666 /* FilterSectionView.swift in Sources */,
+				FDBC12082868135E00FCADF4 /* AroundDetailViewModel.swift in Sources */,
 				F0224C422829704C0092683A /* EnterNicknameViewController.swift in Sources */,
 				FDF78A2527EB421B005D37C8 /* NoticeViewController.swift in Sources */,
 				F03D976827DDC4A10011FA3D /* BestBoardTVC.swift in Sources */,
