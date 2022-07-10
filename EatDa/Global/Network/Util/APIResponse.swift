@@ -21,7 +21,7 @@ struct APIResponse<T: Decodable>: Decodable {
 
 struct APIConstants {
     // MARK: BASE URL
-    static let BASE_URL = "http://api.foorun.co.kr"
+    static let BASE_URL = "http://34.64.120.170"
     
     // MARK: SIGNUP/SIGNIN
     static let GET_SCHOOL_DATA = "/school"
